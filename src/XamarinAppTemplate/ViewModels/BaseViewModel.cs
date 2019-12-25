@@ -14,18 +14,25 @@ namespace XamarinAppTemplate.ViewModels
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
+        private bool _isBusy = false;
+        private string _title;
 
-        string title = string.Empty;
         public string Title
         {
-            get { return title; }
-            set { SetProperty(ref title, value); }
+            get { return _title; }
+            set { SetProperty(ref _title, value);}
+        }
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { SetProperty(ref _isBusy, value); OnPropertyChanged(nameof(IsNotBusy)); }
+        }
+        public bool IsNotBusy
+        {
+            get
+            {
+                return !_isBusy;
+            }
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,
