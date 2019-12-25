@@ -12,8 +12,6 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
         private bool _isBusy = false;
         private string _title;
 

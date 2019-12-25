@@ -37,17 +37,12 @@
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="About">
-        <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-    </FlyoutItem>
+    <FlyoutItem Title="Register Route" />
 
     <FlyoutItem
-        Title="Disabled"
-        IsEnabled="False">
-        <ShellContent
-            Style="{StaticResource BaseStyle}"
-            ContentTemplate="{DataTemplate local:AboutPage}" />
+        Route="about"
+        Title="About">
+        <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
-
 
 </Shell>

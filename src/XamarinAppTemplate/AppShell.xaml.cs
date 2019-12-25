@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using XamarinAppTemplate.Helpers;
 
 namespace XamarinAppTemplate
 {
@@ -10,6 +11,13 @@ namespace XamarinAppTemplate
         public AppShell()
         {
             InitializeComponent();
+
+            RegisterRoutes();
+        }
+
+        private void RegisterRoutes()
+        {
+            Routing.RegisterRoute("test", new TestRoute());
         }
     }
 }

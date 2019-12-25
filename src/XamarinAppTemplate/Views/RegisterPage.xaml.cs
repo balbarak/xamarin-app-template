@@ -16,5 +16,12 @@ namespace XamarinAppTemplate.Views
         {
             InitializeComponent();
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var state = Shell.Current.CurrentState;
+
+            await Shell.Current.GoToAsync($"/test",true);
+        }
     }
 }
