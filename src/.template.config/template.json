@@ -1,0 +1,11 @@
+﻿{
+  "author": "balbarak",
+  "classifications": [ "Web" ],
+  "name": "Xamarin Forms 4.2 App",
+  "tags": {
+    "language": "C#"
+  },
+  "identity": "XamarinFromTemplateApp.Balbarak.Six",
+  "shortName": "mobileApp",
+  "sourceName": "XamarinAppTemplate"
+}
