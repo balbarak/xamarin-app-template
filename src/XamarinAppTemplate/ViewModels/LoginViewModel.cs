@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace XamarinAppTemplate.ViewModels
 {
@@ -14,10 +16,12 @@ namespace XamarinAppTemplate.ViewModels
 
         }
 
-        public override Task InitializeAsync(object navigationData)
+        public async override Task InitializeAsync(object navigationData)
         {
+            await Task.Delay(2000);
 
-            return base.InitializeAsync(navigationData);
+            await MainThread.InvokeOnMainThreadAsync(()=> App.Current.MainPage.DisplayAlert("Nehahaha", "done", "ok"));
+
         }
     }
 }
