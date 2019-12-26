@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamarinAppTemplate.LightTheme">
+
+    <Color x:Key="PageBackgroundColor">#f2f3f8</Color>
+
+    <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
+
+
+    <Color x:Key="PrimaryColor">#5867dd</Color>
+    <Color x:Key="BrandColor">#5d78ff</Color>
+    <Color x:Key="SuccessColor">#0abb87</Color>
+    <Color x:Key="WarningColor">#ffb822</Color>
+    <Color x:Key="DangerColor">#fd397a</Color>
+
+    <Color x:Key="TextColor">White</Color>
+    <Color x:Key="ReverseTextColor">Black</Color>
+
+    <Color x:Key="FlyoutBackgroundColor">#1e1e2d</Color>
+
+    <Color x:Key="FlyoutTextColor">#a2a3b7</Color>
+    <Color x:Key="FlyoutItemSelectedColor">#1b1b28</Color>
+
+</ResourceDictionary>

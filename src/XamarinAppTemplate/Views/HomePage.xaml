@@ -34,17 +34,21 @@
             </Label>
 
             <Button
-                Text="Login"
-                Command="{Binding LoginCommand}" />
+                Command="{Binding LoginCommand}"
+                Text="Login" />
 
-            <controls:ButtonFrame
-                Padding="15"
-                TappedColor="Blue"
-                BackgroundColor="Yellow">
-                <Grid>
-                    <Label Text="I am button frame" />
-                </Grid>
-            </controls:ButtonFrame>
+            <Button
+                Style="{StaticResource btn-danger}"
+                Text="Danger" />
+
+            <Button
+                Style="{StaticResource btn-success}"
+                Text="Success" />
+
+            <Button
+                Style="{StaticResource btn-warning}"
+                Text="Warning" />
+
 
         </StackLayout>
 

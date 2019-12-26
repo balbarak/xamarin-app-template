@@ -6,7 +6,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    BackgroundColor="Yellow"
     Title="Login Page"
     x:Class="XamarinAppTemplate.Views.LoginPage">
     <ContentPage.Content>
@@ -16,9 +15,6 @@
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
 
-            <Button
-                Text="Go To Register"
-                Clicked="OnRegisterClicked" />
         </StackLayout>
     </ContentPage.Content>
 </local:BaseContentPage>

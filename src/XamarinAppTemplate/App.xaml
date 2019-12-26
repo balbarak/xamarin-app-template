@@ -6,5 +6,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.App">
-    <Application.Resources />
+    <Application.Resources>
+
+        <ResourceDictionary Source="Themes/LightTheme.xaml" />
+        <ResourceDictionary Source="Styles/AppStyle.xaml" />
+
+    </Application.Resources>
 </Application>

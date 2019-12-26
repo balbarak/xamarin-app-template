@@ -28,6 +28,7 @@ namespace XamarinAppTemplate.Controls
             get { return (ICommand)GetValue(CommandProperty); }
             set { SetValue(CommandProperty, value); }
         }
+
         public Color TappedColor
         {
             get { return (Color)GetValue(TappedColorProperty); }

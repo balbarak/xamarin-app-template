@@ -21,6 +21,8 @@ namespace XamarinAppTemplate
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
             _viewModel = GetViewModel();
             BindingContext = _viewModel;
+
+            SetDynamicResource(BackgroundColorProperty, "PageBackgroundColor");
         }
 
         public Task InitializeViewModel(object data)

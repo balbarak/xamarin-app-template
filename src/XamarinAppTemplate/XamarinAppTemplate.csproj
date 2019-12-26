@@ -17,6 +17,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Styles\AppStyle.xaml.cs">
+      <DependentUpon>AppStyle.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
