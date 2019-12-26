@@ -20,8 +20,15 @@ namespace XamarinAppTemplate
             base.OnNavigating(args);
         }
 
+        protected override void OnNavigated(ShellNavigatedEventArgs args)
+        {
+            
+            base.OnNavigated(args);
+        }
+
         private void RegisterRoutes()
         {
+            
             Routing.RegisterRoute("test", new TestRoute());
 
         }

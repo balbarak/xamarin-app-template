@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using XamarinAppTemplate.Services;
+using XamarinAppTemplate.ViewModels;
 
 namespace XamarinAppTemplate
 {
@@ -20,6 +22,11 @@ namespace XamarinAppTemplate
 
         private static IServiceCollection ConfigureServices(IServiceCollection serviceCollections)
         {
+            serviceCollections.AddSingleton<NavigationService>();
+
+            serviceCollections.AddScoped<HomeViewModel>();
+
+            serviceCollections.AddScoped<LoginViewModel>();
 
             return serviceCollections;
         }

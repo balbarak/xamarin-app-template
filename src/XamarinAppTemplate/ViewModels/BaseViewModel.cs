@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using XamarinAppTemplate.Services;
 
 namespace XamarinAppTemplate.ViewModels
 {
@@ -12,6 +12,12 @@ namespace XamarinAppTemplate.ViewModels
     {
         private bool _isBusy = false;
         private string _title;
+        protected NavigationService _navService;
+
+        public BaseViewModel()
+        {
+            _navService = AppServiceLocator.Current.GetService<NavigationService>();
+        }
 
         public string Title
         {

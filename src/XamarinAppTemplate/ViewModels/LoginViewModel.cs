@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace XamarinAppTemplate.ViewModels
 {
-    public class HomeViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
-        public ICommand LoginCommand => new Command(async () => await _navService.PushAsync<LoginViewModel>());
+        public bool state { get; set; }
 
-        public HomeViewModel()
+        public LoginViewModel()
         {
 
         }
 
         public override Task InitializeAsync(object navigationData)
         {
+
             return base.InitializeAsync(navigationData);
         }
     }

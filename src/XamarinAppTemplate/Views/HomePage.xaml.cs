@@ -10,18 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace XamarinAppTemplate.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class HomePage : BaseContentPage
     {
         public HomePage()
         {
             InitializeComponent();
         }
 
-        private async void OnLoginClicked(object sender, EventArgs e)
-        {
-            var state = Shell.Current.CurrentState;
-
-            await Shell.Current.GoToAsync($"test",true);
-        }
     }
 }

@@ -22,7 +22,9 @@
         </Style>
     </Shell.Resources>
 
-    <FlyoutItem Title="Home">
+    <FlyoutItem
+        Route="home"
+        Title="Home">
         <ShellContent
             Style="{StaticResource BaseStyle}"
             Title="Country"
