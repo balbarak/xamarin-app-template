@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using XamarinAppTemplate.Helpers;
 
@@ -13,11 +12,18 @@ namespace XamarinAppTemplate
             InitializeComponent();
 
             RegisterRoutes();
+
+        }
+
+        protected override void OnNavigating(ShellNavigatingEventArgs args)
+        {
+            base.OnNavigating(args);
         }
 
         private void RegisterRoutes()
         {
             Routing.RegisterRoute("test", new TestRoute());
+
         }
     }
 }

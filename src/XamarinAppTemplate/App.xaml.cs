@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinAppTemplate.Services;
 using XamarinAppTemplate.Views;
 
 namespace XamarinAppTemplate
@@ -13,7 +12,7 @@ namespace XamarinAppTemplate
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            Startup.Configure();
 
             MainPage = new AppShell();
         }

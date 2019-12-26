@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
-using XamarinAppTemplate.Models;
-using XamarinAppTemplate.Services;
 
 namespace XamarinAppTemplate.ViewModels
 {
@@ -32,6 +30,8 @@ namespace XamarinAppTemplate.ViewModels
                 return !_isBusy;
             }
         }
+
+        public virtual Task InitializeAsync(object navigationData) => Task.FromResult(false);
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",

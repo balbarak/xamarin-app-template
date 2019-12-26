@@ -21,7 +21,7 @@ namespace XamarinAppTemplate.Views
         {
             var state = Shell.Current.CurrentState;
 
-            await Shell.Current.GoToAsync($"/test",true);
+            await Shell.Current.GoToAsync($"{state.Location}/about",true);
         }
     }
 }

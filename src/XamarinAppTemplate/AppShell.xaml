@@ -22,6 +22,13 @@
         </Style>
     </Shell.Resources>
 
+    <FlyoutItem Title="Home">
+        <ShellContent
+            Style="{StaticResource BaseStyle}"
+            Title="Country"
+            ContentTemplate="{DataTemplate local:HomePage}" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Countries">
         <ShellContent
             Style="{StaticResource BaseStyle}"
@@ -29,15 +36,17 @@
             ContentTemplate="{DataTemplate local:CountryPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Register">
+    <FlyoutItem
+        Route="register"
+        Title="Register">
         <ShellContent ContentTemplate="{DataTemplate local:RegisterPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Login">
+    <FlyoutItem
+        Route="login"
+        Title="Login">
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
-
-    <FlyoutItem Title="Register Route" />
 
     <FlyoutItem
         Route="about"
