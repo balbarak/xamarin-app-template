@@ -5,25 +5,29 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:XamarinAppTemplate.Controls"
     mc:Ignorable="d"
+    xmlns:beh="clr-namespace:XamarinAppTemplate.Behaviors"
     x:Class="XamarinAppTemplate.Views.HomePage">
 
     <ContentPage.Content>
-        <StackLayout Padding="10">
+        <StackLayout
+            Spacing="10"
+            Padding="10">
 
+            <Label
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Welcome to balbarak Template" />
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
+                            <Span Text="  XamarinAppTemplate" />
                             <Span
-                                FontSize="Large"
-                                Text="Welcome to XamarinAppTemplate v1.0" />
-                            <Span Text=" " />
-                            <Span
-                                Text="iOS, Android, and Windows"
-                                FontAttributes="Bold" />
-                            <Span Text=" " />
-                            <Span Text="versions." />
+                                FontAttributes="Bold"
+                                Text=" v1.0 " />
+                            <Span Text="2019" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
@@ -32,6 +36,15 @@
             <Button
                 Text="Login"
                 Command="{Binding LoginCommand}" />
+
+            <controls:ButtonFrame
+                Padding="15"
+                TappedColor="Blue"
+                BackgroundColor="Yellow">
+                <Grid>
+                    <Label Text="I am button frame" />
+                </Grid>
+            </controls:ButtonFrame>
 
         </StackLayout>
 

@@ -25,17 +25,15 @@
     <FlyoutItem
         Route="home"
         Title="Home">
-
         <ShellContent
             Style="{StaticResource BaseStyle}"
             Title="Home"
             ContentTemplate="{DataTemplate local:HomePage}" />
-        <Tab Title="Whoah">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="Countries">
+    <FlyoutItem
+        Route="country"
+        Title="Countries">
         <ShellContent
             Style="{StaticResource BaseStyle}"
             Title="Country"

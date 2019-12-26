@@ -9,8 +9,6 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public bool state { get; set; }
-
         public LoginViewModel()
         {
 
@@ -18,9 +16,6 @@ namespace XamarinAppTemplate.ViewModels
 
         public async override Task InitializeAsync(object navigationData)
         {
-            await Task.Delay(2000);
-
-            await MainThread.InvokeOnMainThreadAsync(()=> App.Current.MainPage.DisplayAlert("Nehahaha", "done", "ok"));
 
         }
     }
