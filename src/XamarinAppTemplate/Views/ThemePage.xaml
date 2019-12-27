@@ -8,27 +8,47 @@
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.ThemePage">
 
-    <local:Portlet
-        Title="Hello Workd !!!"
-        Margin="10">
+    <Grid>
+        <StackLayout
+            Spacing="20"
+            Margin="20">
+            <local:Portlet>
 
-        <local:Portlet.Header>
-            <Grid>
-                <Label Text="Woha" />
-            </Grid>
-        </local:Portlet.Header>
+                <local:Portlet.Header>
+                    <Grid>
+                        <Label Text="Loading" />
+                    </Grid>
+                </local:Portlet.Header>
 
-        <local:Portlet.Body>
-            <Grid>
-                <Label Text="I am from body dude !!!" />
-            </Grid>
-        </local:Portlet.Body>
+                <local:Portlet.Body>
+                    <Grid>
+                        <Button
+                            Command="{Binding StartLoadingCommand}"
+                            Text="Start Loading" />
+                    </Grid>
+                </local:Portlet.Body>
+            </local:Portlet>
 
-        <local:Portlet.Footer>
-            <Grid>
-                <Label Text="Footer !!!?" />
-            </Grid>
-        </local:Portlet.Footer>
+            <local:Portlet>
 
-    </local:Portlet>
+                <local:Portlet.Header>
+                    <Grid>
+                        <Label Text="Toaster" />
+                    </Grid>
+                </local:Portlet.Header>
+
+                <local:Portlet.Body>
+                    <Grid>
+                        <Button
+                            Command="{Binding ShowToasterCommand}"
+                            Text="Start Toaster" />
+                    </Grid>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+        </StackLayout>
+
+        <local:Loading IsBusy="{Binding IsBusy}" />
+    </Grid>
+
 </local:BaseContentPage>

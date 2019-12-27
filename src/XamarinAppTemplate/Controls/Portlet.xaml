@@ -19,14 +19,11 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <StackLayout
-                    BindingContext="{x:Reference self}"
-                    IsVisible="{Binding HasHeader}">
+                <StackLayout IsVisible="{Binding HasHeader, Source={x:Reference self}}">
                     <ContentView
                         Padding="10"
                         Grid.Row="1"
-                        BindingContext="{x:Reference self}"
-                        Content="{Binding Header}" />
+                        Content="{Binding Header, Source={x:Reference self}}" />
                     <BoxView
                         BackgroundColor="#EBEDF2"
                         HeightRequest="1" />
@@ -35,21 +32,18 @@
                 <ContentView
                     Padding="10"
                     Grid.Row="1"
-                    BindingContext="{x:Reference self}"
-                    Content="{Binding Body}" />
+                    Content="{Binding Body, Source={x:Reference self}}" />
 
                 <StackLayout
                     Grid.Row="2"
-                    BindingContext="{x:Reference self}"
-                    IsVisible="{Binding HasFooter}">
+                    IsVisible="{Binding HasFooter, Source={x:Reference self}}">
                     <BoxView
                         BackgroundColor="#EBEDF2"
                         HeightRequest="1" />
                     <ContentView
                         Padding="10"
                         Grid.Row="1"
-                        BindingContext="{x:Reference self}"
-                        Content="{Binding Footer}" />
+                        Content="{Binding Footer, Source={x:Reference self}}" />
 
                 </StackLayout>
             </Grid>

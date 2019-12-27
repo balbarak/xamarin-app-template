@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Plugin.Toasts;
 using UIKit;
+using Xamarin.Forms;
 
 namespace XamarinAppTemplate.iOS
 {
@@ -24,9 +26,19 @@ namespace XamarinAppTemplate.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+
+            SetupPlugins();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void SetupPlugins()
+        {
+            DependencyService.Register<ToastNotification>();
+
+            ToastNotification.Init();
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="self"
+    xmlns:resources="clr-namespace:XamarinAppTemplate.Resx"
+    mc:Ignorable="d"
+    IsVisible="{Binding IsBusy, Source={x:Reference self}}"
+    x:Class="XamarinAppTemplate.Loading">
+    <Grid>
+
+        <ContentView
+            IsVisible="{Binding IsBusy, Source={x:Reference self}}"
+            BackgroundColor="#000000"
+            Opacity="0.4" />
+
+        <Frame
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HasShadow="True"
+            Padding="10"
+            IsVisible="{Binding IsBusy, Source={x:Reference self}}"
+            WidthRequest="120"
+            CornerRadius="10">
+            <StackLayout>
+                <ActivityIndicator
+                    Color="{DynamicResource BrandColor}"
+                    IsRunning="{Binding IsBusy, Source={x:Reference self}}" />
+                <Label
+                    HorizontalOptions="Center"
+                    Text="{x:Static resources:AppResource.PleaseWait}" />
+
+            </StackLayout>
+
+        </Frame>
+    </Grid>
+</ContentView>
