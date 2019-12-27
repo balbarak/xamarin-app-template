@@ -71,4 +71,16 @@
         </Setter>
     </Style>
 
+
+    <OnPlatform
+        x:Key="FA-Solid"
+        x:TypeArguments="x:String">
+        <On
+            Platform="Android"
+            Value="fa-solid-900.ttf#Font Awesome 5 Brands Solid" />
+        <On
+            Platform="iOS"
+            Value="Cairo-Regular" />
+    </OnPlatform>
+
 </ResourceDictionary>

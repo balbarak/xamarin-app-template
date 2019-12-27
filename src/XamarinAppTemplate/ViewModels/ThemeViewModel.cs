@@ -14,7 +14,7 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand ShowToasterCommand => new Command(ShowToaster);
 
-
+        public string Icon => "\uf2ca";
         public ThemeViewModel()
         {
             Title = "Themes";

@@ -46,6 +46,25 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
+            <local:Portlet>
+
+                <local:Portlet.Header>
+                    <Grid>
+                        <Label Text="Icons" />
+                    </Grid>
+                </local:Portlet.Header>
+
+                <local:Portlet.Body>
+                    <Grid>
+                        <Label
+                            FontFamily="{StaticResource FA-Solid}"
+                            FontSize="Header"
+                            TextColor="Red"
+                            Text="{x:Static local:FontAwsomeSolidIcons.BIBLE}" />
+                    </Grid>
+                </local:Portlet.Body>
+            </local:Portlet>
+
         </StackLayout>
 
         <local:Loading IsBusy="{Binding IsBusy}" />
