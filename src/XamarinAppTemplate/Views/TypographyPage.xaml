@@ -6,11 +6,11 @@
     xmlns:local="clr-namespace:XamarinAppTemplate"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    Title="Typography"
     x:Class="XamarinAppTemplate.Views.TypographyPage">
 
-    <ScrollView>
+    <ScrollView Padding="0,20">
         <StackLayout
-            Margin="0,20"
             Padding="20,0"
             Spacing="20">
             <Frame
@@ -25,7 +25,6 @@
                     <StackLayout>
                         <Label
                             FontSize="Subtitle"
-                            TextColor="Black"
                             Padding="15,10"
                             Text="Buttons" />
                         <BoxView
@@ -68,9 +67,8 @@
                     <StackLayout>
                         <Label
                             FontSize="Subtitle"
-                            TextColor="Black"
                             Padding="15,10"
-                            Text="Buttons" />
+                            Text="Text Colors" />
                         <BoxView
                             BackgroundColor="#EBEDF2"
                             HeightRequest="1" />
@@ -79,26 +77,35 @@
                         Padding="20"
                         Grid.Row="1"
                         Spacing="10">
-                        <Button
-                            Command="{Binding LoginCommand}"
-                            Text="Login" />
+                        <Label
+                            FontSize="Body"
+                            Text="1. Primary Color"
+                            TextColor="{DynamicResource PrimaryColor}" />
+                        <Label
+                            FontSize="Body"
+                            Text="2. Brand Color"
+                            TextColor="{DynamicResource BrandColor}" />
+                        <Label
+                            FontSize="Body"
+                            Text="3. Success Color"
+                            TextColor="{DynamicResource SuccessColor}" />
+                        <Label
+                            FontSize="Body"
+                            Text="4. Warning Color"
+                            TextColor="{DynamicResource WarningColor}" />
+                        <Label
+                            FontSize="Body"
+                            Text="5. Danger Color"
+                            TextColor="{DynamicResource DangerColor}" />
 
-                        <Button
-                            Style="{StaticResource btn-danger}"
-                            Text="Danger" />
-
-                        <Button
-                            Style="{StaticResource btn-success}"
-                            Text="Success" />
-
-                        <Button
-                            Style="{StaticResource btn-warning}"
-                            Text="Warning" />
+                        <Label
+                            FontSize="Body"
+                            Text="6. Normal"
+                            TextColor="{DynamicResource TextColor}" />
                     </StackLayout>
                 </Grid>
             </Frame>
         </StackLayout>
-
 
     </ScrollView>
 </local:BaseContentPage>

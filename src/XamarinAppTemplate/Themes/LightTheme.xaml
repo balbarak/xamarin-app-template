@@ -6,7 +6,9 @@
 
     <Color x:Key="PageBackgroundColor">#ECEDF3</Color>
 
-    <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
+
+    <Color x:Key="NavigationBarBackgroundColor">White</Color>
+    <Color x:Key="NavigationBarColor">#6c7293</Color>
 
 
     <Color x:Key="PrimaryColor">#5867dd</Color>
@@ -15,12 +17,15 @@
     <Color x:Key="WarningColor">#ffb822</Color>
     <Color x:Key="DangerColor">#fd397a</Color>
 
-    <Color x:Key="TextColor">White</Color>
-    <Color x:Key="ReverseTextColor">Black</Color>
+    <Color x:Key="TextColor">#6c7293</Color>
+    <Color x:Key="TextColorReverse">White</Color>
+
+    <Color x:Key="ButtonColor">White</Color>
+    <Color x:Key="ButtonColorReverse">Black</Color>
 
     <Color x:Key="FlyoutBackgroundColor">#1e1e2d</Color>
-
     <Color x:Key="FlyoutTextColor">#a2a3b7</Color>
-    <Color x:Key="FlyoutItemSelectedColor">#1b1b28</Color>
+    <Color x:Key="FlyoutItemSelectedBackgroundColor">#1b1b28</Color>
+    <Color x:Key="FlyoutItemSelectedColor">White</Color>
 
 </ResourceDictionary>

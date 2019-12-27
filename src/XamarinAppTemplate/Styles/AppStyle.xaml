@@ -10,9 +10,9 @@
     </Style>
 
     <Style TargetType="ShellContent">
-        <Setter Property="Shell.BackgroundColor" Value="{DynamicResource TextColor}" />
-        <Setter Property="Shell.ForegroundColor" Value="{DynamicResource ReverseTextColor}" />
-        <Setter Property="Shell.TitleColor" Value="{DynamicResource ReverseTextColor}" />
+        <Setter Property="Shell.BackgroundColor" Value="{DynamicResource NavigationBarBackgroundColor}" />
+        <Setter Property="Shell.ForegroundColor" Value="{DynamicResource NavigationBarColor}" />
+        <Setter Property="Shell.TitleColor" Value="{DynamicResource NavigationBarColor}" />
         <Setter Property="Shell.NavBarHasShadow" Value="False" />
         <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
         <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
@@ -22,7 +22,7 @@
     <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource BrandColor}" />
         <Setter Property="CornerRadius" Value="50" />
-        <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
     </Style>
 
     <Style
@@ -30,7 +30,7 @@
         TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource DangerColor}" />
         <Setter Property="CornerRadius" Value="50" />
-        <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
     </Style>
 
     <Style
@@ -38,6 +38,10 @@
         TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource SuccessColor}" />
         <Setter Property="CornerRadius" Value="50" />
+        <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
+    </Style>
+
+    <Style TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
     </Style>
 
@@ -46,7 +50,7 @@
         TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource WarningColor}" />
         <Setter Property="CornerRadius" Value="50" />
-        <Setter Property="TextColor" Value="{DynamicResource ReverseTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ButtonColorReverse}" />
     </Style>
 
 
@@ -59,7 +63,7 @@
                     <VisualState x:Name="Normal" />
                     <VisualState x:Name="Selected">
                         <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="{DynamicResource FlyoutItemSelectedColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource FlyoutItemSelectedBackgroundColor}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>

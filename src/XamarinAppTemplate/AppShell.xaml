@@ -14,6 +14,14 @@
 
 
     <FlyoutItem
+        Route="theme"
+        Title="Theme">
+        <ShellContent
+            Title="Theme"
+            ContentTemplate="{DataTemplate local:ThemePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem
         Route="typography"
         Title="Typography">
         <ShellContent
@@ -86,8 +94,8 @@
                         <DataTrigger
                             TargetType="Label"
                             Binding="{Binding Source={x:Reference grid}, Path=BackgroundColor}"
-                            Value="{StaticResource FlyoutItemSelectedColor}">
-                            <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+                            Value="{StaticResource FlyoutItemSelectedBackgroundColor}">
+                            <Setter Property="TextColor" Value="{DynamicResource FlyoutItemSelectedColor}" />
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>

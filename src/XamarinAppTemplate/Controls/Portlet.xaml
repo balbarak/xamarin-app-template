@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="self"
+    mc:Ignorable="d"
+    x:Class="XamarinAppTemplate.Portlet">
+    <ContentView.Content>
+        <Frame
+            HasShadow="False"
+            Padding="0"
+            VerticalOptions="Start">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout>
+                    <ContentView
+                        Padding="10"
+                        Grid.Row="1"
+                        BindingContext="{x:Reference self}"
+                        Content="{Binding Header}" />
+                    <BoxView
+                        BackgroundColor="#EBEDF2"
+                        HeightRequest="1" />
+                </StackLayout>
+
+                <ContentView
+                    Padding="10"
+                    Grid.Row="1"
+                    BindingContext="{x:Reference self}"
+                    Content="{Binding Body}" />
+
+                <StackLayout
+                    Grid.Row="2"
+                    BindingContext="{x:Reference self}"
+                    IsVisible="{Binding HasFooter}">
+                    <BoxView
+                        BackgroundColor="#EBEDF2"
+                        HeightRequest="1" />
+                    <ContentView
+                        Padding="10"
+                        Grid.Row="1"
+                        BindingContext="{x:Reference self}"
+                        Content="{Binding Footer}" />
+
+                </StackLayout>
+            </Grid>
+        </Frame>
+
+    </ContentView.Content>
+</ContentView>

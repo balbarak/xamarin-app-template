@@ -34,6 +34,8 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddScoped<TypographyViewModel>();
 
+            serviceCollections.AddScoped<ThemeViewModel>();
+
             return serviceCollections;
         }
     }
