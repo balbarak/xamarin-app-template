@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:res="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
     xmlns:local="clr-namespace:XamarinAppTemplate.Views"
     FlyoutBehavior="Flyout"
@@ -12,6 +13,14 @@
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
 
+
+    <FlyoutItem
+        Route="settings"
+        Title="{x:Static res:AppResource.Settings}">
+        <ShellContent
+            Title="{x:Static res:AppResource.Settings}"
+            ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
 
     <FlyoutItem
         Route="theme"
@@ -66,15 +75,13 @@
     <Shell.FlyoutHeader>
         <Grid
             HeightRequest="200"
-            BackgroundColor="#1a1a27">
-            <Image
-                Aspect="AspectFill"
-                Source="xamarinstore.jpg"
-                Opacity="0.6" />
+            BackgroundColor="#1F1E2E">
+
             <Label
-                Text="Animals"
+                Text="XamarinAppTemplate"
                 TextColor="White"
                 FontAttributes="Bold"
+                FontSize="Title"
                 HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center" />
         </Grid>

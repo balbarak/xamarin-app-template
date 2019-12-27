@@ -120,4 +120,7 @@
   <data name="PleaseWait" xml:space="preserve">
     <value>الرجاء الانتظار ...</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>اعدادات</value>
+  </data>
 </root>

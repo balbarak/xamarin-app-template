@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    mc:Ignorable="d"
+    x:Class="XamarinAppTemplate.Views.SettingsPage">
+
+    <StackLayout Margin="20">
+        <local:Portlet>
+            <local:Portlet.Header>
+                <Grid>
+                    <Label Text="Settings" />
+                </Grid>
+            </local:Portlet.Header>
+            <local:Portlet.Body>
+                <StackLayout Spacing="20">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Hel" />
+
+                        <Switch
+                            ThumbColor="Beige"
+                            OnColor="{DynamicResource BrandColor}"
+                            Grid.Column="1" />
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Hel" />
+
+                        <Picker
+                            Title="hello"
+                            Grid.Column="1">
+                            <Picker.Items />
+                        </Picker>
+                    </Grid>
+                </StackLayout>
+            </local:Portlet.Body>
+        </local:Portlet>
+    </StackLayout>
+</local:BaseContentPage>

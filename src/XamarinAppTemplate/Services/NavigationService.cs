@@ -84,6 +84,8 @@ namespace XamarinAppTemplate.Services
             _mappings.Add(typeof(TypographyViewModel),typeof(TypographyPage));
 
             _mappings.Add(typeof(ThemeViewModel),typeof(ThemePage));
+
+            _mappings.Add(typeof(SettingsViewModel),typeof(SettingsPage));
         }
     }
 }

@@ -68,5 +68,14 @@ namespace XamarinAppTemplate.Resx {
                 return ResourceManager.GetString("PleaseWait", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اعدادات.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
     }
 }
