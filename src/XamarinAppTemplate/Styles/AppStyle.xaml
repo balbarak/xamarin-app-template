@@ -10,9 +10,10 @@
     </Style>
 
     <Style TargetType="ShellContent">
-        <Setter Property="Shell.BackgroundColor" Value="{DynamicResource BrandColor}" />
-        <Setter Property="Shell.ForegroundColor" Value="{DynamicResource TextColor}" />
-        <Setter Property="Shell.TitleColor" Value="{DynamicResource TextColor}" />
+        <Setter Property="Shell.BackgroundColor" Value="{DynamicResource TextColor}" />
+        <Setter Property="Shell.ForegroundColor" Value="{DynamicResource ReverseTextColor}" />
+        <Setter Property="Shell.TitleColor" Value="{DynamicResource ReverseTextColor}" />
+        <Setter Property="Shell.NavBarHasShadow" Value="False" />
         <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
         <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
     </Style>

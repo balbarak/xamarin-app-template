@@ -11,18 +11,12 @@ using XamarinAppTemplate.Helpers;
 namespace XamarinAppTemplate.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegisterPage : ContentPage
+    public partial class RegisterPage : BaseContentPage
     {
         public RegisterPage()
         {
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            var state = Shell.Current.CurrentState;
-
-            await Shell.Current.GoToAsync($"{state.Location}/about",true);
-        }
     }
 }

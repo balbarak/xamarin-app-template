@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using XamarinAppTemplate.Services;
 using XamarinAppTemplate.ViewModels;
 
 namespace XamarinAppTemplate
 {
-    public class BaseContentPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class BaseContentPage : ContentPage
     {
         private NavigationService _navService;
         private BaseViewModel _viewModel;
@@ -18,11 +21,11 @@ namespace XamarinAppTemplate
 
         public BaseContentPage()
         {
+            InitializeComponent();
+
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
             _viewModel = GetViewModel();
             BindingContext = _viewModel;
-
-            SetDynamicResource(BackgroundColorProperty, "PageBackgroundColor");
         }
 
         public Task InitializeViewModel(object data)

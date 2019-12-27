@@ -34,7 +34,6 @@ namespace XamarinAppTemplate.Services
 
         public Task PushAsync<TViewModel>() where TViewModel : BaseViewModel => PushAsyncInternal<TViewModel>(null);
 
-
         public Type GetPageViewModelType(Type page)
         {
 
@@ -57,7 +56,6 @@ namespace XamarinAppTemplate.Services
             return _mappings[viewModel];
         }
 
-
         private async Task PushAsyncInternal<TViewModel>(object data) where TViewModel : BaseViewModel
         {
             var pageType = GetViewModelPage(typeof(TViewModel));
@@ -78,6 +76,10 @@ namespace XamarinAppTemplate.Services
             _mappings.Add(typeof(HomeViewModel),typeof(HomePage));
 
             _mappings.Add(typeof(LoginViewModel),typeof(LoginPage));
+            
+            _mappings.Add(typeof(RegisterViewModel),typeof(RegisterPage));
+
+            _mappings.Add(typeof(AboutViewModel),typeof(AboutPage));
         }
     }
 }

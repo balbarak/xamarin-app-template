@@ -12,18 +12,6 @@
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
 
-    <Shell.Resources>
-        <Style
-            x:Key="BaseStyle"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#455A64" />
-            <Setter Property="Shell.ForegroundColor" Value="White" />
-            <Setter Property="Shell.TitleColor" Value="White" />
-            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-        </Style>
-    </Shell.Resources>
-
     <FlyoutItem
         Route="home"
         Title="Home">
@@ -61,7 +49,7 @@
     <Shell.FlyoutHeader>
         <Grid
             HeightRequest="200"
-            BackgroundColor="Black">
+            BackgroundColor="#1a1a27">
             <Image
                 Aspect="AspectFill"
                 Source="xamarinstore.jpg"

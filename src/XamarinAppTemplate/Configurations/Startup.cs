@@ -28,6 +28,10 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddScoped<LoginViewModel>();
 
+            serviceCollections.AddScoped<RegisterViewModel>();
+
+            serviceCollections.AddScoped<AboutViewModel>();
+
             return serviceCollections;
         }
     }
