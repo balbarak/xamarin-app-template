@@ -55,13 +55,26 @@
                 </local:Portlet.Header>
 
                 <local:Portlet.Body>
-                    <Grid>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="10">
                         <Label
                             FontFamily="{StaticResource FA-Solid}"
-                            FontSize="Header"
-                            TextColor="Red"
-                            Text="{x:Static local:FontAwsomeSolidIcons.BIBLE}" />
-                    </Grid>
+                            FontSize="Medium"
+                            TextColor="{DynamicResource BrandColor}"
+                            Text="{x:Static local:FontAwsomeSolidIcons.PLUS}" />
+                        <Label
+                            FontFamily="{StaticResource FA-Solid}"
+                            FontSize="Medium"
+                            TextColor="{DynamicResource BrandColor}"
+                            Text="{x:Static local:FontAwsomeSolidIcons.CALCULATOR}" />
+
+                        <Label
+                            FontFamily="{StaticResource FA-Solid}"
+                            FontSize="Medium"
+                            TextColor="{DynamicResource BrandColor}"
+                            Text="{x:Static local:FontAwsomeSolidIcons.CALENDAR}" />
+                    </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
 
