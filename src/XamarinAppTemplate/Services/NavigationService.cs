@@ -80,6 +80,8 @@ namespace XamarinAppTemplate.Services
             _mappings.Add(typeof(RegisterViewModel),typeof(RegisterPage));
 
             _mappings.Add(typeof(AboutViewModel),typeof(AboutPage));
+
+            _mappings.Add(typeof(TypographyViewModel),typeof(TypographyPage));
         }
     }
 }

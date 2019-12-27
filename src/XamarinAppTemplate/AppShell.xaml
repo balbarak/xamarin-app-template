@@ -12,6 +12,15 @@
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
 
+
+    <FlyoutItem
+        Route="typography"
+        Title="Typography">
+        <ShellContent
+            Title="Typography"
+            ContentTemplate="{DataTemplate local:TypographyPage}" />
+    </FlyoutItem>
+
     <FlyoutItem
         Route="home"
         Title="Home">

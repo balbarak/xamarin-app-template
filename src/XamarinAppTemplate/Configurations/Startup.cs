@@ -32,6 +32,8 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddScoped<AboutViewModel>();
 
+            serviceCollections.AddScoped<TypographyViewModel>();
+
             return serviceCollections;
         }
     }
