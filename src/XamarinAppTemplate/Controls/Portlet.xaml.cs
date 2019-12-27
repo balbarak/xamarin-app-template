@@ -19,7 +19,11 @@ namespace XamarinAppTemplate
             typeof(Portlet),
             false);
 
-
+        public static readonly BindableProperty HasHeaderProperty = BindableProperty.Create(
+            nameof(HasHeader),
+            typeof(bool),
+            typeof(Portlet),
+            false);
 
         public static readonly BindableProperty TitleProperty = BindableProperty.Create(
            nameof(Title),
@@ -37,7 +41,8 @@ namespace XamarinAppTemplate
             nameof(Header),
             typeof(View),
             typeof(Portlet),
-            null);
+            null,
+            propertyChanged: OnHeaderChanged);
 
         public static readonly BindableProperty FooterProperty = BindableProperty.Create(
           nameof(Footer),
@@ -76,6 +81,12 @@ namespace XamarinAppTemplate
             set => SetValue(HasFooterProperty, value);
         }
 
+        public bool HasHeader
+        {
+            get => (bool)GetValue(HasHeaderProperty);
+            set => SetValue(HasHeaderProperty, value);
+        }
+
 
         public Portlet()
         {
@@ -97,6 +108,23 @@ namespace XamarinAppTemplate
             else
             {
                 portlet.HasFooter = false;
+            }
+        }
+
+        static void OnHeaderChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var portlet = bindable as Portlet;
+
+            if (portlet == null)
+                return;
+
+            if (newValue != null)
+            {
+                portlet.HasHeader = true;
+            }
+            else
+            {
+                portlet.HasHeader = false;
             }
         }
     }

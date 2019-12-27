@@ -19,7 +19,9 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <StackLayout>
+                <StackLayout
+                    BindingContext="{x:Reference self}"
+                    IsVisible="{Binding HasHeader}">
                     <ContentView
                         Padding="10"
                         Grid.Row="1"
