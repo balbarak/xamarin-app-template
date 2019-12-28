@@ -39,6 +39,7 @@ namespace XamarinAppTemplate.iOS
             return base.FinishedLaunching(app, options);
         }
 
+
         private void SetupPlugins()
         {
             DependencyService.Register<ToastNotification>();

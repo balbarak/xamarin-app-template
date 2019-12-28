@@ -12,12 +12,10 @@ namespace XamarinAppTemplate
         public static CultureInfo ArabicCulture => new CultureInfo("ar-SA");
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
 
-        public static FlowDirection CurrentFlowDirection { get; set; }
+        public static FlowDirection CurrentFlowDirection { get; set; } = FlowDirection.RightToLeft;
 
         public void SwitchDirection(LanguageDirection dir)
         {
-            Shell.Current.Navigation.PopAsync();
-
             if (dir == LanguageDirection.Rtl)
             {
                 CurrentFlowDirection = FlowDirection.RightToLeft;
@@ -34,6 +32,7 @@ namespace XamarinAppTemplate
             var manager = AppServiceLocator.Current.GetService<ILanguageManager>();
 
             manager.SwitchDirection(dir);
+
         }
     }
 }

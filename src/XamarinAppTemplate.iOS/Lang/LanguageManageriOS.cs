@@ -3,47 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
-
 using Foundation;
 using UIKit;
+using Xamarin.Forms.Platform.iOS;
 
 namespace XamarinAppTemplate.iOS.Lang
 {
     public class LanguageManageriOS : ILanguageManager
     {
-        [DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
-        internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
-
+        private const string APPLE_LANGUAGES = "AppleLanguages";
 
         public void SwitchDirection(LanguageDirection dir)
         {
-            var iosLocaleAuto = NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier;
-            var iosLanguageAuto = NSLocale.AutoUpdatingCurrentLocale.LanguageCode;
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var rootView = window.RootViewController;
 
-            //var ee = NSUserDefaults.StandardUserDefaults.StringForKey("PGCurrentLanguageKey");
-            //var ee = NSUserDefaults.StandardUserDefaults.StringForKey("AppleLanguages");
+            var shell = rootView.ChildViewControllerForHomeIndicatorAutoHidden;
 
-            //NSUserDefaults.StandardUserDefaults.SetString("ar", "AppleLanguages");
+            var childs = rootView.ChildViewControllers;
+           
+            rootView.View.SemanticContentAttribute = UISemanticContentAttribute.ForceLeftToRight;
+            rootView.View.SetNeedsLayout();
+            rootView.View.SetNeedsDisplay();
 
-            //NSUserDefaults.StandardUserDefaults.Synchronize();
 
-            //var windows = UIApplication.SharedApplication.Windows;
+            var shellRender = shell.ChildViewControllers[0] as ShellItemRenderer;
 
-            foreach (var window in UIApplication.SharedApplication.Windows)
-            {
-                foreach (var viewe in window.Subviews)
-                {
-                    viewe.RemoveFromSuperview();
+            var navController = shellRender.SelectedViewController as UINavigationController;
 
-                    window.AddSubview(viewe);
-                }
-            }
-            //Localize
-            //NSUserDefaults.StandardUserDefaults.
-            //Selector selector = new Selector("setSemanticContentAttribute:");
-            //IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, UISemanticContentAttribute.ForceRightToLeft);
+            navController.Title = "fuck off";
+        }
 
-            //UIView.Appearance.sem
+        private void SetUserLangugage(string lang)
+        {
+            NSUserDefaults.StandardUserDefaults.SetString(lang, APPLE_LANGUAGES);
+
         }
     }
 }
