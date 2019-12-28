@@ -34,8 +34,6 @@ namespace XamarinAppTemplate.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
-
         }
 
         private void RegisterPlugins(Bundle bundle)
