@@ -15,6 +15,14 @@ namespace XamarinAppTemplate
 
         }
 
+        public void InvalidateMeasurePublic()
+        {
+            this.InvalidateMeasure();
+            this.UpdateChildrenLayout();
+            this.ForceLayout();
+           
+        }
+
         protected override void OnNavigating(ShellNavigatingEventArgs args)
         {
             base.OnNavigating(args);
@@ -22,7 +30,6 @@ namespace XamarinAppTemplate
 
         protected override void OnNavigated(ShellNavigatedEventArgs args)
         {
-            
             base.OnNavigated(args);
         }
 

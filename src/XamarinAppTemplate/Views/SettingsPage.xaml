@@ -24,6 +24,7 @@
                         </Grid.ColumnDefinitions>
                         <Label Text="Hel" />
 
+                        <Button Text="update" Clicked="Button_Clicked"/>
                         <Switch
                             ThumbColor="Beige"
                             IsToggled="{Binding IsDarkTheme}"
