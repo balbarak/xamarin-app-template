@@ -16,7 +16,7 @@ namespace XamarinAppTemplate
 
         public void SwitchDirection(LanguageDirection dir)
         {
-            
+            Shell.Current.Navigation.PopAsync();
 
             if (dir == LanguageDirection.Rtl)
             {

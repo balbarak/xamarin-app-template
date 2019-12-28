@@ -25,7 +25,7 @@
 
     <FlyoutItem
         Route="theme"
-        Title="Theme">
+        Title="{x:Static res:AppResource.Themes}">
         <ShellContent
             Title="Theme"
             ContentTemplate="{DataTemplate local:ThemePage}" />

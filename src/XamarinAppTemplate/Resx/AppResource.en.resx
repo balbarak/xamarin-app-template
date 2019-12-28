@@ -123,4 +123,7 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="Themes" xml:space="preserve">
+    <value>Themes</value>
+  </data>
 </root>

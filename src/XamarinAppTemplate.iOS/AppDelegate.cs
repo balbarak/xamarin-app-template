@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Microsoft.Extensions.DependencyInjection;
 using Plugin.Toasts;
 using UIKit;
 using Xamarin.Forms;
+using XamarinAppTemplate.iOS.Lang;
 
 namespace XamarinAppTemplate.iOS
 {
@@ -29,8 +31,11 @@ namespace XamarinAppTemplate.iOS
 
             SetupPlugins();
 
-            LoadApplication(new App());
+            Startup.Services.AddTransient<ILanguageManager, LanguageManageriOS>();
 
+            LoadApplication(new App());
+           
+            
             return base.FinishedLaunching(app, options);
         }
 

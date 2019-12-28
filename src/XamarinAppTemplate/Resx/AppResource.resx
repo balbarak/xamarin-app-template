@@ -123,4 +123,7 @@
   <data name="Settings" xml:space="preserve">
     <value>اعدادات</value>
   </data>
+  <data name="Themes" xml:space="preserve">
+    <value>الأنماط</value>
+  </data>
 </root>
