@@ -9,6 +9,7 @@ namespace XamarinAppTemplate.Droid.Lang
         {
 
             var window = CrossCurrentActivity.Current.Activity.Window;
+            var activity = CrossCurrentActivity.Current.Activity;
 
             if (dir == LanguageDirection.Ltr)
                 window.DecorView.LayoutDirection = LayoutDirection.Ltr;
@@ -16,6 +17,7 @@ namespace XamarinAppTemplate.Droid.Lang
             if (dir == LanguageDirection.Rtl)
                 window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 
+            activity.Recreate();
         }
     }
 }

@@ -20,8 +20,6 @@ namespace XamarinAppTemplate.Views
         private void Button_Clicked(object sender, EventArgs e)
         {
             var app = Shell.Current as AppShell;
-
-            app.InvalidateMeasurePublic();
         }
     }
 }

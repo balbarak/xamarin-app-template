@@ -7,20 +7,20 @@
     xmlns:res="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
     xmlns:local="clr-namespace:XamarinAppTemplate.Views"
-    FlowDirection="RightToLeft"
+    FlowDirection="{Binding FlowDirection}"
     FlyoutBehavior="Flyout"
     FlyoutBackgroundColor="{DynamicResource FlyoutBackgroundColor}"
+    x:Name="mainShell"
     FlyoutHeaderBehavior="CollapseOnScroll"
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
 
 
+
     <FlyoutItem
         Route="settings"
         Title="{x:Static res:AppResource.Settings}">
-        <ShellContent
-            Title="{x:Static res:AppResource.Settings}"
-            ContentTemplate="{DataTemplate local:SettingsPage}" />
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
 
     <FlyoutItem
@@ -73,6 +73,7 @@
         <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
 
+
     <Shell.FlyoutHeader>
         <Grid
             HeightRequest="200"
@@ -87,6 +88,7 @@
                 VerticalTextAlignment="Center" />
         </Grid>
     </Shell.FlyoutHeader>
+
 
     <Shell.ItemTemplate>
         <DataTemplate>

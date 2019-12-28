@@ -24,6 +24,7 @@ namespace XamarinAppTemplate
             InitializeComponent();
 
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
+
             _viewModel = GetViewModel();
             BindingContext = _viewModel;
         }
@@ -51,7 +52,7 @@ namespace XamarinAppTemplate
         {
             var type = GetType();
             var viewModelType = _navService.GetPageViewModelType(type);
-            var viewModel = AppServiceLocator.Current.GetService(viewModelType) as BaseViewModel;
+            var viewModel = (BaseViewModel) AppServiceLocator.Current.GetService(viewModelType);
 
             return viewModel;
         }

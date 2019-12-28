@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using XamarinAppTemplate.Helpers;
+using XamarinAppTemplate.ViewModels;
 
 namespace XamarinAppTemplate
 {
@@ -13,14 +14,9 @@ namespace XamarinAppTemplate
 
             RegisterRoutes();
 
-        }
+            var viewModel = AppServiceLocator.Current.GetService<AppShellViewModel>();
 
-        public void InvalidateMeasurePublic()
-        {
-            this.InvalidateMeasure();
-            this.UpdateChildrenLayout();
-            this.ForceLayout();
-           
+            BindingContext = viewModel;
         }
 
         protected override void OnNavigating(ShellNavigatingEventArgs args)
@@ -36,7 +32,7 @@ namespace XamarinAppTemplate
         private void RegisterRoutes()
         {
             
-            Routing.RegisterRoute("test", new TestRoute());
+            //Routing.RegisterRoute("test", new TestRoute());
 
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace XamarinAppTemplate.ViewModels
 {
@@ -9,6 +11,13 @@ namespace XamarinAppTemplate.ViewModels
         private readonly ILanguageManager _languageManager;
 
         private bool _isDarkTheme;
+        private bool _isArabic;
+
+        public bool IsArabic
+        {
+            get => _isArabic;
+            set => SetProperty(ref _isArabic, value, nameof(IsArabic), OnLanguageChanged);
+        }
 
         public bool IsDarkTheme
         {
@@ -20,6 +29,12 @@ namespace XamarinAppTemplate.ViewModels
         {
             _languageManager = manager;
         }
+        public override Task InitializeAsync(object navigationData)
+        {
+            Title = Resx.AppResource.Settings;
+
+            return base.InitializeAsync(navigationData);
+        }
 
         private void OnThemeChanged()
         {
@@ -27,6 +42,14 @@ namespace XamarinAppTemplate.ViewModels
                 _languageManager.SwitchDirection(LanguageDirection.Ltr);
             else
                 _languageManager.SwitchDirection(LanguageDirection.Rtl);
+        }
+
+        private void OnLanguageChanged()
+        {
+            if (IsArabic)
+                SwitchDirection(LanguageDirection.Rtl);
+            else
+                SwitchDirection(LanguageDirection.Ltr);
         }
     }
 }

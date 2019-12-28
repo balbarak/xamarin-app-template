@@ -5,6 +5,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:XamarinAppTemplate"
+    Title="slksdjlkf"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.SettingsPage">
 
@@ -12,7 +13,7 @@
         <local:Portlet>
             <local:Portlet.Header>
                 <Grid>
-                    <Label Text="Settings" />
+                    <Label Text="{Binding Title}" />
                 </Grid>
             </local:Portlet.Header>
             <local:Portlet.Body>
@@ -24,7 +25,6 @@
                         </Grid.ColumnDefinitions>
                         <Label Text="Hel" />
 
-                        <Button Text="update" Clicked="Button_Clicked"/>
                         <Switch
                             ThumbColor="Beige"
                             IsToggled="{Binding IsDarkTheme}"
@@ -32,7 +32,27 @@
                             Grid.Column="1" />
                     </Grid>
 
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Is Arabic" />
+
+                        <Switch
+                            ThumbColor="Beige"
+                            IsToggled="{Binding IsArabic}"
+                            OnColor="{DynamicResource BrandColor}"
+                            Grid.Column="1" />
+                    </Grid>
+
+
+                    <Button
+                        Text="Update Layout"
+                        Clicked="Button_Clicked" />
                 </StackLayout>
+
+
             </local:Portlet.Body>
         </local:Portlet>
     </StackLayout>

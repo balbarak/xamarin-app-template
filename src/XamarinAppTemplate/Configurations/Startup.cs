@@ -23,22 +23,23 @@ namespace XamarinAppTemplate
         private static IServiceCollection ConfigureServices(IServiceCollection serviceCollections)
         {
             serviceCollections.AddSingleton<NavigationService>();
-
-            serviceCollections.AddScoped<HomeViewModel>();
-
-            serviceCollections.AddScoped<LoginViewModel>();
-
-            serviceCollections.AddScoped<RegisterViewModel>();
-
-            serviceCollections.AddScoped<AboutViewModel>();
-
-            serviceCollections.AddScoped<TypographyViewModel>();
-
-            serviceCollections.AddScoped<ThemeViewModel>();
-
-            serviceCollections.AddScoped<SettingsViewModel>();
-
             serviceCollections.AddSingleton<LanguageManager>();
+
+            serviceCollections.AddTransient<HomeViewModel>();
+
+            serviceCollections.AddTransient<LoginViewModel>();
+
+            serviceCollections.AddTransient<RegisterViewModel>();
+
+            serviceCollections.AddTransient<AboutViewModel>();
+
+            serviceCollections.AddTransient<TypographyViewModel>();
+
+            serviceCollections.AddTransient<ThemeViewModel>();
+
+            serviceCollections.AddSingleton<SettingsViewModel>();
+
+            serviceCollections.AddSingleton<AppShellViewModel>();
 
             return serviceCollections;
         }

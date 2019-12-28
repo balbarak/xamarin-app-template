@@ -43,7 +43,7 @@ namespace XamarinAppTemplate
 
         public object GetService(Type type)
         {
-            return _serviceScope.ServiceProvider.GetRequiredService(type);
+            return _serviceScope.ServiceProvider.GetService(type);
         }
 
         #region Dispose

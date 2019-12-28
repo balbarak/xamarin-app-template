@@ -15,7 +15,7 @@ namespace XamarinAppTemplate
             InitializeComponent();
 
             Startup.Configure();
-            
+
             MainPage = new AppShell();
         }
 
@@ -24,22 +24,16 @@ namespace XamarinAppTemplate
             
         }
 
-
         protected override void OnSleep()
         {
+
         }
 
         protected override void OnResume()
         {
+
         }
 
-
-        private Task InitializeNavigation()
-        {
-            var nav = AppServiceLocator.Current.GetService<NavigationService>();
-
-            return nav.Init();
-        }
 
     }
 }

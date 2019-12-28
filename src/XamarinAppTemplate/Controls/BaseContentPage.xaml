@@ -5,7 +5,8 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="{DynamicResource PageBackgroundColor}"
-    FlowDirection="RightToLeft"
+    FlowDirection="{Binding FlowDirection}"
+    Title="{Binding Title}"
     Shell.NavBarHasShadow="True"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.BaseContentPage">

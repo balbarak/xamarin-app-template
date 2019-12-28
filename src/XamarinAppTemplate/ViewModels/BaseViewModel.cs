@@ -12,33 +12,46 @@ namespace XamarinAppTemplate.ViewModels
     {
         private bool _isBusy = false;
         private string _title;
+        private FlowDirection _flowDirection;
+        private LanguageManager _langugaeManager;
+
         protected NavigationService _navService;
+
+        public FlowDirection FlowDirection { get => _flowDirection; set => SetProperty(ref _flowDirection, value); }
+        public string Title { get => _title; set => SetProperty(ref _title, value); }
+        public bool IsBusy { get { return _isBusy; } set { SetProperty(ref _isBusy, value); OnPropertyChanged(nameof(IsNotBusy)); } }
+        public bool IsNotBusy { get => !_isBusy; }
 
         public BaseViewModel()
         {
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
-        }
+            _langugaeManager = AppServiceLocator.Current.GetService<LanguageManager>();
 
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value);}
-        }
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set { SetProperty(ref _isBusy, value); OnPropertyChanged(nameof(IsNotBusy)); }
-        }
-        public bool IsNotBusy
-        {
-            get
-            {
-                return !_isBusy;
-            }
+            FlowDirection = LanguageManager.CurrentFlowDirection;
         }
 
         public virtual Task InitializeAsync(object navigationData) => Task.FromResult(false);
 
+        public void SwitchDirection(LanguageDirection dir)
+        {
+            var shellBinding = Shell.Current.BindingContext as BaseViewModel;
+
+            _langugaeManager.SwitchDirection(dir);
+
+            if (dir == LanguageDirection.Rtl)
+            {
+                FlowDirection = FlowDirection.RightToLeft;
+                shellBinding.FlowDirection = FlowDirection.RightToLeft;
+            }
+            else
+            {
+                FlowDirection = FlowDirection.LeftToRight;
+                shellBinding.FlowDirection = FlowDirection.LeftToRight;
+            }
+
+        }
+
+        #region INotifyPropertyChanged
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",
             Action onChanged = null)
@@ -52,7 +65,7 @@ namespace XamarinAppTemplate.ViewModels
             return true;
         }
 
-        #region INotifyPropertyChanged
+        
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
