@@ -8,6 +8,9 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using Plugin.Toasts;
+using Microsoft.Extensions.DependencyInjection;
+using XamarinAppTemplate.Droid.Lang;
+using Plugin.CurrentActivity;
 
 namespace XamarinAppTemplate.Droid
 {
@@ -19,10 +22,12 @@ namespace XamarinAppTemplate.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            Startup.Services.AddTransient<ILanguageManager, LanguageManagerAndroid>();
+
             base.OnCreate(savedInstanceState);
 
             
-            RegisterPlugins();
+            RegisterPlugins(savedInstanceState);
 
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -33,11 +38,13 @@ namespace XamarinAppTemplate.Droid
 
         }
 
-        private void RegisterPlugins()
+        private void RegisterPlugins(Bundle bundle)
         {
             DependencyService.Register<ToastNotification>();
 
             ToastNotification.Init(this);
+
+            CrossCurrentActivity.Current.Init(this, bundle);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -46,5 +53,6 @@ namespace XamarinAppTemplate.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 }

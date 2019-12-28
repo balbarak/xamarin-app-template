@@ -26,23 +26,11 @@
 
                         <Switch
                             ThumbColor="Beige"
+                            IsToggled="{Binding IsDarkTheme}"
                             OnColor="{DynamicResource BrandColor}"
                             Grid.Column="1" />
                     </Grid>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Hel" />
-
-                        <Picker
-                            Title="hello"
-                            Grid.Column="1">
-                            <Picker.Items />
-                        </Picker>
-                    </Grid>
                 </StackLayout>
             </local:Portlet.Body>
         </local:Portlet>

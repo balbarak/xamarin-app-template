@@ -38,6 +38,8 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddScoped<SettingsViewModel>();
 
+            serviceCollections.AddSingleton<LanguageManager>();
+
             return serviceCollections;
         }
     }
