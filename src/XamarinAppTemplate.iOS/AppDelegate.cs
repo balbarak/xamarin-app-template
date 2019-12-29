@@ -34,11 +34,11 @@ namespace XamarinAppTemplate.iOS
             Startup.Services.AddTransient<ILanguageManager, LanguageManageriOS>();
 
             LoadApplication(new App());
+
            
             
             return base.FinishedLaunching(app, options);
         }
-
 
         private void SetupPlugins()
         {
