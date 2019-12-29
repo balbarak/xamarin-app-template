@@ -33,7 +33,11 @@ namespace XamarinAppTemplate
 
             manager.SwitchDirection(dir);
 
-            App.Current.MainPage = new AppShell();
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                App.Current.MainPage = new AppShell();
+            }
+            
 
         }
     }
