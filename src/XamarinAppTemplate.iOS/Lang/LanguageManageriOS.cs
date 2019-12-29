@@ -12,11 +12,15 @@ namespace XamarinAppTemplate.iOS.Lang
 {
     public class LanguageManageriOS : ILanguageManager
     {
-        private const string APPLE_LANGUAGES = "AppleLanguages";
+        private const string APPLE_LANGUAGES = "AppleLanguage";
 
         public void SwitchDirection(LanguageDirection dir)
         {
+
+            ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
+
             
+
             var windows = UIApplication.SharedApplication.Windows;
 
             UISemanticContentAttribute iosDir;
@@ -25,6 +29,8 @@ namespace XamarinAppTemplate.iOS.Lang
                 iosDir = UISemanticContentAttribute.ForceLeftToRight;
             else
                 iosDir = UISemanticContentAttribute.ForceRightToLeft;
+
+            AppDelegate.IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, iosDir);
 
             foreach (var window in windows)
             {
@@ -42,7 +48,7 @@ namespace XamarinAppTemplate.iOS.Lang
         {
             view.SemanticContentAttribute = dir;
             view.SetNeedsLayout();
-            view.SetNeedsDisplay();
+            //view.SetNeedsDisplay();
 
             if (view.Subviews.Count() > 0)
             {

@@ -17,6 +17,9 @@ namespace XamarinAppTemplate.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        [System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
+        internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
+
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -37,7 +40,12 @@ namespace XamarinAppTemplate.iOS
 
            
             
-            return base.FinishedLaunching(app, options);
+            var result =  base.FinishedLaunching(app, options);
+
+
+            
+
+            return result;
         }
 
         private void SetupPlugins()

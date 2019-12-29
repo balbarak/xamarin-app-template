@@ -12,7 +12,7 @@ namespace XamarinAppTemplate
         public static CultureInfo ArabicCulture => new CultureInfo("ar-SA");
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
 
-        public static FlowDirection CurrentFlowDirection { get; set; } = FlowDirection.RightToLeft;
+        public static FlowDirection CurrentFlowDirection { get; set; } = Device.FlowDirection;
 
         public void SwitchDirection(LanguageDirection dir)
         {
