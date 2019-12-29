@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -32,10 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <AndroidSupportedAbis>
     </AndroidSupportedAbis>
   </PropertyGroup>
@@ -102,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinAppTemplate\XamarinAppTemplate.csproj">
-      <Project>{39E4AD99-3741-4759-BA07-BB50B1D2E59E}</Project>
+      <Project>{46D0E765-22FF-4867-B150-B8E1D7EC7C4A}</Project>
       <Name>XamarinAppTemplate</Name>
     </ProjectReference>
   </ItemGroup>

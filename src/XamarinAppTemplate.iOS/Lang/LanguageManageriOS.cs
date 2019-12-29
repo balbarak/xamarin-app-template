@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using Foundation;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
+using XamarinAppTemplate.iOS.Renders;
 
 namespace XamarinAppTemplate.iOS.Lang
 {
@@ -16,27 +17,34 @@ namespace XamarinAppTemplate.iOS.Lang
         public void SwitchDirection(LanguageDirection dir)
         {
             var window = UIApplication.SharedApplication.KeyWindow;
-            var rootView = window.RootViewController;
 
-            var shell = rootView.ChildViewControllerForHomeIndicatorAutoHidden;
+            UISemanticContentAttribute iosDir;
 
-            var childs = rootView.ChildViewControllers;
-           
-            rootView.View.SemanticContentAttribute = UISemanticContentAttribute.ForceLeftToRight;
-            rootView.View.SetNeedsLayout();
-            rootView.View.SetNeedsDisplay();
+            if (dir == LanguageDirection.Ltr)
+                iosDir = UISemanticContentAttribute.ForceLeftToRight;
+            else
+                iosDir = UISemanticContentAttribute.ForceRightToLeft;
 
+            foreach (var view in window.Subviews)
+            {
+                UpdateViewsDirection(view,iosDir);
+            }
 
-            var shellRender = shell.ChildViewControllers[0] as ShellItemRenderer;
-
-            var navController = shellRender.SelectedViewController as UINavigationController;
-
-            navController.Title = "fuck off";
         }
 
-        private void SetUserLangugage(string lang)
+        private void UpdateViewsDirection(UIView view,UISemanticContentAttribute dir)
         {
-            NSUserDefaults.StandardUserDefaults.SetString(lang, APPLE_LANGUAGES);
+            view.SemanticContentAttribute = dir;
+            view.SetNeedsLayout();
+            view.SetNeedsDisplay();
+
+            if (view.Subviews.Count() > 0)
+            {
+                foreach (var item in view.Subviews)
+                {
+                    UpdateViewsDirection(item,dir);
+                }
+            }
 
         }
     }
