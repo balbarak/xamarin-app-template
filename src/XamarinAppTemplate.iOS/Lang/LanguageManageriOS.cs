@@ -57,6 +57,10 @@ namespace XamarinAppTemplate.iOS.Lang
                     UpdateViewsDirection(item,dir);
                 }
             }
+            else
+            {
+                return;
+            }
 
         }
     }

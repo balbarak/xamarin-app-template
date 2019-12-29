@@ -33,6 +33,8 @@ namespace XamarinAppTemplate
 
             manager.SwitchDirection(dir);
 
+            App.Current.MainPage = new AppShell();
+
         }
     }
 }
