@@ -49,7 +49,8 @@ namespace XamarinAppTemplate.iOS.Lang
             view.SemanticContentAttribute = dir;
             view.SetNeedsLayout();
             //view.SetNeedsDisplay();
-
+            //view.UpdateConstraints();
+            view.SetNeedsUpdateConstraints();
             if (view.Subviews.Count() > 0)
             {
                 foreach (var item in view.Subviews)

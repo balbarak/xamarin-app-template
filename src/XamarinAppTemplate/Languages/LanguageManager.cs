@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Threading;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace XamarinAppTemplate
@@ -35,8 +36,9 @@ namespace XamarinAppTemplate
 
             if (Device.RuntimePlatform == Device.iOS)
             {
-                App.Current.MainPage = new AppShell();
+                MainThread.BeginInvokeOnMainThread(() => App.Current.MainPage.ForceLayout());
             }
+
             
 
         }

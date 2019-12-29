@@ -16,6 +16,11 @@
     x:Class="XamarinAppTemplate.AppShell">
 
 
+    <FlyoutItem
+        Route="settings"
+        Title="{x:Static res:AppResource.Settings}">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
 
     <FlyoutItem
         Route="theme"
@@ -25,12 +30,7 @@
             ContentTemplate="{DataTemplate local:ThemePage}" />
     </FlyoutItem>
     
-    <FlyoutItem
-        Route="settings"
-        Title="{x:Static res:AppResource.Settings}">
-        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
-    </FlyoutItem>
-
+    
     <FlyoutItem
         Route="typography"
         Title="Typography">
