@@ -16,7 +16,8 @@ namespace XamarinAppTemplate.iOS.Lang
 
         public void SwitchDirection(LanguageDirection dir)
         {
-            var window = UIApplication.SharedApplication.KeyWindow;
+            
+            var windows = UIApplication.SharedApplication.Windows;
 
             UISemanticContentAttribute iosDir;
 
@@ -25,9 +26,14 @@ namespace XamarinAppTemplate.iOS.Lang
             else
                 iosDir = UISemanticContentAttribute.ForceRightToLeft;
 
-            foreach (var view in window.Subviews)
+            foreach (var window in windows)
             {
-                UpdateViewsDirection(view,iosDir);
+
+                foreach (var view in window.Subviews)
+                {
+                    UpdateViewsDirection(view, iosDir);
+                }
+
             }
 
         }
