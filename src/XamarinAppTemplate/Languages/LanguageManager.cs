@@ -34,13 +34,6 @@ namespace XamarinAppTemplate
 
             manager.SwitchDirection(dir);
 
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                MainThread.BeginInvokeOnMainThread(() => App.Current.MainPage.ForceLayout());
-            }
-
-            
-
         }
     }
 }

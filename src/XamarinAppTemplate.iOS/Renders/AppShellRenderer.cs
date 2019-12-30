@@ -13,19 +13,46 @@ namespace XamarinAppTemplate.iOS.Renders
 {
     public class AppShellRenderer : ShellRenderer
     {
+        public UIView ContentView { get; private set; }
+
         public AppShellRenderer()
         {
 
         }
 
-        protected override IShellFlyoutRenderer CreateFlyoutRenderer()
+        public void ReCreateFlyout()
         {
-            return new ShellFlyoutRenderer()
-            {
-                FlyoutTransition = new SlideFlyoutTransitionRtl()
-            };
+               
         }
 
+        protected override IShellFlyoutRenderer CreateFlyoutRenderer()
+        {
+            var result = new ShellFlyoutRenderer()
+            {
+
+                FlyoutTransition = new SlideFlyoutTransitionRtl(),
+            };
+
+            
+            return result;
+        }
+
+        protected override IShellFlyoutContentRenderer CreateShellFlyoutContentRenderer()
+        {
+            var result =  base.CreateShellFlyoutContentRenderer();
+
+            ContentView = result.ViewController.View;
+            
+            return result;
+        }
+
+        protected override IShellItemRenderer CreateShellItemRenderer(ShellItem item)
+        {
+            var result =  base.CreateShellItemRenderer(item);
+
+
+            return result;
+        }
     }
 
 

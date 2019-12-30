@@ -4,6 +4,8 @@ using CoreGraphics;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using XamarinAppTemplate.iOS.Lang;
+using XamarinAppTemplate.iOS.Renders;
 
 namespace XamarinAppTemplate.iOS.Transitions
 {
@@ -36,11 +38,16 @@ namespace XamarinAppTemplate.iOS.Transitions
             else
                 flyout.Frame = new CGRect(positionY, 0, flyoutWidth, bounds.Height);
 
+
+
+
             if (behavior != FlyoutBehavior.Locked)
             {
                 var shellOpacity = (nfloat)(0.5 + (0.5 * (1 - openPercent)));
                 shell.Layer.Opacity = (float)shellOpacity;
             }
+
+
         }
     }
 }

@@ -22,10 +22,18 @@ namespace XamarinAppTemplate.iOS.Lang
             ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
 
             var windows = UIApplication.SharedApplication.Windows;
-
-            var shell = UIApplication.SharedApplication.KeyWindow.RootViewController.ChildViewControllerForHomeIndicatorAutoHidden as ShellRenderer;
+            var keyWindow = UIApplication.SharedApplication.KeyWindow;
+            var shell = UIApplication.SharedApplication.KeyWindow.RootViewController.ChildViewControllerForHomeIndicatorAutoHidden as AppShellRenderer;
             var flyout = shell.ViewController as ShellFlyoutRenderer;
-            var flyoutView = flyout.View;
+
+            var vc = keyWindow.RootViewController;
+
+            while (vc.PresentedViewController != null)
+            {
+                vc = vc.PresentedViewController;
+            }
+
+            vc.View.BackgroundColor = UIColor.Red;
 
             UISemanticContentAttribute iosDir;
 
@@ -37,14 +45,21 @@ namespace XamarinAppTemplate.iOS.Lang
             AppDelegate.IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, iosDir);
 
 
+            UpdateViewsDirection(shell.ContentView,iosDir);
+
             foreach (var window in windows)
             {
+                UIViewController root = window.RootViewController;
 
-                foreach (var view in window.Subviews)
-                {
-                    UpdateViewsDirection(view, iosDir);
+                if (root != null && root.View != null)
+                { 
+                    UpdateViewsDirection(root.View, iosDir);
+
+                    var superView = root.View.Superview;
+
+                    if (superView != null)
+                        UpdateViewsDirection(superView,iosDir);
                 }
-
             }
 
         }
@@ -54,14 +69,14 @@ namespace XamarinAppTemplate.iOS.Lang
             
             view.SemanticContentAttribute = dir;
             view.SetNeedsLayout();
-            //view.SetNeedsDisplay();
-            //view.UpdateConstraints();
-            view.SetNeedsUpdateConstraints();
+
             if (view.Subviews.Count() > 0)
             {
                 foreach (var item in view.Subviews)
                 {
                     UpdateViewsDirection(item,dir);
+
+                    Debug.WriteLine("Update view: " + item.AccessibilityIdentifier);
                 }
             }
             else
