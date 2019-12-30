@@ -29,13 +29,12 @@ namespace XamarinAppTemplate.iOS.Transitions
 
             var positionY = shellWidth - openPixels;
 
+            var currentFlowDirection = LanguageManager.CurrentFlowDirection;
 
-            Debug.WriteLine("Y: " + positionY);
-            Debug.WriteLine("Width: " + shell.Frame.Width);
-
-            //flyout.Frame = new CGRect(-openLimit + openPixels, 0, flyoutWidth, bounds.Height);
-
-            flyout.Frame = new CGRect(positionY, 0, flyoutWidth, bounds.Height);
+            if (currentFlowDirection == FlowDirection.LeftToRight)
+                flyout.Frame = new CGRect(-openLimit + openPixels, 0, flyoutWidth, bounds.Height);
+            else
+                flyout.Frame = new CGRect(positionY, 0, flyoutWidth, bounds.Height);
 
             if (behavior != FlyoutBehavior.Locked)
             {
