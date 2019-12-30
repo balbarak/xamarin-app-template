@@ -70,6 +70,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transitions\SlideFlyoutTransitionRtl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -140,8 +141,11 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\XamarinAppTemplate\XamarinAppTemplate.csproj">
-      <Project>{39E4AD99-3741-4759-BA07-BB50B1D2E59E}</Project>
+      <Project>{46D0E765-22FF-4867-B150-B8E1D7EC7C4A}</Project>
       <Name>XamarinAppTemplate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transitions\" />
   </ItemGroup>
 </Project>
