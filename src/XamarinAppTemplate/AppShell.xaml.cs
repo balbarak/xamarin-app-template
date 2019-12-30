@@ -35,5 +35,6 @@ namespace XamarinAppTemplate
             //Routing.RegisterRoute("test", new TestRoute());
 
         }
+
     }
 }

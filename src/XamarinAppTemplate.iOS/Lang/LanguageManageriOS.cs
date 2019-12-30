@@ -7,6 +7,8 @@ using Foundation;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
 using XamarinAppTemplate.iOS.Renders;
+using System.Diagnostics;
+using CoreGraphics;
 
 namespace XamarinAppTemplate.iOS.Lang
 {
@@ -19,9 +21,11 @@ namespace XamarinAppTemplate.iOS.Lang
 
             ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
 
-            
-
             var windows = UIApplication.SharedApplication.Windows;
+
+            var shell = UIApplication.SharedApplication.KeyWindow.RootViewController.ChildViewControllerForHomeIndicatorAutoHidden as ShellRenderer;
+            var flyout = shell.ViewController as ShellFlyoutRenderer;
+            var flyoutView = flyout.View;
 
             UISemanticContentAttribute iosDir;
 
@@ -31,6 +35,7 @@ namespace XamarinAppTemplate.iOS.Lang
                 iosDir = UISemanticContentAttribute.ForceRightToLeft;
 
             AppDelegate.IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, iosDir);
+
 
             foreach (var window in windows)
             {
@@ -46,6 +51,7 @@ namespace XamarinAppTemplate.iOS.Lang
 
         private void UpdateViewsDirection(UIView view,UISemanticContentAttribute dir)
         {
+            
             view.SemanticContentAttribute = dir;
             view.SetNeedsLayout();
             //view.SetNeedsDisplay();
