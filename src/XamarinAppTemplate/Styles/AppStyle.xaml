@@ -18,7 +18,7 @@
         <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
     </Style>
 
-
+    
     <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource BrandColor}" />
         <Setter Property="CornerRadius" Value="10" />
@@ -43,6 +43,7 @@
 
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+        <Setter Property="HorizontalOptions" Value="Start"/>
     </Style>
 
     <Style

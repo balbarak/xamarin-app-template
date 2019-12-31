@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Threading;
@@ -17,6 +18,7 @@ namespace XamarinAppTemplate
 
         public void SwitchDirection(LanguageDirection dir)
         {
+            
             if (dir == LanguageDirection.Rtl)
             {
                 CurrentFlowDirection = FlowDirection.RightToLeft;
@@ -25,6 +27,7 @@ namespace XamarinAppTemplate
             }
             else
             {
+                
                 CurrentFlowDirection = FlowDirection.LeftToRight;
                 Thread.CurrentThread.CurrentCulture = EnglishCulture;
                 Thread.CurrentThread.CurrentUICulture = EnglishCulture;

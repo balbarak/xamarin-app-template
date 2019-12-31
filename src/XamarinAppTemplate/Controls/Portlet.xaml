@@ -24,7 +24,7 @@
                     <ContentView
                         Padding="10"
                         Grid.Row="1"
-                        FlowDirection="{Binding FlowDirection}"
+                        HorizontalOptions="Start"
                         Content="{Binding Header, Source={x:Reference self}}" />
                     <BoxView
                         BackgroundColor="#EBEDF2"

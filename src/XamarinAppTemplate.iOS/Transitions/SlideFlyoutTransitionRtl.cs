@@ -39,14 +39,11 @@ namespace XamarinAppTemplate.iOS.Transitions
                 flyout.Frame = new CGRect(positionY, 0, flyoutWidth, bounds.Height);
 
 
-
-
             if (behavior != FlyoutBehavior.Locked)
             {
                 var shellOpacity = (nfloat)(0.5 + (0.5 * (1 - openPercent)));
                 shell.Layer.Opacity = (float)shellOpacity;
             }
-
 
         }
     }

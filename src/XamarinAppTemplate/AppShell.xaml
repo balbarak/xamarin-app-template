@@ -98,6 +98,7 @@
                 Style="{StaticResource FlyoutItemStyle}">
                 <Label
                     FontSize="Medium"
+                    HorizontalOptions="Start"
                     TextColor="{DynamicResource FlyoutTextColor}"
                     Text="{Binding Title}">
                     <Label.Triggers>

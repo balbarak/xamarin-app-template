@@ -26,7 +26,7 @@ namespace XamarinAppTemplate.iOS.Lang
             var shell = UIApplication.SharedApplication.KeyWindow.RootViewController.ChildViewControllerForHomeIndicatorAutoHidden as AppShellRenderer;
             var flyout = shell.ViewController as ShellFlyoutRenderer;
 
-
+            
             UISemanticContentAttribute iosDir;
 
             if (dir == LanguageDirection.Ltr)
@@ -34,53 +34,17 @@ namespace XamarinAppTemplate.iOS.Lang
             else
                 iosDir = UISemanticContentAttribute.ForceRightToLeft;
 
+            
             AppDelegate.IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, iosDir);
 
             UpdateViewsDirection(keyWindow.RootViewController.View, iosDir);
-
-            //UpdateViewsDirection(shell.ContentView, iosDir);
-
-            //var mainRoot = keyWindow.RootViewController;
-
-            ///UpdateViewsDirection(mainRoot.View, iosDir);
-
-            //foreach (var window in windows)
-            //{
-            //    UIViewController root = window.RootViewController;
-
-            //    var ee = root.NavigationController;
-
-            //    if (root != null && root.View != null)
-            //    {
-            //        var presentedController = root.PresentedViewController;
-
-            //        if (presentedController != null)
-            //        {
-
-            //            var currentView = presentedController.View;
-
-            //            if (currentView != null)
-            //            {
-            //                UpdateViewsDirection(currentView, iosDir);
-            //            }
-            //        }
-
-            //        UpdateViewsDirection(root.View, iosDir);
-
-            //        var superView = root.View.Superview;
-
-            //        if (superView != null)
-            //            UpdateViewsDirection(superView, iosDir);
-            //    }
-            //}
 
         }
 
         private void UpdateViewsDirection(UIView view, UISemanticContentAttribute dir)
         {
-
+            
             view.SemanticContentAttribute = dir;
-            view.SetNeedsLayout();
             view.SetNeedsDisplay();
 
             if (view.Subviews.Count() == 0)

@@ -5,7 +5,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:XamarinAppTemplate"
-    Title="slksdjlkf"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.SettingsPage">
 
@@ -13,7 +12,9 @@
         <local:Portlet>
             <local:Portlet.Header>
                 <Grid>
-                    <Label Text="{Binding Title}" />
+                    <Label
+                        HorizontalOptions="Start"
+                        Text="{Binding Title}" />
                 </Grid>
             </local:Portlet.Header>
             <local:Portlet.Body>
@@ -23,10 +24,13 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Text="Hel" />
+                        <Label
+                            HorizontalOptions="Start"
+                            Text="Hel" />
 
                         <Switch
                             ThumbColor="Beige"
+                            HorizontalOptions="End"
                             IsToggled="{Binding IsDarkTheme}"
                             OnColor="{DynamicResource BrandColor}"
                             Grid.Column="1" />
@@ -37,10 +41,13 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Text="Is Arabic" />
+                        <Label
+                            HorizontalOptions="Start"
+                            Text="Is Arabic" />
 
                         <Switch
                             ThumbColor="Beige"
+                            HorizontalOptions="End"
                             IsToggled="{Binding IsArabic}"
                             OnColor="{DynamicResource BrandColor}"
                             Grid.Column="1" />
@@ -55,5 +62,6 @@
 
             </local:Portlet.Body>
         </local:Portlet>
+
     </StackLayout>
 </local:BaseContentPage>
