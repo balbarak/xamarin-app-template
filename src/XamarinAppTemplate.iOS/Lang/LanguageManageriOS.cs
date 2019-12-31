@@ -26,14 +26,6 @@ namespace XamarinAppTemplate.iOS.Lang
             var shell = UIApplication.SharedApplication.KeyWindow.RootViewController.ChildViewControllerForHomeIndicatorAutoHidden as AppShellRenderer;
             var flyout = shell.ViewController as ShellFlyoutRenderer;
 
-            var vc = keyWindow.RootViewController;
-
-            while (vc.PresentedViewController != null)
-            {
-                vc = vc.PresentedViewController;
-            }
-
-            vc.View.BackgroundColor = UIColor.Red;
 
             UISemanticContentAttribute iosDir;
 
@@ -44,44 +36,59 @@ namespace XamarinAppTemplate.iOS.Lang
 
             AppDelegate.IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, iosDir);
 
+            UpdateViewsDirection(keyWindow.RootViewController.View, iosDir);
 
-            UpdateViewsDirection(shell.ContentView,iosDir);
+            //UpdateViewsDirection(shell.ContentView, iosDir);
 
-            foreach (var window in windows)
-            {
-                UIViewController root = window.RootViewController;
+            //var mainRoot = keyWindow.RootViewController;
 
-                if (root != null && root.View != null)
-                { 
-                    UpdateViewsDirection(root.View, iosDir);
+            ///UpdateViewsDirection(mainRoot.View, iosDir);
 
-                    var superView = root.View.Superview;
+            //foreach (var window in windows)
+            //{
+            //    UIViewController root = window.RootViewController;
 
-                    if (superView != null)
-                        UpdateViewsDirection(superView,iosDir);
-                }
-            }
+            //    var ee = root.NavigationController;
+
+            //    if (root != null && root.View != null)
+            //    {
+            //        var presentedController = root.PresentedViewController;
+
+            //        if (presentedController != null)
+            //        {
+
+            //            var currentView = presentedController.View;
+
+            //            if (currentView != null)
+            //            {
+            //                UpdateViewsDirection(currentView, iosDir);
+            //            }
+            //        }
+
+            //        UpdateViewsDirection(root.View, iosDir);
+
+            //        var superView = root.View.Superview;
+
+            //        if (superView != null)
+            //            UpdateViewsDirection(superView, iosDir);
+            //    }
+            //}
 
         }
 
-        private void UpdateViewsDirection(UIView view,UISemanticContentAttribute dir)
+        private void UpdateViewsDirection(UIView view, UISemanticContentAttribute dir)
         {
-            
+
             view.SemanticContentAttribute = dir;
             view.SetNeedsLayout();
+            view.SetNeedsDisplay();
 
-            if (view.Subviews.Count() > 0)
-            {
-                foreach (var item in view.Subviews)
-                {
-                    UpdateViewsDirection(item,dir);
-
-                    Debug.WriteLine("Update view: " + item.AccessibilityIdentifier);
-                }
-            }
-            else
-            {
+            if (view.Subviews.Count() == 0)
                 return;
+
+            foreach (var item in view.Subviews)
+            {
+                UpdateViewsDirection(item, dir);
             }
 
         }
