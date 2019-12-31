@@ -45,6 +45,7 @@ namespace XamarinAppTemplate.iOS.Transitions
                 shell.Layer.Opacity = (float)shellOpacity;
             }
 
+            flyout.Tag = 300;
         }
     }
 }

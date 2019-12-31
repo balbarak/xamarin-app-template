@@ -125,6 +125,9 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\fa-brands-400.ttf" />
+    <BundleResource Include="Resources\fa-regular-400.ttf" />
+    <BundleResource Include="Resources\fa-solid-900.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

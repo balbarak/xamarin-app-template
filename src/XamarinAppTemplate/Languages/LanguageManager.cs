@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace XamarinAppTemplate
 {
-    public class LanguageManager 
+    public class LanguageManager
     {
         public static CultureInfo ArabicCulture => new CultureInfo("ar-SA");
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
@@ -18,7 +18,7 @@ namespace XamarinAppTemplate
 
         public void SwitchDirection(LanguageDirection dir)
         {
-            
+
             if (dir == LanguageDirection.Rtl)
             {
                 CurrentFlowDirection = FlowDirection.RightToLeft;
@@ -27,7 +27,7 @@ namespace XamarinAppTemplate
             }
             else
             {
-                
+
                 CurrentFlowDirection = FlowDirection.LeftToRight;
                 Thread.CurrentThread.CurrentCulture = EnglishCulture;
                 Thread.CurrentThread.CurrentUICulture = EnglishCulture;
@@ -37,6 +37,8 @@ namespace XamarinAppTemplate
 
             manager.SwitchDirection(dir);
 
+            if (Device.RuntimePlatform == Device.iOS)
+                Application.Current.MainPage = new AppShell();
         }
     }
 }

@@ -25,6 +25,8 @@
 		<string>en</string>
 		<string>ar</string>
 	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
@@ -39,5 +41,10 @@
 	<string>XamarinAppTemplate</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fa-brands-400.ttf</string>
+		<string>fa-solid-900.ttf</string>
+	</array>
 </dict>
 </plist>

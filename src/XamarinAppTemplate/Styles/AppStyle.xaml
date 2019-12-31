@@ -78,10 +78,10 @@
         x:TypeArguments="x:String">
         <On
             Platform="Android"
-            Value="fa-solid-900.ttf#Font Awesome 5 Brands Solid" />
+            Value="fa-solid-900.ttf#Font Awesome 5 Free" />
         <On
             Platform="iOS"
-            Value="Cairo-Regular" />
+            Value="Font Awesome 5 Free" />
     </OnPlatform>
 
 </ResourceDictionary>

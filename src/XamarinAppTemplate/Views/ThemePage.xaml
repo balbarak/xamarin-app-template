@@ -67,7 +67,7 @@
                             FontFamily="{StaticResource FA-Solid}"
                             FontSize="Medium"
                             TextColor="{DynamicResource BrandColor}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.CALCULATOR}" />
+                            Text="{x:Static local:FontAwsomeSolidIcons.PHONE}" />
 
                         <Label
                             FontFamily="{StaticResource FA-Solid}"

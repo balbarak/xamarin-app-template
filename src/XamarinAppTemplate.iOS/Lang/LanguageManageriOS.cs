@@ -26,7 +26,7 @@ namespace XamarinAppTemplate.iOS.Lang
             var shell = UIApplication.SharedApplication.KeyWindow.RootViewController.ChildViewControllerForHomeIndicatorAutoHidden as AppShellRenderer;
             var flyout = shell.ViewController as ShellFlyoutRenderer;
 
-            
+
             UISemanticContentAttribute iosDir;
 
             if (dir == LanguageDirection.Ltr)
@@ -34,16 +34,18 @@ namespace XamarinAppTemplate.iOS.Lang
             else
                 iosDir = UISemanticContentAttribute.ForceRightToLeft;
 
-            
+
             AppDelegate.IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, iosDir);
 
-            UpdateViewsDirection(keyWindow.RootViewController.View, iosDir);
+            //UpdateViewsDirection(flyout.View, iosDir);
+
+            //UpdateViewsDirection(keyWindow.RootViewController.View, iosDir);
 
         }
 
         private void UpdateViewsDirection(UIView view, UISemanticContentAttribute dir)
         {
-            
+
             view.SemanticContentAttribute = dir;
             view.SetNeedsDisplay();
 
