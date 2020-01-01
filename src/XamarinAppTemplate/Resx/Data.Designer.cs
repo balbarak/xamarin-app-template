@@ -59,5 +59,15 @@ namespace XamarinAppTemplate.Resx {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Countries {
+            get {
+                object obj = ResourceManager.GetObject("Countries", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
