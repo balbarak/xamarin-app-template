@@ -15,6 +15,14 @@ namespace XamarinAppTemplate
         public static CultureInfo ArabicCulture => new CultureInfo("ar-SA");
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
 
+        public static bool IsEnglish
+        {
+            get
+            {
+                return Thread.CurrentThread.CurrentCulture.Name.Contains("en");
+
+            }
+        }
         public static FlowDirection CurrentFlowDirection { get; set; } = Device.FlowDirection;
 
         public void SwitchDirection(LanguageDirection dir)

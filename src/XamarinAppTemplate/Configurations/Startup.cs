@@ -37,6 +37,8 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddTransient<ThemeViewModel>();
 
+            serviceCollections.AddTransient<CountryViewModel>();
+
             serviceCollections.AddSingleton<SettingsViewModel>();
 
             serviceCollections.AddSingleton<AppShellViewModel>();
