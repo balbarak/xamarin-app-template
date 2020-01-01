@@ -126,6 +126,9 @@
   <data name="ChangeLangugeMsg" xml:space="preserve">
     <value>Change language will restart the app from beginning</value>
   </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Countries</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>

@@ -62,6 +62,14 @@
         <vm:AppShellViewModel />
     </Shell.BindingContext>
 
+    <FlyoutItem
+        Route="country"
+        Title="{x:Static res:AppResource.Countries}">
+        <ShellContent
+            Title="{x:Static res:AppResource.Countries}"
+            ContentTemplate="{DataTemplate local:CountryPage}" />
+    </FlyoutItem>
+
 
     <FlyoutItem
         Route="theme"
@@ -96,13 +104,7 @@
             ContentTemplate="{DataTemplate local:HomePage}" />
     </FlyoutItem>
 
-    <FlyoutItem
-        Route="country"
-        Title="Countries">
-        <ShellContent
-            Title="Country"
-            ContentTemplate="{DataTemplate local:CountryPage}" />
-    </FlyoutItem>
+
 
     <FlyoutItem
         Route="register"

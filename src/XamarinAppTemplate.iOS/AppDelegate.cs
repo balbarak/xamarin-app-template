@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 using Foundation;
 using Microsoft.Extensions.DependencyInjection;
 using Plugin.Toasts;
@@ -37,13 +38,8 @@ namespace XamarinAppTemplate.iOS
             Startup.Services.AddTransient<ILanguageManager, LanguageManageriOS>();
 
             LoadApplication(new App());
-
-           
-            
+ 
             var result =  base.FinishedLaunching(app, options);
-
-
-            
 
             return result;
         }
@@ -53,6 +49,9 @@ namespace XamarinAppTemplate.iOS
             DependencyService.Register<ToastNotification>();
 
             ToastNotification.Init();
+
+            var ignore = typeof(SvgCachedImage);
+            CachedImageRenderer.Init(); // Initializing FFImageLoading
         }
     }
 }

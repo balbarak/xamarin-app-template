@@ -24,6 +24,7 @@ namespace XamarinAppTemplate
         {
             serviceCollections.AddSingleton<NavigationService>();
             serviceCollections.AddSingleton<LanguageManager>();
+            serviceCollections.AddSingleton<CountryService>();
 
             serviceCollections.AddTransient<HomeViewModel>();
 

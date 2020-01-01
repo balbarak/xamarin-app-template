@@ -42,6 +42,8 @@ namespace XamarinAppTemplate.Droid
 
             ToastNotification.Init(this);
 
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: false);
+
             CrossCurrentActivity.Current.Init(this, bundle);
         }
 

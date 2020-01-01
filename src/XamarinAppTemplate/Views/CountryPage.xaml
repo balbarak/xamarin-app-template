@@ -5,14 +5,68 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:local="clr-namespace:XamarinAppTemplate"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ffmpeg="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.CountryPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label
-                Text="This is country Page"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+
+            <CollectionView
+                Margin="10,0"
+                VerticalScrollBarVisibility="Always"
+                ItemsUpdatingScrollMode="KeepScrollOffset"
+                ItemsSource="{Binding Countries}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        ItemSpacing="20"
+                        Orientation="Vertical" />
+
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            HeightRequest="80"
+                            Padding="10"
+                            Margin="50,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Frame
+                                    Padding="1"
+                                    HasShadow="False"
+                                    BorderColor="Black"
+                                    VerticalOptions="Start"
+                                    Margin="0">
+                                    <ffmpeg:CachedImage
+                                        x:Name="img"
+                                        Grid.Column="0"
+                                        Margin="0"
+                                        Aspect="AspectFill"
+                                        VerticalOptions="Start"
+                                        Source="{Binding Image}" />
+                                </Frame>
+
+                                <StackLayout Grid.Column="1">
+                                    <Label
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"
+                                        Text="{Binding Name}" />
+                                    <Label
+                                        FontSize="Caption"
+                                        Text="{Binding Model.Capital}" />
+                                </StackLayout>
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <local:Loading IsBusy="{Binding IsBusy}" />
+        </Grid>
     </ContentPage.Content>
 </local:BaseContentPage>

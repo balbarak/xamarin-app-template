@@ -10,12 +10,12 @@ namespace XamarinAppTemplate.Models
 
         public string CodeTwo { get; set; }
 
-        public LocaleString Name { get; set; }
+        public LocaleStringSqlite Name { get; set; }
         public string PhoneCode { get; set; }
 
         public bool IsActive { get; set; }
 
-        public LocaleString Capital { get; set; }
+        public LocaleStringSqlite Capital { get; set; }
 
         public int? Population { get; set; }
 

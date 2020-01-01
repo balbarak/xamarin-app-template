@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinAppTemplate.Persistance;
 using XamarinAppTemplate.Services;
 using XamarinAppTemplate.Views;
 
@@ -19,9 +20,11 @@ namespace XamarinAppTemplate
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
-            
+            var context = await XamarinAppTemplateDbContext.InitDatabase();
+
+            await context.EnsureSeeding();
         }
 
         protected override void OnSleep()
