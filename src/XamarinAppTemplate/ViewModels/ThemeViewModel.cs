@@ -16,7 +16,7 @@ namespace XamarinAppTemplate.ViewModels
 
         public ThemeViewModel()
         {
-            Title = "Themes";
+            Title = Resx.AppResource.Themes;
         }
 
         public override Task InitializeAsync(object navigationData)

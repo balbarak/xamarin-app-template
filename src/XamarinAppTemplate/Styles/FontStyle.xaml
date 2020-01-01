@@ -25,7 +25,7 @@
             Value="Tajawal-Regular.ttf#Tajawal" />
         <On
             Platform="iOS"
-            Value="Font Awesome 5 Free" />
+            Value="Tajawal" />
     </OnPlatform>
 
 </ResourceDictionary>

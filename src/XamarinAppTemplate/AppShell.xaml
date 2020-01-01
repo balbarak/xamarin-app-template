@@ -62,11 +62,13 @@
         <vm:AppShellViewModel />
     </Shell.BindingContext>
 
+
     <FlyoutItem
         Route="settings"
         Title="{x:Static res:AppResource.Settings}">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
+
 
     <FlyoutItem
         Route="theme"
@@ -144,7 +146,6 @@
                 Style="{StaticResource FlyoutItemStyle}">
                 <Label
                     FontSize="Medium"
-                    HorizontalOptions="Start"
                     TextColor="{DynamicResource FlyoutTextColor}"
                     Text="{Binding Title}">
                     <Label.Triggers>

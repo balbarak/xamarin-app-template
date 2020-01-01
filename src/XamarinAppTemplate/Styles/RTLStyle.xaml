@@ -5,7 +5,6 @@
     x:Class="XamarinAppTemplate.RTLStyle">
 
     <Style TargetType="Label">
-        <Setter Property="TextColor" Value="Red" />
         <Setter Property="HorizontalOptions" Value="Start" />
         <Setter Property="FontFamily" Value="{StaticResource TajawalFont}" />
     </Style>

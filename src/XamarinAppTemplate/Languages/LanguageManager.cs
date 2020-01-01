@@ -41,11 +41,16 @@ namespace XamarinAppTemplate
 
             manager.SwitchDirection(dir);
 
-            if (Device.RuntimePlatform == Device.iOS)
-                Application.Current.MainPage = new AppShell();
+            //if (Device.RuntimePlatform == Device.iOS)
 
-            OnDirectionChanged?.Invoke(this, dir);
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                Application.Current.MainPage = new AppShell();
+            });
             
+            
+            //OnDirectionChanged?.Invoke(this, dir);
+
         }
 
         private void SetStyles(bool isRtl)
