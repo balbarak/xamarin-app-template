@@ -12,12 +12,6 @@ namespace XamarinAppTemplate
         public AppShell()
         {
             InitializeComponent();
-
-            RegisterRoutes();
-
-            var viewModel = AppServiceLocator.Current.GetService<AppShellViewModel>();
-
-            BindingContext = viewModel;
         }
 
         protected override void OnNavigating(ShellNavigatingEventArgs args)
@@ -29,19 +23,5 @@ namespace XamarinAppTemplate
         {
             base.OnNavigated(args);
         }
-
-        private void RegisterRoutes()
-        {
-            
-            //Routing.RegisterRoute("test", new TestRoute());
-
-        }
-
-        public void TestUpdate()
-        {
-            this.OnPropertyChanged();
-
-        }
-
     }
 }

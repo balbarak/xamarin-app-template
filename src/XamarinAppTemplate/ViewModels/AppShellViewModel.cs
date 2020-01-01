@@ -6,6 +6,9 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class AppShellViewModel : BaseViewModel
     {
+        public AppShellViewModel()
+        {
 
+        }
     }
 }

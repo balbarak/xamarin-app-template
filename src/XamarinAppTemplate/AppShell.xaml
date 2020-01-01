@@ -7,6 +7,7 @@
     xmlns:res="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
     xmlns:local="clr-namespace:XamarinAppTemplate.Views"
+    xmlns:vm="clr-namespace:XamarinAppTemplate.ViewModels"
     xmlns:all="clr-namespace:XamarinAppTemplate"
     FlowDirection="{Binding FlowDirection}"
     FlyoutBehavior="Flyout"
@@ -15,6 +16,7 @@
     FlyoutHeaderBehavior="CollapseOnScroll"
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
+
 
 
     <Shell.Resources>
@@ -56,6 +58,9 @@
         </Style>
     </Shell.Resources>
 
+    <Shell.BindingContext>
+        <vm:AppShellViewModel />
+    </Shell.BindingContext>
 
     <FlyoutItem
         Route="settings"

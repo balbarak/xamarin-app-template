@@ -28,6 +28,13 @@ namespace XamarinAppTemplate.ViewModels
             _langugaeManager = AppServiceLocator.Current.GetService<LanguageManager>();
 
             FlowDirection = LanguageManager.CurrentFlowDirection;
+
+            LanguageManager.OnDirectionChanged += OnDirectionChanged;
+        }
+
+        ~BaseViewModel()
+        {
+            LanguageManager.OnDirectionChanged -= OnDirectionChanged;
         }
 
         public virtual Task InitializeAsync(object navigationData) => Task.FromResult(false);
@@ -49,6 +56,11 @@ namespace XamarinAppTemplate.ViewModels
                 shellBinding.FlowDirection = FlowDirection.LeftToRight;
             }
 
+        }
+
+        protected virtual void OnDirectionChanged(object sender,LanguageDirection dir)
+        {
+            this.FlowDirection = LanguageManager.CurrentFlowDirection;
         }
 
         #region INotifyPropertyChanged
