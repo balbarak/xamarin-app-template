@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace XamarinAppTemplate.Themes
+namespace XamarinAppTemplate
 {
     public class ThemeManager
     {
@@ -22,7 +22,7 @@ namespace XamarinAppTemplate.Themes
             mergedDictionaries.Add(new AppStyle());
         }
 
-        public void SetRTLTheme()
+        public static void SetRTLTheme()
         {
             var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
 

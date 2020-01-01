@@ -15,8 +15,6 @@ namespace XamarinAppTemplate
         public static CultureInfo ArabicCulture => new CultureInfo("ar-SA");
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
 
-        public static event EventHandler<LanguageDirection> OnDirectionChanged;
-
         public static FlowDirection CurrentFlowDirection { get; set; } = Device.FlowDirection;
 
         public void SwitchDirection(LanguageDirection dir)
@@ -37,43 +35,18 @@ namespace XamarinAppTemplate
 
             var manager = AppServiceLocator.Current.GetService<ILanguageManager>();
 
-            SetStyles(dir == LanguageDirection.Rtl);
+            if (dir == LanguageDirection.Ltr)
+                ThemeManager.SetDefaultTheme();
+            else
+                ThemeManager.SetRTLTheme();
 
             manager.SwitchDirection(dir);
-
-            //if (Device.RuntimePlatform == Device.iOS)
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 Application.Current.MainPage = new AppShell();
             });
-            
-            
-            //OnDirectionChanged?.Invoke(this, dir);
-
         }
 
-        private void SetStyles(bool isRtl)
-        {
-            var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
-
-            if (isRtl)
-            {
-                mergedDictionaries.Clear();
-                mergedDictionaries.Add(new FontStyle());
-                mergedDictionaries.Add(new LightTheme());
-                mergedDictionaries.Add(new AppStyle());
-                mergedDictionaries.Add(new RTLStyle());
-            }
-            else
-            {
-                mergedDictionaries.Clear();
-                mergedDictionaries.Add(new FontStyle());
-                mergedDictionaries.Add(new LightTheme());
-                mergedDictionaries.Add(new AppStyle());
-
-
-            }
-        }
     }
 }

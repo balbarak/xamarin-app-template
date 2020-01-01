@@ -29,6 +29,7 @@ namespace XamarinAppTemplate.ViewModels
         {
             _languageManager = manager;
         }
+
         public override Task InitializeAsync(object navigationData)
         {
             Title = Resx.AppResource.Settings;
@@ -38,10 +39,7 @@ namespace XamarinAppTemplate.ViewModels
 
         private void OnThemeChanged()
         {
-            if (IsDarkTheme)
-                _languageManager.SwitchDirection(LanguageDirection.Ltr);
-            else
-                _languageManager.SwitchDirection(LanguageDirection.Rtl);
+
         }
 
         private void OnLanguageChanged()

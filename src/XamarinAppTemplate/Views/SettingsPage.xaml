@@ -8,54 +8,57 @@
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.SettingsPage">
 
-    <StackLayout Margin="20">
-        <local:Portlet>
-            <local:Portlet.Header>
-                <Grid>
-                    <Label Text="{Binding Title}" />
-                </Grid>
-            </local:Portlet.Header>
-            <local:Portlet.Body>
-                <StackLayout Spacing="20">
+    <Grid>
+        <StackLayout Margin="20">
+            <local:Portlet>
+                <local:Portlet.Header>
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Hel" />
-
-                        <Switch
-                            ThumbColor="Beige"
-                            HorizontalOptions="End"
-                            IsToggled="{Binding IsDarkTheme}"
-                            OnColor="{DynamicResource BrandColor}"
-                            Grid.Column="1" />
+                        <Label Text="{Binding Title}" />
                     </Grid>
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout Spacing="20">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Hel" />
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Is Arabic" />
+                            <Switch
+                                ThumbColor="Beige"
+                                HorizontalOptions="End"
+                                IsToggled="{Binding IsDarkTheme}"
+                                OnColor="{DynamicResource BrandColor}"
+                                Grid.Column="1" />
+                        </Grid>
 
-                        <Switch
-                            ThumbColor="Beige"
-                            HorizontalOptions="End"
-                            IsToggled="{Binding IsArabic}"
-                            OnColor="{DynamicResource BrandColor}"
-                            Grid.Column="1" />
-                    </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Is Arabic" />
+
+                            <Switch
+                                ThumbColor="Beige"
+                                HorizontalOptions="End"
+                                IsToggled="{Binding IsArabic}"
+                                OnColor="{DynamicResource BrandColor}"
+                                Grid.Column="1" />
+                        </Grid>
 
 
-                    <Button
-                        Text="Update Layout"
-                        Clicked="Button_Clicked" />
-                </StackLayout>
+                        <Button
+                            Text="Update Layout"
+                            Clicked="Button_Clicked" />
+                    </StackLayout>
 
 
-            </local:Portlet.Body>
-        </local:Portlet>
+                </local:Portlet.Body>
+            </local:Portlet>
+        </StackLayout>
 
-    </StackLayout>
+        <local:Loading IsBusy="{Binding IsBusy}" />
+    </Grid>
 </local:BaseContentPage>

@@ -28,4 +28,11 @@
             Value="Tajawal" />
     </OnPlatform>
 
+    <Style
+        TargetType="Label"
+        x:Key="FontIcon-FA-Solid">
+        <Setter Property="FontFamily" Value="{StaticResource FA-Solid}" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{DynamicResource BrandColor}" />
+    </Style>
 </ResourceDictionary>

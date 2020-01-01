@@ -61,6 +61,51 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هل أنت متأكد ؟.
+        /// </summary>
+        public static string AreYouSure {
+            get {
+                return ResourceManager.GetString("AreYouSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الغاء.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تغيير اللغة سيؤدي الى اعادة التطبيق من البداية.
+        /// </summary>
+        public static string ChangeLangugeMsg {
+            get {
+                return ResourceManager.GetString("ChangeLangugeMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لا.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to موافق.
+        /// </summary>
+        public static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الرجاء الانتظار ....
         /// </summary>
         public static string PleaseWait {
@@ -84,6 +129,15 @@ namespace XamarinAppTemplate.Resx {
         public static string Themes {
             get {
                 return ResourceManager.GetString("Themes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نعم.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

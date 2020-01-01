@@ -28,13 +28,6 @@ namespace XamarinAppTemplate.ViewModels
             _langugaeManager = AppServiceLocator.Current.GetService<LanguageManager>();
 
             FlowDirection = LanguageManager.CurrentFlowDirection;
-
-            LanguageManager.OnDirectionChanged += OnDirectionChanged;
-        }
-
-        ~BaseViewModel()
-        {
-            LanguageManager.OnDirectionChanged -= OnDirectionChanged;
         }
 
         public virtual Task InitializeAsync(object navigationData) => Task.FromResult(false);

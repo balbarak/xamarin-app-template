@@ -32,22 +32,5 @@ namespace XamarinAppTemplate
             set { SetValue(IsSelectedProperty, value); }
         }
 
-        public ShellItemGrid()
-        {
-            LanguageManager.OnDirectionChanged += OnDirectionChanged;
-        }
-
-        ~ShellItemGrid()
-        {
-            LanguageManager.OnDirectionChanged -= OnDirectionChanged;
-        }
-
-        private void OnDirectionChanged(object sender, LanguageDirection e)
-        {
-            if (e == LanguageDirection.Rtl)
-                FlowDirection = FlowDirection.RightToLeft;
-            else
-                FlowDirection = FlowDirection.LeftToRight;
-        }
     }
 }
