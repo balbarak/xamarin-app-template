@@ -17,7 +17,7 @@ namespace XamarinAppTemplate.Droid.Lang
             if (dir == LanguageDirection.Rtl)
                 window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 
-            activity.Recreate();
+            //activity.Recreate();
         }
     }
 }

@@ -7,6 +7,7 @@
     xmlns:res="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
     xmlns:local="clr-namespace:XamarinAppTemplate.Views"
+    xmlns:all="clr-namespace:XamarinAppTemplate"
     FlowDirection="{Binding FlowDirection}"
     FlyoutBehavior="Flyout"
     FlyoutBackgroundColor="{DynamicResource FlyoutBackgroundColor}"
@@ -14,6 +15,46 @@
     FlyoutHeaderBehavior="CollapseOnScroll"
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
+
+
+    <Shell.Resources>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
+            <Setter Property="BarTextColor" Value="{DynamicResource SecondaryColor}" />
+        </Style>
+
+        <Style TargetType="ShellContent">
+            <Setter Property="Shell.BackgroundColor" Value="{DynamicResource NavigationBarBackgroundColor}" />
+            <Setter Property="Shell.ForegroundColor" Value="{DynamicResource NavigationBarColor}" />
+            <Setter Property="Shell.TitleColor" Value="{DynamicResource NavigationBarColor}" />
+            <Setter Property="Shell.NavBarHasShadow" Value="False" />
+            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+        </Style>
+
+        <Style
+            x:Key="FlyoutItemStyle"
+            TargetType="all:ShellItemGrid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{DynamicResource FlyoutBackgroundColor}" />
+                                <Setter Property="IsSelected" Value="False" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{DynamicResource FlyoutItemSelectedBackgroundColor}" />
+                                <Setter Property="IsSelected" Value="True" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </Shell.Resources>
 
 
     <FlyoutItem
@@ -29,8 +70,8 @@
             Title="Theme"
             ContentTemplate="{DataTemplate local:ThemePage}" />
     </FlyoutItem>
-    
-    
+
+
     <FlyoutItem
         Route="typography"
         Title="Typography">
@@ -92,7 +133,7 @@
 
     <Shell.ItemTemplate>
         <DataTemplate>
-            <Grid
+            <all:ShellItemGrid
                 x:Name="grid"
                 Padding="30,10"
                 Style="{StaticResource FlyoutItemStyle}">
@@ -104,13 +145,13 @@
                     <Label.Triggers>
                         <DataTrigger
                             TargetType="Label"
-                            Binding="{Binding Source={x:Reference grid}, Path=BackgroundColor}"
-                            Value="{StaticResource FlyoutItemSelectedBackgroundColor}">
+                            Binding="{Binding Source={x:Reference grid}, Path=IsSelected}"
+                            Value="True">
                             <Setter Property="TextColor" Value="{DynamicResource FlyoutItemSelectedColor}" />
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>
-            </Grid>
+            </all:ShellItemGrid>
 
         </DataTemplate>
     </Shell.ItemTemplate>

@@ -12,9 +12,7 @@
         <local:Portlet>
             <local:Portlet.Header>
                 <Grid>
-                    <Label
-                        HorizontalOptions="Start"
-                        Text="{Binding Title}" />
+                    <Label Text="{Binding Title}" />
                 </Grid>
             </local:Portlet.Header>
             <local:Portlet.Body>
@@ -24,9 +22,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label
-                            HorizontalOptions="Start"
-                            Text="Hel" />
+                        <Label Text="Hel" />
 
                         <Switch
                             ThumbColor="Beige"
@@ -41,9 +37,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label
-                            HorizontalOptions="Start"
-                            Text="Is Arabic" />
+                        <Label Text="Is Arabic" />
 
                         <Switch
                             ThumbColor="Beige"

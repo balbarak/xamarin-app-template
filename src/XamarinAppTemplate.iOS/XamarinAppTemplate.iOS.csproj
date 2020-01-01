@@ -71,6 +71,8 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transitions\SlideFlyoutTransitionRtl.cs" />
+    <BundleResource Include="Resources\Tajawal-Bold.ttf" />
+    <BundleResource Include="Resources\Tajawal-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -148,7 +150,5 @@
       <Name>XamarinAppTemplate</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transitions\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -21,6 +21,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Styles\FontStyle.xaml.cs">
+      <DependentUpon>FontStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Styles\RTLStyle.xaml.cs">
+      <DependentUpon>RTLStyle.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Styles\AppStyle.xaml.cs">
       <DependentUpon>AppStyle.xaml</DependentUpon>
     </Compile>

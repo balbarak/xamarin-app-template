@@ -44,6 +44,8 @@ namespace XamarinAppTemplate
 
                 IsInitialized = true;
             }
+            if (FlowDirection != LanguageManager.CurrentFlowDirection)
+                FlowDirection = LanguageManager.CurrentFlowDirection;
 
             base.OnAppearing();
         }

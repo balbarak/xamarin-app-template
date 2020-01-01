@@ -94,6 +94,8 @@ namespace XamarinAppTemplate
             InitializeComponent();
         }
 
+        
+
         static void OnFooterChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var portlet = bindable as Portlet;
@@ -127,5 +129,6 @@ namespace XamarinAppTemplate
                 portlet.HasHeader = false;
             }
         }
+
     }
 }

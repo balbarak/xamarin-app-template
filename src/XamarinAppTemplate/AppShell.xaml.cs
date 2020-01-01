@@ -39,7 +39,8 @@ namespace XamarinAppTemplate
 
         public void TestUpdate()
         {
-            this.InvalidateMeasure();
+            this.OnPropertyChanged();
+
         }
 
     }

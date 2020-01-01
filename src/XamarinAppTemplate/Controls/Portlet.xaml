@@ -4,51 +4,50 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    FlowDirection="{Binding FlowDirection}"
     x:Name="self"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Portlet">
-    
-        <Frame
-            HasShadow="False"
-            Padding="0"
-            VerticalOptions="Start">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
 
-                <StackLayout IsVisible="{Binding HasHeader, Source={x:Reference self}}">
-                    <ContentView
-                        Padding="10"
-                        Grid.Row="1"
-                        HorizontalOptions="Start"
-                        Content="{Binding Header, Source={x:Reference self}}" />
-                    <BoxView
-                        BackgroundColor="#EBEDF2"
-                        HeightRequest="1" />
-                </StackLayout>
+    <Frame
+        HasShadow="False"
+        Padding="0"
+        VerticalOptions="Start">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
 
+            <StackLayout IsVisible="{Binding HasHeader, Source={x:Reference self}}">
                 <ContentView
-                    Padding="20,10"
+                    Padding="10"
                     Grid.Row="1"
-                    Content="{Binding Body, Source={x:Reference self}}" />
+                    HorizontalOptions="Start"
+                    Content="{Binding Header, Source={x:Reference self}}" />
+                <BoxView
+                    BackgroundColor="#EBEDF2"
+                    HeightRequest="1" />
+            </StackLayout>
 
-                <StackLayout
-                    Grid.Row="2"
-                    IsVisible="{Binding HasFooter, Source={x:Reference self}}">
-                    <BoxView
-                        BackgroundColor="#EBEDF2"
-                        HeightRequest="1" />
-                    <ContentView
-                        Padding="10"
-                        Grid.Row="1"
-                        Content="{Binding Footer, Source={x:Reference self}}" />
+            <ContentView
+                Padding="20,10"
+                Grid.Row="1"
+                Content="{Binding Body, Source={x:Reference self}}" />
 
-                </StackLayout>
-            </Grid>
-        </Frame>
+            <StackLayout
+                Grid.Row="2"
+                IsVisible="{Binding HasFooter, Source={x:Reference self}}">
+                <BoxView
+                    BackgroundColor="#EBEDF2"
+                    HeightRequest="1" />
+                <ContentView
+                    Padding="10"
+                    Grid.Row="1"
+                    Content="{Binding Footer, Source={x:Reference self}}" />
+
+            </StackLayout>
+        </Grid>
+    </Frame>
 
 </ContentView>
