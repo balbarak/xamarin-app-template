@@ -29,19 +29,46 @@
                                 IsToggled="{Binding IsArabic}"
                                 OnColor="{DynamicResource BrandColor}"
                                 Grid.Column="1" />
+
                     </Grid>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Is Arabic" />
+
+                        <Switch
+                                HorizontalOptions="End"
+                                IsToggled="{Binding IsArabic}"
+                                OnColor="{DynamicResource BrandColor}"
+                                Grid.Column="1" />
+
+                    </StackLayout>
+
+                    <SearchBar
+                        Placeholder="Wrie"/>
+
                 </StackLayout>
 
 
             </local:Portlet.Body>
         </local:Portlet>
 
-       <TableView Margin="0" BackgroundColor="Transparent" Intent="Settings">
-                    <TableSection Title="Settings">
-                        <SwitchCell
+        <TableView Margin="0"
+                   BackgroundColor="White"
+                  Intent="Settings">
+            <TableSection
+                    Title="Language">
+                <SwitchCell
                             Text="sk me"/>
-                    </TableSection>
-                </TableView>
+
+                <TextCell
+                        Detail="Wehere you should go"
+                        Text="What is that dude"/>
+
+                <EntryCell
+                        Label="Write you Name:"
+                        Placeholder="Write your name"/>
+            </TableSection>
+        </TableView>
     </StackLayout>
 
 </local:BaseContentPage>
