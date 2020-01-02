@@ -14,24 +14,26 @@
         VerticalOptions="Start">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
             <StackLayout IsVisible="{Binding HasHeader, Source={x:Reference self}}">
                 <ContentView
-                    Padding="10"
+                    MinimumHeightRequest="50"
+                    Padding="15,10"
                     Grid.Row="1"
                     HorizontalOptions="Start"
                     Content="{Binding Header, Source={x:Reference self}}" />
                 <BoxView
                     BackgroundColor="#EBEDF2"
                     HeightRequest="1" />
+
             </StackLayout>
 
             <ContentView
-                Padding="20,10"
+                Padding="15,10"
                 Grid.Row="1"
                 Content="{Binding Body, Source={x:Reference self}}" />
 
@@ -42,7 +44,7 @@
                     BackgroundColor="#EBEDF2"
                     HeightRequest="1" />
                 <ContentView
-                    Padding="10"
+                    Padding="15,10"
                     Grid.Row="1"
                     Content="{Binding Footer, Source={x:Reference self}}" />
 

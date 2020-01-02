@@ -9,10 +9,11 @@
     xmlns:local="clr-namespace:XamarinAppTemplate"
     x:Class="XamarinAppTemplate.Views.CountryDetailsPage">
 
-    <local:Portlet Margin="10,20">
+    <local:Portlet>
         <local:Portlet.Header>
-
-            <Label Text="{Binding Country.Name}">
+            <Label
+                Margin="10,0"
+                Text="{Binding Country.Name}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span
@@ -20,25 +21,39 @@
                             Text="{Binding Country.Name}"/>
                         <Span
                             FontSize="Subtitle"
-                           
                             Text="{Binding Country.Capital,StringFormat='   {0}'}"/>
                     </FormattedString>
                 </Label.FormattedText>
-                </Label>
+            </Label>
 
         </local:Portlet.Header>
 
         <local:Portlet.Body>
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Frame
                     HasShadow="False"
                     Padding="1"
                     BorderColor="Black"
                     HorizontalOptions="Center"
                     VerticalOptions="Start">
-                <ffmpeg:CachedImage Source="{Binding Country.Image}"/>
+
+                    <ffmpeg:CachedImage Source="{Binding Country.Image}"/>
 
                 </Frame>
+
+                <StackLayout
+                    Margin="0,30"
+                    Grid.Row="1">
+                    <StackLayout Spacing="50" Orientation="Horizontal">
+                        <Label Text="Name" FontAttributes="Bold"/>
+                        <Label Text="Welcome thes is" HorizontalOptions="Start" />
+                    </StackLayout>
+                </StackLayout>
+
             </Grid>
         </local:Portlet.Body>
     </local:Portlet>

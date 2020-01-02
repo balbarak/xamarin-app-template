@@ -148,7 +148,7 @@
                 Padding="30,10"
                 Style="{StaticResource FlyoutItemStyle}">
                 <Label
-                    FontSize="Medium"
+                    FontSize="Subtitle"
                     TextColor="{DynamicResource FlyoutTextColor}"
                     Text="{Binding Title}">
                     <Label.Triggers>

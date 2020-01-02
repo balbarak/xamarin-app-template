@@ -13,7 +13,7 @@
 
             <CollectionView
                 x:Name="countryCollection"
-                Margin="10,0"
+                
                 VerticalScrollBarVisibility="Always"
                 ItemsUpdatingScrollMode="KeepScrollOffset"
                 SelectionMode="Single"
@@ -84,7 +84,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <local:Loading IsBusy="{Binding IsBusy}" />
         </Grid>
     </ContentPage.Content>
 </local:BaseContentPage>

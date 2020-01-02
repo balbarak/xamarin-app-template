@@ -9,9 +9,9 @@
     Title="Typography"
     x:Class="XamarinAppTemplate.Views.TypographyPage">
 
-    <ScrollView Padding="0,20">
+    <ScrollView Padding="0">
         <StackLayout
-            Padding="20,0"
+            Padding="0"
             Spacing="20">
             <Frame
                 HasShadow="False"

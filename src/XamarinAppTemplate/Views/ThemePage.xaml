@@ -10,8 +10,7 @@
 
     <Grid>
         <StackLayout
-            Spacing="20"
-            Margin="20">
+            Spacing="20">
             <local:Portlet>
 
                 <local:Portlet.Header>
@@ -82,7 +81,6 @@
 
         </StackLayout>
 
-        <local:Loading IsBusy="{Binding IsBusy}" />
     </Grid>
 
 </local:BaseContentPage>

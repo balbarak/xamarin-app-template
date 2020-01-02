@@ -8,57 +8,54 @@
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.SettingsPage">
 
-    <Grid>
-        <StackLayout Margin="20">
-            <local:Portlet>
-                <local:Portlet.Header>
+    <StackLayout Padding="0">
+        <local:Portlet>
+            <local:Portlet.Header>
+                <Grid>
+                    <Label Text="{Binding Title}" FontSize="Subtitle" />
+                </Grid>
+            </local:Portlet.Header>
+            <local:Portlet.Body>
+                <StackLayout Spacing="20">
                     <Grid>
-                        <Label Text="{Binding Title}" />
-                    </Grid>
-                </local:Portlet.Header>
-                <local:Portlet.Body>
-                    <StackLayout Spacing="20">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Hel" />
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Hel" />
 
-                            <Switch
+                        <Switch
                                 ThumbColor="Beige"
                                 HorizontalOptions="End"
                                 IsToggled="{Binding IsDarkTheme}"
                                 OnColor="{DynamicResource BrandColor}"
                                 Grid.Column="1" />
-                        </Grid>
+                    </Grid>
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Is Arabic" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Is Arabic" />
 
-                            <Switch
+                        <Switch
                                 ThumbColor="Beige"
                                 HorizontalOptions="End"
                                 IsToggled="{Binding IsArabic}"
                                 OnColor="{DynamicResource BrandColor}"
                                 Grid.Column="1" />
-                        </Grid>
+                    </Grid>
 
 
-                        <Button
+                    <Button
                             Text="Update Layout"
                             Clicked="Button_Clicked" />
-                    </StackLayout>
+                </StackLayout>
 
 
-                </local:Portlet.Body>
-            </local:Portlet>
-        </StackLayout>
+            </local:Portlet.Body>
+        </local:Portlet>
+    </StackLayout>
 
-        <local:Loading IsBusy="{Binding IsBusy}" />
-    </Grid>
 </local:BaseContentPage>

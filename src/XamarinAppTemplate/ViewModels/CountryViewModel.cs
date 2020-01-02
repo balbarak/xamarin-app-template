@@ -28,27 +28,35 @@ namespace XamarinAppTemplate.ViewModels
         {
             Title = Resx.AppResource.Countries;
 
+            await LoadCountries();
+
+        }
+
+
+        public async Task LoadCountries()
+        {
             IsBusy = true;
 
             await Task.WhenAny(App.InitialDatabaseTask);
 
             var countries = await _service.GetAll();
 
-            IsBusy = false;
-
             foreach (var item in countries)
             {
                 Countries.Add(new CountryWrapper(item));
-
-                //await Task.Delay(500);
+                await Task.Delay(10);
             }
 
-            
+            IsBusy = false;
+
 
         }
 
         public Task Details(object entity)
         {
+            if (entity == null)
+                return Task.CompletedTask;
+
             return _navService.PushAsync<CountryDetailsViewModel>(entity);
         }
     }

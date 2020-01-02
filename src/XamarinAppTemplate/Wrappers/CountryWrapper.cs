@@ -14,6 +14,8 @@ namespace XamarinAppTemplate.Wrappers
 
         public LocaleStringSqlite Capital => Model.Capital;
 
+        public int? Population => Model.Population;
+
         public CountryWrapper(Country model) : base(model)
         {
 

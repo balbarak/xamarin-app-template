@@ -6,18 +6,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="{DynamicResource PageBackgroundColor}"
     FlowDirection="{Binding FlowDirection}"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
     Title="{Binding Title}"
     Shell.NavBarHasShadow="True"
+    ControlTemplate="{StaticResource MainLayout}"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.BaseContentPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
 
     <Shell.TitleView>
         <Grid>

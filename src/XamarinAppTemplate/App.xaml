@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.App">
     <Application.Resources>
@@ -12,7 +13,15 @@
         <ResourceDictionary Source="Themes/LightTheme.xaml" />
         <ResourceDictionary Source="Styles/AppStyle.xaml" />
 
-        <!--<ResourceDictionary Source="Styles/RTLStyle.xaml" />-->
+        <ControlTemplate x:Key="MainLayout">
+            <Grid
+                Padding="0">
+
+                <ContentPresenter Padding="10" />
+                
+                <local:Loading IsBusy="{TemplateBinding BindingContext.IsBusy}"/>
+            </Grid>
+        </ControlTemplate>
 
     </Application.Resources>
 </Application>
