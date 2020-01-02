@@ -37,6 +37,8 @@ namespace XamarinAppTemplate.ViewModels
         {
             IsBusy = true;
 
+            bool isIos = Device.RuntimePlatform == Device.iOS;
+
             await Task.WhenAny(App.InitialDatabaseTask);
 
             var countries = await _service.GetAll();
@@ -44,7 +46,9 @@ namespace XamarinAppTemplate.ViewModels
             foreach (var item in countries)
             {
                 Countries.Add(new CountryWrapper(item));
-                await Task.Delay(10);
+
+                if (isIos)
+                    await Task.Delay(10);
             }
 
             IsBusy = false;

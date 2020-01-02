@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.SettingsPage">
 
-    <StackLayout Padding="0">
+    <StackLayout Spacing="20" Padding="0">
         <local:Portlet>
             <local:Portlet.Header>
                 <Grid>
@@ -22,40 +22,26 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Text="Hel" />
-
-                        <Switch
-                                ThumbColor="Beige"
-                                HorizontalOptions="End"
-                                IsToggled="{Binding IsDarkTheme}"
-                                OnColor="{DynamicResource BrandColor}"
-                                Grid.Column="1" />
-                    </Grid>
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
                         <Label Text="Is Arabic" />
 
                         <Switch
-                                ThumbColor="Beige"
                                 HorizontalOptions="End"
                                 IsToggled="{Binding IsArabic}"
                                 OnColor="{DynamicResource BrandColor}"
                                 Grid.Column="1" />
                     </Grid>
-
-
-                    <Button
-                            Text="Update Layout"
-                            Clicked="Button_Clicked" />
                 </StackLayout>
 
 
             </local:Portlet.Body>
         </local:Portlet>
+
+       <TableView Margin="0" BackgroundColor="Transparent" Intent="Settings">
+                    <TableSection Title="Settings">
+                        <SwitchCell
+                            Text="sk me"/>
+                    </TableSection>
+                </TableView>
     </StackLayout>
 
 </local:BaseContentPage>
