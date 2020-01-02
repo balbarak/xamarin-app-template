@@ -4,15 +4,43 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ffmpeg="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     mc:Ignorable="d"
     xmlns:local="clr-namespace:XamarinAppTemplate"
     x:Class="XamarinAppTemplate.Views.CountryDetailsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label
-                Text="Country Details Page"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <local:Portlet Margin="10,20">
+        <local:Portlet.Header>
+
+            <Label Text="{Binding Country.Name}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            FontSize="Title"
+                            Text="{Binding Country.Name}"/>
+                        <Span
+                            FontSize="Subtitle"
+                           
+                            Text="{Binding Country.Capital,StringFormat='   {0}'}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                </Label>
+
+        </local:Portlet.Header>
+
+        <local:Portlet.Body>
+            <Grid>
+                <Frame
+                    HasShadow="False"
+                    Padding="1"
+                    BorderColor="Black"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start">
+                <ffmpeg:CachedImage Source="{Binding Country.Image}"/>
+
+                </Frame>
+            </Grid>
+        </local:Portlet.Body>
+    </local:Portlet>
+
 </local:BaseContentPage>
