@@ -22,7 +22,7 @@
                 ItemsSource="{Binding Countries}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout
-                        ItemSpacing="20"
+                        ItemSpacing="10"
                         Orientation="Vertical" />
 
                 </CollectionView.ItemsLayout>
