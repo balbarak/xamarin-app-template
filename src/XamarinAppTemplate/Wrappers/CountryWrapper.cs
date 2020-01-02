@@ -12,6 +12,8 @@ namespace XamarinAppTemplate.Wrappers
 
         public ImageSource Image => ImageSource.FromResource($"XamarinAppTemplate.Images.flags.{Model.Id}.png");
 
+        public LocaleStringSqlite Capital => Model.Capital;
+
         public CountryWrapper(Country model) : base(model)
         {
 

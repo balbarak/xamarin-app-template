@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace XamarinAppTemplate.Behaviors
+namespace XamarinAppTemplate
 {
     public class TapBehavior : Behavior<Frame>
     {

@@ -88,6 +88,8 @@ namespace XamarinAppTemplate.Services
             _mappings.Add(typeof(SettingsViewModel),typeof(SettingsPage));
 
             _mappings.Add(typeof(CountryViewModel), typeof(CountryPage));
+
+            _mappings.Add(typeof(CountryDetailsViewModel), typeof(CountryDetailsPage));
         }
     }
 }

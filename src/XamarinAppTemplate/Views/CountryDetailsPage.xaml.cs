@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace XamarinAppTemplate.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CountryDetailsPage : ContentPage
+    public partial class CountryDetailsPage : BaseContentPage
     {
         public CountryDetailsPage()
         {

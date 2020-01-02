@@ -12,9 +12,13 @@
         <Grid>
 
             <CollectionView
+                x:Name="countryCollection"
                 Margin="10,0"
                 VerticalScrollBarVisibility="Always"
                 ItemsUpdatingScrollMode="KeepScrollOffset"
+                SelectionMode="Single"
+                SelectionChangedCommand="{Binding DetailsCommand}"
+                SelectionChangedCommandParameter="{Binding Source={x:Reference countryCollection}, Path=SelectedItem}"
                 ItemsSource="{Binding Countries}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout
@@ -26,13 +30,15 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame
-                            HeightRequest="80"
+                            VerticalOptions="Center"
+                            HeightRequest="50"
                             Padding="10"
                             Margin="50,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="80" />
                                     <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
 
                                 <Frame
@@ -50,15 +56,26 @@
                                         Source="{Binding Image}" />
                                 </Frame>
 
-                                <StackLayout Grid.Column="1">
+                                <StackLayout
+                                    Margin="10,0"
+                                    Spacing="1"
+                                    Grid.Column="1">
                                     <Label
                                         FontSize="Subtitle"
                                         FontAttributes="Bold"
                                         Text="{Binding Name}" />
                                     <Label
                                         FontSize="Caption"
-                                        Text="{Binding Model.Capital}" />
+                                        Text="{Binding Capital}" />
                                 </StackLayout>
+
+                                <Label
+                                    Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    Style="{StaticResource FontIcon-FA-Solid}"
+                                    FontSize="Caption"
+                                    TextColor="{DynamicResource TextColor}"
+                                    Text="{x:Static local:FontAwsomeSolidIcons.CHEVRON_RIGHT}" />
 
                             </Grid>
                         </Frame>
