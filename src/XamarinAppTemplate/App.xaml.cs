@@ -19,12 +19,14 @@ namespace XamarinAppTemplate
 
             Startup.Configure();
 
+            InitialDatabaseTask = XamarinAppTemplateDbContext.InitDatabase();
+
             MainPage = new AppShell();
         }
 
         protected override void OnStart()
         {
-            InitialDatabaseTask = XamarinAppTemplateDbContext.InitDatabase();
+
         }
 
         protected override void OnSleep()

@@ -30,7 +30,7 @@ namespace XamarinAppTemplate.ViewModels
 
             IsBusy = true;
 
-            await Task.WhenAll(App.InitialDatabaseTask);
+            await Task.WhenAny(App.InitialDatabaseTask);
 
             var countries = await _service.GetAll();
 
