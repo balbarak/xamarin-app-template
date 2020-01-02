@@ -30,6 +30,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame
+                            HasShadow="False"
                             VerticalOptions="Center"
                             HeightRequest="50"
                             Padding="10"
