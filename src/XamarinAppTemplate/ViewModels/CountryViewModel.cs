@@ -28,8 +28,9 @@ namespace XamarinAppTemplate.ViewModels
         {
             Title = Resx.AppResource.Countries;
 
-
             IsBusy = true;
+
+            await Task.WhenAll(App.InitialDatabaseTask);
 
             var countries = await _service.GetAll();
 

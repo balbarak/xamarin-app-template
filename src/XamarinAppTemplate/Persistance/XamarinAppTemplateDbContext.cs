@@ -53,7 +53,7 @@ namespace XamarinAppTemplate.Persistance
 
         public static Task<XamarinAppTemplateDbContext> InitDatabase()
         {
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
                 if (!Directory.Exists(MobileAppSettings.DATABASE_FOLDER_PATH))
                 {
@@ -64,6 +64,8 @@ namespace XamarinAppTemplate.Persistance
 
                 context.Database.Migrate();
                 context.Database.EnsureCreated();
+
+                await context.EnsureSeeding();
 
                 return context;
             });

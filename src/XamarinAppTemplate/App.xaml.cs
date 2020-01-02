@@ -10,6 +10,8 @@ namespace XamarinAppTemplate
 {
     public partial class App : Application
     {
+        public static Task InitialDatabaseTask { get; private set; }
+
 
         public App()
         {
@@ -20,11 +22,9 @@ namespace XamarinAppTemplate
             MainPage = new AppShell();
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
-            var context = await XamarinAppTemplateDbContext.InitDatabase();
-
-            await context.EnsureSeeding();
+            InitialDatabaseTask = XamarinAppTemplateDbContext.InitDatabase();
         }
 
         protected override void OnSleep()

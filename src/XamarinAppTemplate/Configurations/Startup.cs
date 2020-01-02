@@ -15,6 +15,8 @@ namespace XamarinAppTemplate
 
         public static void Configure()
         {
+            SQLitePCL.Batteries.Init();
+
             ConfigureServices(_serviceCollection);
 
             AppServiceLocator.Configure(_serviceCollection);
