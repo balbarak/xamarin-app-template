@@ -162,4 +162,19 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="Capital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>Populations</value>
+  </data>
+  <data name="PhoneCode" xml:space="preserve">
+    <value>Phone Code</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

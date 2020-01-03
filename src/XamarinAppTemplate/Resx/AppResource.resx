@@ -162,4 +162,19 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="Capital" xml:space="preserve">
+    <value>العاصمة</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>التعداد السكاني</value>
+  </data>
+  <data name="PhoneCode" xml:space="preserve">
+    <value>مفتاح الخط</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>الرمز</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
 </root>

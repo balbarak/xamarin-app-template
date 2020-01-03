@@ -5,10 +5,23 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ffmpeg="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
     xmlns:local="clr-namespace:XamarinAppTemplate"
     x:Class="XamarinAppTemplate.Views.CountryDetailsPage">
 
+    <local:BaseContentPage.Resources>
+        <Style
+            x:Key="LabelText"
+            TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        <Style
+            x:Key="LabelValue"
+            TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="End" />
+        </Style>
+    </local:BaseContentPage.Resources>
     <local:Portlet>
         <local:Portlet.Header>
             <StackLayout
@@ -50,16 +63,148 @@
                 <StackLayout
                     Margin="0,30"
                     Grid.Row="1">
-                    <StackLayout
-                        Spacing="50"
-                        Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
                         <Label
-                            Text="Name"
-                            FontAttributes="Bold" />
+                            Style="{StaticResource LabelText}"
+                            Text="{Static resx:AppResource.Name}" />
                         <Label
-                            Text="Welcome thes is"
-                            HorizontalOptions="Start" />
-                    </StackLayout>
+                            Style="{StaticResource LabelValue}"
+                            Text="{Binding Country.Name}"
+                            Grid.Column="1" />
+
+                        <BoxView
+                            Grid.Row="1"
+                            HeightRequest="1"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="LightGray" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Style="{StaticResource LabelText}"
+                            Text="{Static resx:AppResource.Capital}" />
+                        <Label
+                            Style="{StaticResource LabelValue}"
+                            Text="{Binding Country.Model.Capital, StringFormat='{0:N0}'}"
+                            Grid.Column="1" />
+
+                        <BoxView
+                            Grid.Row="1"
+                            HeightRequest="1"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="LightGray" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Style="{StaticResource LabelText}"
+                            Text="{Static resx:AppResource.Population}" />
+                        <Label
+                            Style="{StaticResource LabelValue}"
+                            Text="{Binding Country.Model.Population, StringFormat='{0:N0}'}"
+                            Grid.Column="1" />
+
+                        <BoxView
+                            Grid.Row="1"
+                            HeightRequest="1"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="LightGray" />
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Style="{StaticResource LabelText}"
+                            Text="{Static resx:AppResource.Code}" />
+                        <Label
+                            Style="{StaticResource LabelValue}"
+                            Text="{Binding Country.Model.CodeTwo}"
+                            Grid.Column="1" />
+
+                        <BoxView
+                            Grid.Row="1"
+                            HeightRequest="1"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="LightGray" />
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Style="{StaticResource LabelText}"
+                            Text="{Static resx:AppResource.Code}" />
+                        <Label
+                            Style="{StaticResource LabelValue}"
+                            Text="{Binding Country.Model.Id}"
+                            Grid.Column="1" />
+
+                        <BoxView
+                            Grid.Row="1"
+                            HeightRequest="1"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="LightGray" />
+                    </Grid>
+
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Style="{StaticResource LabelText}"
+                            Text="{Static resx:AppResource.PhoneCode}" />
+                        <Label
+                            Style="{StaticResource LabelValue}"
+                            Text="{Binding Country.Model.PhoneCode, StringFormat='+{0}'}"
+                            Grid.Column="1" />
+
+                        <BoxView
+                            Grid.Row="1"
+                            HeightRequest="1"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="LightGray" />
+                    </Grid>
                 </StackLayout>
 
             </Grid>

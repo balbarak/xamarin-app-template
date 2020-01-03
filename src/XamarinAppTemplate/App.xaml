@@ -14,12 +14,11 @@
         <ResourceDictionary Source="Styles/AppStyle.xaml" />
 
         <ControlTemplate x:Key="MainLayout">
-            <Grid
-                Padding="0">
+            <Grid Padding="0">
 
                 <ContentPresenter Padding="10" />
-                
-                <local:Loading IsBusy="{TemplateBinding BindingContext.IsBusy}"/>
+
+                <local:Loading IsBusy="{TemplateBinding BindingContext.IsBusy}" />
             </Grid>
         </ControlTemplate>
 
