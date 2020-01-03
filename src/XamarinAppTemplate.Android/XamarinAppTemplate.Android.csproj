@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Lang\LanguageManagerAndroid.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renders\AppEntryRenderer.cs" />
+    <Compile Include="Renders\FormGroupEntryRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

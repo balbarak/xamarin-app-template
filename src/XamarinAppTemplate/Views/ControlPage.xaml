@@ -15,6 +15,28 @@
 
             <local:Portlet>
                 <local:Portlet.Header>
+                    <Label Text="Inputs" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <Entry Placeholder="Write your name" />
+
+
+                        <StackLayout Spacing="0">
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Default Editor Input" />
+                            <Editor Placeholder="Write your name" />
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+
+            <local:Portlet>
+                <local:Portlet.Header>
                     <Label Text="Checkbox" />
                 </local:Portlet.Header>
                 <local:Portlet.Body>
@@ -112,32 +134,6 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
-            <local:Portlet>
-                <local:Portlet.Header>
-                    <Label Text="Inputs" />
-                </local:Portlet.Header>
-                <local:Portlet.Body>
-                    <StackLayout>
-                        <StackLayout Spacing="0">
-                            <Label
-                                VerticalOptions="Center"
-                                Text="Default Entry Input" />
-                            <Entry Placeholder="Write your name" />
-
-                        </StackLayout>
-
-                        <StackLayout Spacing="0">
-                            <Label
-                                VerticalOptions="Center"
-                                Text="Default Editor Input" />
-                            <Editor Placeholder="Write your name" />
-
-                        </StackLayout>
-
-
-                    </StackLayout>
-                </local:Portlet.Body>
-            </local:Portlet>
 
             <local:Portlet>
                 <local:Portlet.Header>
