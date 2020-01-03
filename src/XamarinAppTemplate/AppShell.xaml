@@ -64,19 +64,19 @@
 
 
     <FlyoutItem
-        Route="settings"
-        Title="{x:Static res:AppResource.Settings}">
-        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
-    </FlyoutItem>
-
-
-    <FlyoutItem
         Route="controls"
         Title="{x:Static res:AppResource.Controls}">
         <ShellContent
             Title="{x:Static res:AppResource.Controls}"
             ContentTemplate="{DataTemplate local:ControlPage}" />
     </FlyoutItem>
+
+    <FlyoutItem
+        Route="settings"
+        Title="{x:Static res:AppResource.Settings}">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
+
 
     <FlyoutItem
         Route="country"

@@ -11,6 +11,7 @@ using Plugin.Toasts;
 using Microsoft.Extensions.DependencyInjection;
 using XamarinAppTemplate.Droid.Lang;
 using Plugin.CurrentActivity;
+using TouchEffect.Android;
 
 namespace XamarinAppTemplate.Droid
 {
@@ -48,6 +49,8 @@ namespace XamarinAppTemplate.Droid
         private void RegisterPlugins(Bundle bundle)
         {
             DependencyService.Register<ToastNotification>();
+
+            TouchEffectPreserver.Preserve();
 
             ToastNotification.Init(this);
 

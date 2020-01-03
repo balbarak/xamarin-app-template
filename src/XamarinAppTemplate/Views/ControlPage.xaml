@@ -5,6 +5,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:XamarinAppTemplate"
+    xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.ControlPage">
 
@@ -13,6 +14,48 @@
             Padding="0"
             Spacing="10">
 
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Touch Effects Ripple" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout Spacing="20">
+                        <Frame
+                            Padding="0"
+                            CornerRadius="15"
+                            BorderColor="{DynamicResource BrandColor}">
+                            <Grid
+                                touch:TouchEff.NativeAnimation="True"
+                                Padding="10"
+                                HeightRequest="30">
+                                <Label
+                                    Text="Native Touch"
+                                    VerticalOptions="Center" />
+
+                                <Grid.Effects>
+                                    <touch:TouchEff />
+                                </Grid.Effects>
+                            </Grid>
+                        </Frame>
+
+                        <Grid
+                            touch:TouchEff.NativeAnimation="True"
+                            HeightRequest="30"
+                            Padding="10"
+                            BackgroundColor="LightGray">
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Custom Touch" />
+
+                            <Grid.Effects>
+                                <touch:TouchEff />
+                            </Grid.Effects>
+                        </Grid>
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
             <local:Portlet>
                 <local:Portlet.Header>
                     <Label Text="Inputs" />

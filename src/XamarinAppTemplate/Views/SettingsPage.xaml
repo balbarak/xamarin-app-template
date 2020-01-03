@@ -4,15 +4,35 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     xmlns:local="clr-namespace:XamarinAppTemplate"
+    xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.SettingsPage">
 
-    <StackLayout Spacing="20" Padding="0">
+    <StackLayout>
+
+        <Frame Padding="0">
+            <Grid
+                HeightRequest="100"
+                touch:TouchEff.NativeAnimation="True">
+                <Label Text="Click Me mother fuckder" />
+                <Grid.Effects>
+                    <touch:TouchEff />
+                </Grid.Effects>
+            </Grid>
+        </Frame>
+    </StackLayout>
+
+    <!--<StackLayout
+        Spacing="20"
+        Padding="0">
         <local:Portlet>
             <local:Portlet.Header>
                 <Grid>
-                    <Label Text="{Binding Title}" FontSize="Subtitle" />
+                    <Label
+                        Text="{Binding Title}"
+                        FontSize="Subtitle" />
                 </Grid>
             </local:Portlet.Header>
             <local:Portlet.Body>
@@ -25,10 +45,10 @@
                         <Label Text="Is Arabic" />
 
                         <Switch
-                                HorizontalOptions="End"
-                                IsToggled="{Binding IsArabic}"
-                                OnColor="{DynamicResource BrandColor}"
-                                Grid.Column="1" />
+                            HorizontalOptions="End"
+                            IsToggled="{Binding IsArabic}"
+                            OnColor="{DynamicResource BrandColor}"
+                            Grid.Column="1" />
 
                     </Grid>
 
@@ -36,15 +56,14 @@
                         <Label Text="Is Arabic" />
 
                         <Switch
-                                HorizontalOptions="End"
-                                IsToggled="{Binding IsArabic}"
-                                OnColor="{DynamicResource BrandColor}"
-                                Grid.Column="1" />
+                            HorizontalOptions="End"
+                            IsToggled="{Binding IsArabic}"
+                            OnColor="{DynamicResource BrandColor}"
+                            Grid.Column="1" />
 
                     </StackLayout>
 
-                    <SearchBar
-                        Placeholder="Wrie"/>
+                    <SearchBar Placeholder="Wrie" />
 
                 </StackLayout>
 
@@ -52,23 +71,7 @@
             </local:Portlet.Body>
         </local:Portlet>
 
-        <TableView Margin="0"
-                   BackgroundColor="White"
-                  Intent="Settings">
-            <TableSection
-                    Title="Language">
-                <SwitchCell
-                            Text="sk me"/>
 
-                <TextCell
-                        Detail="Wehere you should go"
-                        Text="What is that dude"/>
-
-                <EntryCell
-                        Label="Write you Name:"
-                        Placeholder="Write your name"/>
-            </TableSection>
-        </TableView>
-    </StackLayout>
+    </StackLayout>-->
 
 </local:BaseContentPage>

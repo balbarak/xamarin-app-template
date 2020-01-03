@@ -26,6 +26,8 @@ namespace XamarinAppTemplate
         {
 
         }
+
+        
         public TapBehavior(Color tappedColor)
         {
             TappedColor = tappedColor;

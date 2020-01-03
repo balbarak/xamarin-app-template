@@ -6,6 +6,7 @@ using FFImageLoading.Svg.Forms;
 using Foundation;
 using Microsoft.Extensions.DependencyInjection;
 using Plugin.Toasts;
+using TouchEffect.iOS;
 using UIKit;
 using Xamarin.Forms;
 using XamarinAppTemplate.iOS.Lang;
@@ -50,6 +51,8 @@ namespace XamarinAppTemplate.iOS
         private void SetupPlugins()
         {
             DependencyService.Register<ToastNotification>();
+            
+            TouchEffectPreserver.Preserve();
 
             ToastNotification.Init();
 

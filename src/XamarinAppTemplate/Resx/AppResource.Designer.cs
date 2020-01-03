@@ -61,6 +61,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to العربية.
+        /// </summary>
+        public static string Arabic {
+            get {
+                return ResourceManager.GetString("Arabic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to هل أنت متأكد ؟.
         /// </summary>
         public static string AreYouSure {
@@ -102,6 +111,33 @@ namespace XamarinAppTemplate.Resx {
         public static string Countries {
             get {
                 return ResourceManager.GetString("Countries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Dark.
+        /// </summary>
+        public static string IsDarkTheme {
+            get {
+                return ResourceManager.GetString("IsDarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اللغة.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
             }
         }
         

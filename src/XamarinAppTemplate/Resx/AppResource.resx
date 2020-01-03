@@ -150,4 +150,16 @@
   <data name="Yes" xml:space="preserve">
     <value>نعم</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="IsDarkTheme" xml:space="preserve">
+    <value>Is Dark</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
 </root>
