@@ -52,6 +52,8 @@ namespace XamarinAppTemplate.Droid
 
             TouchEffectPreserver.Preserve();
 
+            Xamarin.Forms.Svg.Droid.SvgImage.Init(this); //need to write here
+
             ToastNotification.Init(this);
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: false);

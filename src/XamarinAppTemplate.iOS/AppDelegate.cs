@@ -56,6 +56,9 @@ namespace XamarinAppTemplate.iOS
 
             ToastNotification.Init();
 
+            Xamarin.Forms.Svg.iOS.SvgImage.Init();  //need to write here
+
+
             var ignore = typeof(SvgCachedImage);
             CachedImageRenderer.Init(); // Initializing FFImageLoading
         }

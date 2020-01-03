@@ -4,13 +4,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
     xmlns:local="clr-namespace:XamarinAppTemplate"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.ThemePage">
 
     <Grid>
-        <StackLayout
-            Spacing="20">
+        <StackLayout Spacing="20">
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Svg Icons" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="10">
+                        <Label TextColor="{DynamicResource BrandColor}" />
+                        <Image
+                            WidthRequest="30"
+                            Source="{local:SvgImageResource Color={DynamicResource BrandColor},
+                                                            Source={x:Static local:SvgIcons.ADDRESS_BOOK}}" />
+                        <Image
+                            WidthRequest="30"
+                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PLUS},
+                                                            Color=Blue}" />
+                        <Image
+                            WidthRequest="30"
+                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PHONE},
+                                                            Color=Blue}" />
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
             <local:Portlet>
 
                 <local:Portlet.Header>

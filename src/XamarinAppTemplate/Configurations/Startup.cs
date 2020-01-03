@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FFImageLoading.Svg.Forms;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,8 @@ namespace XamarinAppTemplate
             SQLitePCL.Batteries.Init();
 
             ConfigureServices(_serviceCollection);
+
+            Xamarin.Forms.Svg.SvgImageSource.RegisterAssembly();
 
             AppServiceLocator.Configure(_serviceCollection);
         }

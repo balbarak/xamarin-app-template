@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFImageLoading.Svg.Forms;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

@@ -62,6 +62,13 @@
         <vm:AppShellViewModel />
     </Shell.BindingContext>
 
+    <FlyoutItem
+        Route="theme"
+        Title="{x:Static res:AppResource.Themes}">
+        <ShellContent
+            Title="Theme"
+            ContentTemplate="{DataTemplate local:ThemePage}" />
+    </FlyoutItem>
 
     <FlyoutItem
         Route="controls"
@@ -89,13 +96,6 @@
     </FlyoutItem>
 
 
-    <FlyoutItem
-        Route="theme"
-        Title="{x:Static res:AppResource.Themes}">
-        <ShellContent
-            Title="Theme"
-            ContentTemplate="{DataTemplate local:ThemePage}" />
-    </FlyoutItem>
 
 
 

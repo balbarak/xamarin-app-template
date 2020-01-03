@@ -12,6 +12,7 @@ namespace XamarinAppTemplate
         public AppShell()
         {
             InitializeComponent();
+
         }
 
         protected override void OnNavigating(ShellNavigatingEventArgs args)
