@@ -71,6 +71,8 @@
             ContentTemplate="{DataTemplate local:ControlPage}" />
     </FlyoutItem>
 
+
+
     <FlyoutItem
         Route="settings"
         Title="{x:Static res:AppResource.Settings}">
