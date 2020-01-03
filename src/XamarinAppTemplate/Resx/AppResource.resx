@@ -126,6 +126,9 @@
   <data name="ChangeLangugeMsg" xml:space="preserve">
     <value>تغيير اللغة سيؤدي الى اعادة التطبيق من البداية</value>
   </data>
+  <data name="Controls" xml:space="preserve">
+    <value>مدخلات</value>
+  </data>
   <data name="Countries" xml:space="preserve">
     <value>الدول</value>
   </data>

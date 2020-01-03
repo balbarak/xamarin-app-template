@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    mc:Ignorable="d"
+    x:Class="XamarinAppTemplate.Views.ControlPage">
+
+    <ScrollView>
+        <StackLayout
+            Padding="0"
+            Spacing="10">
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Checkbox" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="1">
+                            <CheckBox
+                                x:Name="chk1"
+                                VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Normal Checkbox" />
+                        </StackLayout>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="1">
+                            <CheckBox
+                                x:Name="chk2"
+                                VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                TextDecorations="None"
+                                Text="Checkbox With trigger">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Source={x:Reference chk2}, Path=IsChecked}"
+                                        Value="true">
+                                        <Setter Property="TextColor" Value="{DynamicResource SuccessColor}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="1">
+                            <CheckBox
+                                x:Name="chk3"
+                                VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                TextDecorations="None"
+                                Text="Checkbox With text changed">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Source={x:Reference chk3}, Path=IsChecked}"
+                                        Value="true">
+                                        <Setter Property="Text" Value="Checked" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Switches" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Switch
+                                x:Name="sw1"
+                                VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Switch One" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Switch
+                                x:Name="sw2"
+                                VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Off">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Source={x:Reference sw2}, Path=IsToggled}"
+                                        Value="true">
+                                        <Setter Property="Text" Value="On" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Inputs" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Default Entry Input" />
+                            <Entry Placeholder="Write your name" />
+
+                        </StackLayout>
+
+                        <StackLayout Spacing="0">
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Default Editor Input" />
+                            <Editor Placeholder="Write your name" />
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Swipes" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    Text="Favorite"
+                                    BackgroundColor="LightGreen" />
+                                <SwipeItem
+                                    Text="Delete"
+                                    BackgroundColor="LightPink" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    Text="Favorite"
+                                    BackgroundColor="LightGreen" />
+                                <SwipeItem
+                                    Text="Delete"
+                                    BackgroundColor="LightPink" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <!--  Content  -->
+                        <Frame
+                            HasShadow="False"
+                            Padding="0"
+                            HeightRequest="40"
+                            WidthRequest="300"
+                            BackgroundColor="{DynamicResource BrandColor}">
+                            <Label
+                                Text="Swipe right"
+                                TextColor="{DynamicResource TextColorReverse}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </SwipeView>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Searchbar" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <SearchBar Placeholder="Search for text" />
+                </local:Portlet.Body>
+            </local:Portlet>
+        </StackLayout>
+    </ScrollView>
+</local:BaseContentPage>

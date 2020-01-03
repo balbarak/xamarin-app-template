@@ -88,6 +88,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مدخلات.
+        /// </summary>
+        public static string Controls {
+            get {
+                return ResourceManager.GetString("Controls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الدول.
         /// </summary>
         public static string Countries {

@@ -62,6 +62,15 @@
         <vm:AppShellViewModel />
     </Shell.BindingContext>
 
+
+    <FlyoutItem
+        Route="controls"
+        Title="{x:Static res:AppResource.Controls}">
+        <ShellContent
+            Title="{x:Static res:AppResource.Controls}"
+            ContentTemplate="{DataTemplate local:ControlPage}" />
+    </FlyoutItem>
+
     <FlyoutItem
         Route="country"
         Title="{x:Static res:AppResource.Countries}">
