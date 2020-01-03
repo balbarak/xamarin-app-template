@@ -6,6 +6,7 @@
 
     <Style TargetType="Label">
         <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="FontSize" Value="Medium" />
         <Setter Property="FontFamily" Value="{StaticResource TajawalFont}" />
     </Style>
 

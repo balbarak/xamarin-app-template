@@ -12,16 +12,37 @@
 
     <StackLayout>
 
-        <Frame Padding="0">
-            <Grid
-                HeightRequest="100"
-                touch:TouchEff.NativeAnimation="True">
-                <Label Text="Click Me mother fuckder" />
-                <Grid.Effects>
-                    <touch:TouchEff />
-                </Grid.Effects>
-            </Grid>
-        </Frame>
+        <local:Portlet>
+            <local:Portlet.Header>
+                <Label Text="{Static resx:AppResource.Language}" />
+            </local:Portlet.Header>
+            <local:Portlet.Body>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Static resx:AppResource.Arabic}">
+                        <Label.Triggers>
+                            <DataTrigger
+                                TargetType="Label"
+                                Binding="{Binding Source={x:Reference langSwitch}, Path=IsToggled}"
+                                Value="true">
+                                <Setter Property="Text" Value="{Static resx:AppResource.English}" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
+                    <Switch
+                        x:Name="langSwitch"
+                        HorizontalOptions="End"
+                        IsToggled="{Binding IsArabic}"
+                        OnColor="{DynamicResource BrandColor}"
+                        Grid.Column="1" />
+
+                </Grid>
+            </local:Portlet.Body>
+        </local:Portlet>
     </StackLayout>
 
     <!--<StackLayout
@@ -37,20 +58,7 @@
             </local:Portlet.Header>
             <local:Portlet.Body>
                 <StackLayout Spacing="20">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Is Arabic" />
 
-                        <Switch
-                            HorizontalOptions="End"
-                            IsToggled="{Binding IsArabic}"
-                            OnColor="{DynamicResource BrandColor}"
-                            Grid.Column="1" />
-
-                    </Grid>
 
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Is Arabic" />

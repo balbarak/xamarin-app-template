@@ -11,28 +11,30 @@
 
     <local:Portlet>
         <local:Portlet.Header>
-            <Label
-                Margin="10,0"
-                Text="{Binding Country.Name}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span
-                            FontSize="Title"
-                            Text="{Binding Country.Name}"/>
-                        <Span
-                            FontSize="Subtitle"
-                            Text="{Binding Country.Capital,StringFormat='   {0}'}"/>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            <StackLayout
+                HeightRequest="40"
+                Orientation="Horizontal">
+
+                <Label
+                    FontSize="Title"
+                    VerticalOptions="Center"
+                    LineBreakMode="TailTruncation"
+                    TextType="Html"
+                    Text="{Binding Country.Name}" />
+
+                <Label
+                    FontSize="Subtitle"
+                    VerticalOptions="Center"
+                    Text="{Binding Country.Capital}" />
+            </StackLayout>
 
         </local:Portlet.Header>
 
         <local:Portlet.Body>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Frame
                     HasShadow="False"
@@ -41,16 +43,22 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Start">
 
-                    <ffmpeg:CachedImage Source="{Binding Country.Image}"/>
+                    <ffmpeg:CachedImage Source="{Binding Country.Image}" />
 
                 </Frame>
 
                 <StackLayout
                     Margin="0,30"
                     Grid.Row="1">
-                    <StackLayout Spacing="50" Orientation="Horizontal">
-                        <Label Text="Name" FontAttributes="Bold"/>
-                        <Label Text="Welcome thes is" HorizontalOptions="Start" />
+                    <StackLayout
+                        Spacing="50"
+                        Orientation="Horizontal">
+                        <Label
+                            Text="Name"
+                            FontAttributes="Bold" />
+                        <Label
+                            Text="Welcome thes is"
+                            HorizontalOptions="Start" />
                     </StackLayout>
                 </StackLayout>
 
