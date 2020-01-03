@@ -24,22 +24,14 @@
     </local:BaseContentPage.Resources>
     <local:Portlet>
         <local:Portlet.Header>
-            <StackLayout
-                HeightRequest="40"
-                Orientation="Horizontal">
 
-                <Label
-                    FontSize="Title"
-                    VerticalOptions="Center"
-                    LineBreakMode="TailTruncation"
-                    TextType="Html"
-                    Text="{Binding Country.Name}" />
+            <Label
+                FontSize="Title"
+                VerticalOptions="Center"
+                LineBreakMode="TailTruncation"
+                Text="{Binding Country.Name}" />
 
-                <Label
-                    FontSize="Subtitle"
-                    VerticalOptions="Center"
-                    Text="{Binding Country.Capital}" />
-            </StackLayout>
+
 
         </local:Portlet.Header>
 
