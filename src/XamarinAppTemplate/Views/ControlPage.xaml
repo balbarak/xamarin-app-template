@@ -24,12 +24,14 @@
                         <Frame
                             Padding="0"
                             CornerRadius="15"
+                            HasShadow="False"
                             BorderColor="{DynamicResource BrandColor}">
                             <Grid
                                 touch:TouchEff.NativeAnimation="True"
                                 Padding="10"
                                 HeightRequest="30">
                                 <Label
+                                    HorizontalOptions="Center"
                                     Text="Native Touch"
                                     VerticalOptions="Center" />
 
@@ -39,20 +41,44 @@
                             </Grid>
                         </Frame>
 
+
+                        <Frame
+                            Padding="0"
+                            CornerRadius="15"
+                            HasShadow="False"
+                            BorderColor="{DynamicResource BrandColor}">
+                            <Grid
+                                touch:TouchEff.NativeAnimation="True"
+                                touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
+                                Padding="10"
+                                HeightRequest="30">
+                                <Label
+                                    Text="Native Touch"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+
+                                <Grid.Effects>
+                                    <touch:TouchEff />
+                                </Grid.Effects>
+                            </Grid>
+                        </Frame>
+
+
                         <Grid
                             touch:TouchEff.NativeAnimation="True"
+                            touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
                             HeightRequest="30"
                             Padding="10"
                             BackgroundColor="LightGray">
                             <Label
                                 VerticalOptions="Center"
-                                Text="Custom Touch" />
+                                HorizontalOptions="Center"
+                                Text="Native Touch With Color" />
 
                             <Grid.Effects>
                                 <touch:TouchEff />
                             </Grid.Effects>
                         </Grid>
-
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
