@@ -95,8 +95,7 @@
             ContentTemplate="{DataTemplate local:ThemePage}">
             <ShellContent.Icon>
                 <all:FontIcon
-                    Glyph="{Static all:Icons.FEATHER}"
-                    Color="{DynamicResource FlyoutTextColor}" />
+                    Glyph="{Static all:Icons.FEATHER}" />
             </ShellContent.Icon>
         </ShellContent>
 
@@ -105,8 +104,7 @@
             ContentTemplate="{DataTemplate local:ControlPage}">
             <ShellContent.Icon>
                 <all:FontIcon
-                    Glyph="{Static all:Icons.COG}"
-                    Color="{DynamicResource FlyoutTextColor}" />
+                    Glyph="{Static all:Icons.COG}" />
             </ShellContent.Icon>
         </ShellContent>
 
@@ -115,8 +113,7 @@
             ContentTemplate="{DataTemplate local:CountryPage}">
             <ShellContent.Icon>
                 <all:FontIcon
-                    Glyph="{Static all:Icons.LIST}"
-                    Color="{DynamicResource FlyoutTextColor}" />
+                    Glyph="{Static all:Icons.LIST}" />
             </ShellContent.Icon>
         </ShellContent>
 
