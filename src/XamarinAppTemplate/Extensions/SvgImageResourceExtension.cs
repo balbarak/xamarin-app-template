@@ -15,7 +15,7 @@ namespace XamarinAppTemplate
             nameof(Color),
             typeof(Color),
             typeof(SvgImageResourceExtension),
-            Color.Red,
+            default(Color),
             propertyChanged:OnColorChanged);
         public string Source { get; set; }
 

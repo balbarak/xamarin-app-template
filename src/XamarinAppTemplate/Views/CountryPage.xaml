@@ -13,10 +13,10 @@
 
             <CollectionView
                 x:Name="countryCollection"
-                
                 VerticalScrollBarVisibility="Always"
                 ItemsUpdatingScrollMode="KeepScrollOffset"
                 SelectionMode="Single"
+                SelectedItem="{Binding SelectedCountry, Mode=TwoWay}"
                 SelectionChangedCommand="{Binding DetailsCommand}"
                 SelectionChangedCommandParameter="{Binding Source={x:Reference countryCollection}, Path=SelectedItem}"
                 ItemsSource="{Binding Countries}">

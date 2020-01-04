@@ -16,7 +16,7 @@
         <ControlTemplate x:Key="MainLayout">
             <Grid Padding="0">
 
-                <ContentPresenter Padding="10" />
+                <ContentPresenter Padding="10,10,10,0" />
 
                 <local:Loading IsBusy="{TemplateBinding BindingContext.IsBusy}" />
             </Grid>

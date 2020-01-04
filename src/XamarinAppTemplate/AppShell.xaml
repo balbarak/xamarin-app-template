@@ -28,10 +28,17 @@
         <Style TargetType="ShellContent">
             <Setter Property="Shell.BackgroundColor" Value="{DynamicResource NavigationBarBackgroundColor}" />
             <Setter Property="Shell.ForegroundColor" Value="{DynamicResource NavigationBarColor}" />
-            <Setter Property="Shell.TitleColor" Value="{DynamicResource NavigationBarColor}" />
+
+            <!--<Setter Property="Shell.TitleColor" Value="{DynamicResource NavigationBarColor}" />-->
+
             <Setter Property="Shell.NavBarHasShadow" Value="False" />
-            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+
+            <!--  Tabs Style  -->
+            <Setter Property="Shell.TitleColor" Value="{DynamicResource FlyoutItemSelectedColor}" />
+            <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource NavigationBarColor}" />
+            <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource FlyoutBackgroundColor}" />
+            <Setter Property="Shell.TabBarForegroundColor" Value="Red" />
+
         </Style>
 
         <Style
@@ -61,6 +68,21 @@
     <Shell.BindingContext>
         <vm:AppShellViewModel />
     </Shell.BindingContext>
+
+    <FlyoutItem Title="Tabs">
+        <ShellContent
+            Title="Theme"
+            Icon="{all:SvgImageResource Source={x:Static all:SvgIcons.FILE}}"
+            ContentTemplate="{DataTemplate local:ThemePage}" />
+        <ShellContent
+            Title="{x:Static res:AppResource.Controls}"
+            Icon="{all:SvgImageResource Source={x:Static all:SvgIcons.COGS}}"
+            ContentTemplate="{DataTemplate local:ControlPage}" />
+        <ShellContent
+            Title="{x:Static res:AppResource.Countries}"
+            Icon="{all:SvgImageResource Source={x:Static all:SvgIcons.LIST}}"
+            ContentTemplate="{DataTemplate local:CountryPage}" />
+    </FlyoutItem>
 
     <FlyoutItem
         Route="theme"

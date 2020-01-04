@@ -10,7 +10,7 @@
     x:Class="XamarinAppTemplate.Views.ThemePage">
 
 
-    <Grid>
+    <ScrollView>
         <StackLayout Spacing="20">
 
             <local:Portlet>
@@ -27,16 +27,16 @@
                         <Image
                             WidthRequest="30"
                             Source="{local:SvgImageResource Source={x:Static local:SvgIcons.CAR},
-                                                            Color={DynamicResource BrandColor}}" />
+                                                            Color={StaticResource BrandColor}}" />
 
                         <Image
                             WidthRequest="30"
                             Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PLUS},
-                                                            Color=Blue}" />
+                                                            Color={StaticResource BrandColor}}" />
                         <Image
                             WidthRequest="30"
                             Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PHONE},
-                                                            Color=Blue}" />
+                                                            Color={StaticResource BrandColor}}" />
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
@@ -111,6 +111,6 @@
 
         </StackLayout>
 
-    </Grid>
+    </ScrollView>
 
 </local:BaseContentPage>

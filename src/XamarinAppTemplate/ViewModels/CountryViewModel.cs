@@ -19,6 +19,10 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand DetailsCommand => new Command(async (arg) => await Details(arg));
 
+        private CountryWrapper _selectedCountry;
+
+        public CountryWrapper SelectedCountry { get => _selectedCountry; set => SetProperty(ref _selectedCountry, value); }
+
         public CountryViewModel(CountryService service)
         {
             _service = service;
@@ -60,6 +64,8 @@ namespace XamarinAppTemplate.ViewModels
         {
             if (entity == null)
                 return Task.CompletedTask;
+
+            SelectedCountry = null;
 
             return _navService.PushAsync<CountryDetailsViewModel>(entity);
         }
