@@ -35,4 +35,9 @@
         <Setter Property="FontSize" Value="Medium" />
         <Setter Property="TextColor" Value="{DynamicResource BrandColor}" />
     </Style>
+
+    <Style TargetType="FontImageSource">
+        <Setter Property="FontFamily" Value="{StaticResource FA-Solid}" />
+    </Style>
+
 </ResourceDictionary>

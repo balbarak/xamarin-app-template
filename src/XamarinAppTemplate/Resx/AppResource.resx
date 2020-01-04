@@ -177,4 +177,7 @@
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
+  <data name="Tabs" xml:space="preserve">
+    <value>التبويبات</value>
+  </data>
 </root>

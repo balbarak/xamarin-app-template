@@ -19,7 +19,7 @@ namespace XamarinAppTemplate
             InitializeComponent();
 
             Startup.Configure();
-
+            
             InitialDatabaseTask = XamarinAppTemplateDbContext.InitDatabase();
 
             MainPage = new AppShell();

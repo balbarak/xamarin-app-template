@@ -12,7 +12,7 @@
     <ScrollView Padding="0">
         <StackLayout
             Padding="0"
-            Spacing="20">
+            Spacing="10">
             <Frame
                 HasShadow="False"
                 Padding="0"

@@ -177,4 +177,7 @@
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Tabs" xml:space="preserve">
+    <value>Tabs</value>
+  </data>
 </root>

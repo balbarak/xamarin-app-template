@@ -11,7 +11,7 @@
 
 
     <ScrollView>
-        <StackLayout Spacing="20">
+        <StackLayout Spacing="10">
 
             <local:Portlet>
                 <local:Portlet.Header>
@@ -23,18 +23,29 @@
                         Spacing="10">
                         <Label TextColor="{DynamicResource BrandColor}" />
 
+                        <Image HeightRequest="30">
+                            <Image.Source>
+                                <FontImageSource
+                                    Glyph="{Static local:FontAwsomeSolidIcons.CALCULATOR}"
+                                    Color="{DynamicResource BrandColor}"
+                                    FontFamily="{StaticResource FA-Solid}" />
+                            </Image.Source>
+                        </Image>
 
                         <Image
-                            WidthRequest="30"
-                            Source="{local:SvgImageResource {x:Static local:SvgIcons.CAR}}" />
+                            HeightRequest="30"
+                            Source="{local:SvgImageResource Color={StaticResource BrandColor},
+                                                            Source={x:Static local:SvgIcons.CAR}}" />
 
                         <Image
-                            WidthRequest="30"
-                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PLUS}}" />
+                            HeightRequest="30"
+                            Source="{local:SvgImageResource Color=Blue,
+                                                            Source={x:Static local:SvgIcons.PLUS}}" />
 
                         <Image
-                            WidthRequest="30"
-                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PHONE}}" />
+                            HeightRequest="30"
+                            Source="{local:SvgImageResource Color=Red,
+                                                            Source={x:Static local:SvgIcons.PHONE}}" />
 
                     </StackLayout>
                 </local:Portlet.Body>

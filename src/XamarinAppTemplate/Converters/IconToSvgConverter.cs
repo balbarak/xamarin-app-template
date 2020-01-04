@@ -15,7 +15,7 @@ namespace XamarinAppTemplate
 
             if (value != null && value is string src)
             {
-                result = SvgImageSource.FromSvgResource($"XamarinAppTemplate.Images.Icons.{src}",40,40);
+                result = SvgImageSource.FromSvgResource($"XamarinAppTemplate.Images.Icons.{src}",20,20);
                 
             }
 

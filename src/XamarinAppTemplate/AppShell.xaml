@@ -19,7 +19,9 @@
 
 
 
+
     <Shell.Resources>
+
         <Style TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
             <Setter Property="BarTextColor" Value="{DynamicResource SecondaryColor}" />
@@ -72,6 +74,7 @@
 
     <FlyoutItem
         Route="theme"
+        Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.LIST},FontFamily={StaticResource FA-Solid},Color=Red}}"
         Title="{x:Static res:AppResource.Themes}">
         <ShellContent
             Title="Theme"
@@ -79,24 +82,30 @@
     </FlyoutItem>
 
 
-    <FlyoutItem Title="Tabs">
+
+    <FlyoutItem Title="{x:Static res:AppResource.Tabs}">
         <ShellContent
-            Title="Theme"
-            Icon="{Binding Source={x:Static all:SvgIcons.FILE}, Converter={StaticResource IconToSvg}}"
+            Title="{x:Static res:AppResource.Themes}"
+            Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.FILE},FontFamily={StaticResource FA-Solid}}}"
             ContentTemplate="{DataTemplate local:ThemePage}" />
+
         <ShellContent
             Title="{x:Static res:AppResource.Controls}"
-            Icon="{Binding Source={x:Static all:SvgIcons.COGS}, Converter={StaticResource IconToSvg}}"
+            Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.COGS},FontFamily={StaticResource FA-Solid}}}"
             ContentTemplate="{DataTemplate local:ControlPage}" />
+
         <ShellContent
             Title="{x:Static res:AppResource.Countries}"
-            Icon="{Binding Source={x:Static all:SvgIcons.LIST}, Converter={StaticResource IconToSvg}}"
+            Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.LIST},FontFamily={StaticResource FA-Solid}}}"
             ContentTemplate="{DataTemplate local:CountryPage}" />
+
     </FlyoutItem>
 
     <FlyoutItem
         Route="controls"
+        Icon="{Binding Source={x:Static all:SvgIcons.COGS}, Converter={StaticResource IconToSvg}}"
         Title="{x:Static res:AppResource.Controls}">
+
         <ShellContent
             Title="{x:Static res:AppResource.Controls}"
             ContentTemplate="{DataTemplate local:ControlPage}" />
@@ -118,12 +127,6 @@
             Title="{x:Static res:AppResource.Countries}"
             ContentTemplate="{DataTemplate local:CountryPage}" />
     </FlyoutItem>
-
-
-
-
-
-
 
     <FlyoutItem
         Route="typography"
@@ -185,7 +188,16 @@
                 x:Name="grid"
                 Padding="30,10"
                 Style="{StaticResource FlyoutItemStyle}">
+                <all:ShellItemGrid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                </all:ShellItemGrid.ColumnDefinitions>
+
+                <Image
+                    x:Name="iconImage"
+                    Source="{Binding Icon}" />
                 <Label
+                    Grid.Column="1"
                     FontSize="Subtitle"
                     TextColor="{DynamicResource FlyoutTextColor}"
                     Text="{Binding Title}">
