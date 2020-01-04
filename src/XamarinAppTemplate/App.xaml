@@ -16,7 +16,7 @@
         <ResourceDictionary Source="Styles/AppStyle.xaml" />
 
 
-        <local:SvgToImageSource x:Key="IconToSvg" />
+        <local:IconToSvgConverter x:Key="IconToSvg" />
 
         <ControlTemplate x:Key="MainLayout">
             <Grid Padding="0">

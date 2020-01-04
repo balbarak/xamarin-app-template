@@ -7,7 +7,7 @@ using Xamarin.Forms.Svg;
 
 namespace XamarinAppTemplate
 {
-    public class SvgToImageSource : IValueConverter
+    public class IconToSvgConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -15,7 +15,7 @@ namespace XamarinAppTemplate
 
             if (value != null && value is string src)
             {
-                result = SvgImageSource.FromSvgResource($"XamarinAppTemplate.Images.Icons.{src}",30,30);
+                result = SvgImageSource.FromSvgResource($"XamarinAppTemplate.Images.Icons.{src}",40,40);
                 
             }
 
