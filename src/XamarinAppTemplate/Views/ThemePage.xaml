@@ -26,7 +26,7 @@
                         <Image HeightRequest="30">
                             <Image.Source>
                                 <FontImageSource
-                                    Glyph="{Static local:FontAwsomeSolidIcons.CALCULATOR}"
+                                    Glyph="{Static local:Icons.CALCULATOR}"
                                     Color="{DynamicResource BrandColor}"
                                     FontFamily="{StaticResource FA-Solid}" />
                             </Image.Source>
@@ -50,6 +50,69 @@
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
+
+            <local:Portlet>
+
+                <local:Portlet.Header>
+                    <Grid>
+                        <Label Text="Font Icon" />
+                    </Grid>
+                </local:Portlet.Header>
+
+                <local:Portlet.Body>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="10">
+
+                        <Image>
+                            <Image.Source>
+                                <local:FontIcon
+                                    Color="{DynamicResource BrandColor}"
+                                    Glyph="{x:Static local:Icons.PLUS}" />
+                            </Image.Source>
+                        </Image>
+
+                        <Image>
+                            <Image.Source>
+                                <local:FontIcon
+                                    Color="{DynamicResource BrandColor}"
+                                    Glyph="{x:Static local:Icons.CALCULATOR}" />
+                            </Image.Source>
+                        </Image>
+
+                        <Image>
+                            <Image.Source>
+                                <local:FontIcon
+                                    Color="{DynamicResource BrandColor}"
+                                    Glyph="{x:Static local:Icons.CALENDAR}" />
+                            </Image.Source>
+                        </Image>
+
+                        <Image>
+                            <Image.Source>
+                                <local:FontIcon
+                                    Color="{DynamicResource BrandColor}"
+                                    Glyph="{x:Static local:Icons.PHONE}" />
+                            </Image.Source>
+                        </Image>
+                        <Image>
+                            <Image.Source>
+                                <local:FontIcon
+                                    Color="{DynamicResource BrandColor}"
+                                    Glyph="{x:Static local:Icons.MINUS}" />
+                            </Image.Source>
+                        </Image>
+                        <Image>
+                            <Image.Source>
+                                <local:FontIcon
+                                    Color="{DynamicResource BrandColor}"
+                                    Glyph="{x:Static local:Icons.BOOK}" />
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
 
             <local:Portlet>
 
@@ -84,40 +147,6 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
-            <local:Portlet>
-
-                <local:Portlet.Header>
-                    <Grid>
-                        <Label Text="Icons" />
-                    </Grid>
-                </local:Portlet.Header>
-
-                <local:Portlet.Body>
-                    <StackLayout
-                        Orientation="Horizontal"
-                        Spacing="10">
-                        <Label
-                            Style="{StaticResource FontIcon-FA-Solid}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.PLUS}" />
-                        <Label
-                            Style="{StaticResource FontIcon-FA-Solid}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.PHONE}" />
-
-                        <Label
-                            Style="{StaticResource FontIcon-FA-Solid}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.CALENDAR}" />
-                        <Label
-                            Style="{StaticResource FontIcon-FA-Solid}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.CALCULATOR}" />
-                        <Label
-                            Style="{StaticResource FontIcon-FA-Solid}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.MINUS}" />
-                        <Label
-                            Style="{StaticResource FontIcon-FA-Solid}"
-                            Text="{x:Static local:FontAwsomeSolidIcons.ADDRESS_BOOK}" />
-                    </StackLayout>
-                </local:Portlet.Body>
-            </local:Portlet>
 
         </StackLayout>
 

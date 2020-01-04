@@ -76,7 +76,7 @@
                                     Style="{StaticResource FontIcon-FA-Solid}"
                                     FontSize="Caption"
                                     TextColor="{DynamicResource TextColor}"
-                                    Text="{x:Static local:FontAwsomeSolidIcons.CHEVRON_RIGHT}" />
+                                    Text="{x:Static local:Icons.CHEVRON_RIGHT}" />
 
                             </Grid>
                         </Frame>

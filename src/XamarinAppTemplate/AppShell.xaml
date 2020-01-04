@@ -17,9 +17,6 @@
     Title="XamarinAppTemplate"
     x:Class="XamarinAppTemplate.AppShell">
 
-
-
-
     <Shell.Resources>
 
         <Style TargetType="NavigationPage">
@@ -74,8 +71,12 @@
 
     <FlyoutItem
         Route="theme"
-        Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.LIST},FontFamily={StaticResource FA-Solid},Color=Red}}"
         Title="{x:Static res:AppResource.Themes}">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.FEATHER}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent
             Title="Theme"
             ContentTemplate="{DataTemplate local:ThemePage}" />
@@ -84,27 +85,51 @@
 
 
     <FlyoutItem Title="{x:Static res:AppResource.Tabs}">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.TABLE}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent
             Title="{x:Static res:AppResource.Themes}"
-            Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.FILE},FontFamily={StaticResource FA-Solid}}}"
-            ContentTemplate="{DataTemplate local:ThemePage}" />
+            ContentTemplate="{DataTemplate local:ThemePage}">
+            <ShellContent.Icon>
+                <all:FontIcon
+                    Glyph="{Static all:Icons.FEATHER}"
+                    Color="{DynamicResource FlyoutTextColor}" />
+            </ShellContent.Icon>
+        </ShellContent>
 
         <ShellContent
             Title="{x:Static res:AppResource.Controls}"
-            Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.COGS},FontFamily={StaticResource FA-Solid}}}"
-            ContentTemplate="{DataTemplate local:ControlPage}" />
+            ContentTemplate="{DataTemplate local:ControlPage}">
+            <ShellContent.Icon>
+                <all:FontIcon
+                    Glyph="{Static all:Icons.COG}"
+                    Color="{DynamicResource FlyoutTextColor}" />
+            </ShellContent.Icon>
+        </ShellContent>
 
         <ShellContent
             Title="{x:Static res:AppResource.Countries}"
-            Icon="{x:FontImage Glyph={Static all:FontAwsomeSolidIcons.LIST},FontFamily={StaticResource FA-Solid}}}"
-            ContentTemplate="{DataTemplate local:CountryPage}" />
+            ContentTemplate="{DataTemplate local:CountryPage}">
+            <ShellContent.Icon>
+                <all:FontIcon
+                    Glyph="{Static all:Icons.LIST}"
+                    Color="{DynamicResource FlyoutTextColor}" />
+            </ShellContent.Icon>
+        </ShellContent>
 
     </FlyoutItem>
 
     <FlyoutItem
         Route="controls"
-        Icon="{Binding Source={x:Static all:SvgIcons.COGS}, Converter={StaticResource IconToSvg}}"
         Title="{x:Static res:AppResource.Controls}">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.COG}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
 
         <ShellContent
             Title="{x:Static res:AppResource.Controls}"
@@ -116,6 +141,11 @@
     <FlyoutItem
         Route="settings"
         Title="{x:Static res:AppResource.Settings}">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.COGS}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
     </FlyoutItem>
 
@@ -123,6 +153,11 @@
     <FlyoutItem
         Route="country"
         Title="{x:Static res:AppResource.Countries}">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.LIST}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent
             Title="{x:Static res:AppResource.Countries}"
             ContentTemplate="{DataTemplate local:CountryPage}" />
@@ -131,6 +166,11 @@
     <FlyoutItem
         Route="typography"
         Title="Typography">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.FONT}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent
             Title="Typography"
             ContentTemplate="{DataTemplate local:TypographyPage}" />
@@ -139,6 +179,11 @@
     <FlyoutItem
         Route="home"
         Title="Home">
+        <FlyoutItem.Icon>
+            <all:FontIcon
+                Glyph="{Static all:Icons.HOME}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:HomePage}" />
@@ -186,7 +231,7 @@
         <DataTemplate>
             <all:ShellItemGrid
                 x:Name="grid"
-                Padding="30,10"
+                Padding="10,10"
                 Style="{StaticResource FlyoutItemStyle}">
                 <all:ShellItemGrid.ColumnDefinitions>
                     <ColumnDefinition Width="20" />
@@ -195,8 +240,25 @@
 
                 <Image
                     x:Name="iconImage"
-                    Source="{Binding Icon}" />
+                    Source="{Binding Icon}">
+                    <Image.Triggers>
+                        <DataTrigger
+                            TargetType="Image"
+                            Binding="{Binding Source={x:Reference grid}, Path=IsSelected}"
+                            Value="True">
+                            <Setter Property="Source">
+                                <Setter.Value>
+                                    <all:FontIcon
+                                        Glyph="{Binding Icon.Glyph}"
+                                        Color="{DynamicResource FlyoutItemSelectedColor}" />
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
+
                 <Label
+                    Margin="5,5"
                     Grid.Column="1"
                     FontSize="Subtitle"
                     TextColor="{DynamicResource FlyoutTextColor}"

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XamarinAppTemplate
 {
-    public class FontAwsomeSolidIcons
+    public class Icons
     {
         public const string AD = "\uf641";
         public const string ADDRESS_BOOK = "\uf2b9";
