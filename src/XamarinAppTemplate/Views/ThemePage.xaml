@@ -26,17 +26,16 @@
 
                         <Image
                             WidthRequest="30"
-                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.CAR},
-                                                            Color={StaticResource BrandColor}}" />
+                            Source="{local:SvgImageResource {x:Static local:SvgIcons.CAR}}" />
 
                         <Image
                             WidthRequest="30"
-                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PLUS},
-                                                            Color={StaticResource BrandColor}}" />
+                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PLUS}}" />
+
                         <Image
                             WidthRequest="30"
-                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PHONE},
-                                                            Color={StaticResource BrandColor}}" />
+                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PHONE}}" />
+
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>

@@ -15,9 +15,8 @@
         <ResourceDictionary Source="Themes/LightTheme.xaml" />
         <ResourceDictionary Source="Styles/AppStyle.xaml" />
 
-        <ResourceDictionary>
-            <local:SvgToImageSource x:Key="IconToSvg" />
-        </ResourceDictionary>
+
+        <local:SvgToImageSource x:Key="IconToSvg" />
 
         <ControlTemplate x:Key="MainLayout">
             <Grid Padding="0">
