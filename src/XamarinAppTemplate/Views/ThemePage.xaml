@@ -9,6 +9,7 @@
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.ThemePage">
 
+
     <Grid>
         <StackLayout Spacing="20">
 
@@ -21,10 +22,13 @@
                         Orientation="Horizontal"
                         Spacing="10">
                         <Label TextColor="{DynamicResource BrandColor}" />
+
+
                         <Image
                             WidthRequest="30"
-                            Source="{local:SvgImageResource Color={DynamicResource BrandColor},
-                                                            Source={x:Static local:SvgIcons.ADDRESS_BOOK}}" />
+                            Source="{local:SvgImageResource Source={x:Static local:SvgIcons.CAR},
+                                                            Color={DynamicResource BrandColor}}" />
+
                         <Image
                             WidthRequest="30"
                             Source="{local:SvgImageResource Source={x:Static local:SvgIcons.PLUS},

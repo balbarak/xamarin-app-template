@@ -9,14 +9,17 @@ using Xamarin.Forms.Xaml;
 namespace XamarinAppTemplate
 {
     [ContentProperty(nameof(Source))]
-    public class SvgImageResourceExtension : BindableObject, IMarkupExtension<ImageSource>
+    public class SvgImageResourceExtension : BindableObject, IMarkupExtension
     {
         public static readonly BindableProperty ColorProperty = BindableProperty.Create(
             nameof(Color),
             typeof(Color),
             typeof(SvgImageResourceExtension),
-            Color.Default);
+            Color.Red,
+            propertyChanged:OnColorChanged);
         public string Source { get; set; }
+
+        public bool IsColorChanged { get; set; }
 
         public Color Color
         {
@@ -24,7 +27,7 @@ namespace XamarinAppTemplate
             set => SetValue(ColorProperty, value);
         }
 
-        public ImageSource ProvideValue(IServiceProvider serviceProvider)
+        public object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Source == null)
                 return null;
@@ -35,9 +38,11 @@ namespace XamarinAppTemplate
 
         }
 
-        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+        static void OnColorChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            return (this as IMarkupExtension<ImageSource>).ProvideValue(serviceProvider);
+            var sender = bindable as SvgImageResourceExtension;
+            sender.IsColorChanged = true;
         }
+
     }
 }
