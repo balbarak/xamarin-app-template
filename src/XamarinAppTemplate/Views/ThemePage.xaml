@@ -26,6 +26,11 @@
 
                         <Image
                             WidthRequest="30"
+                            Source="{Binding Source={x:Static local:SvgIcons.PLUS}, Converter={StaticResource SvgToImage}}" />
+
+
+                        <Image
+                            WidthRequest="30"
                             Source="{local:SvgImageResource Source={x:Static local:SvgIcons.CAR},
                                                             Color={StaticResource BrandColor}}" />
 

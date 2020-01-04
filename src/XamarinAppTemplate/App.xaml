@@ -9,9 +9,15 @@
     x:Class="XamarinAppTemplate.App">
     <Application.Resources>
 
+
+
         <ResourceDictionary Source="Styles/FontStyle.xaml" />
         <ResourceDictionary Source="Themes/LightTheme.xaml" />
         <ResourceDictionary Source="Styles/AppStyle.xaml" />
+
+        <ResourceDictionary>
+            <local:SvgToImageSource x:Key="SvgToImage" />
+        </ResourceDictionary>
 
         <ControlTemplate x:Key="MainLayout">
             <Grid Padding="0">
