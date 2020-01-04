@@ -82,13 +82,15 @@
     <FlyoutItem Title="Tabs">
         <ShellContent
             Title="Theme"
-            Icon="{Binding Source={x:Static all:SvgIcons.PLUS}, Converter={StaticResource SvgToImage}}"
+            Icon="{Binding Source={x:Static all:SvgIcons.FILE}, Converter={StaticResource IconToSvg}}"
             ContentTemplate="{DataTemplate local:ThemePage}" />
         <ShellContent
             Title="{x:Static res:AppResource.Controls}"
+            Icon="{Binding Source={x:Static all:SvgIcons.COGS}, Converter={StaticResource IconToSvg}}"
             ContentTemplate="{DataTemplate local:ControlPage}" />
         <ShellContent
             Title="{x:Static res:AppResource.Countries}"
+            Icon="{Binding Source={x:Static all:SvgIcons.LIST}, Converter={StaticResource IconToSvg}}"
             ContentTemplate="{DataTemplate local:CountryPage}" />
     </FlyoutItem>
 

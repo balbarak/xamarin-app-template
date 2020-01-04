@@ -16,7 +16,7 @@
         <ResourceDictionary Source="Styles/AppStyle.xaml" />
 
         <ResourceDictionary>
-            <local:SvgToImageSource x:Key="SvgToImage" />
+            <local:SvgToImageSource x:Key="IconToSvg" />
         </ResourceDictionary>
 
         <ControlTemplate x:Key="MainLayout">
