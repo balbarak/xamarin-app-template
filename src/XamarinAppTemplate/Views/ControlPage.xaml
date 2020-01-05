@@ -152,25 +152,44 @@
                             </Grid>
                         </Frame>
 
-
+                        
                         <Frame
-                            Padding="0"
-                            CornerRadius="15"
+                            Padding="5"
+                            CornerRadius="10"
                             HasShadow="False"
                             BorderColor="{DynamicResource BrandColor}">
+
                             <Grid
+                                x:Name="touchGrid"
                                 touch:TouchEff.NativeAnimation="True"
                                 touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
                                 Padding="10"
                                 HeightRequest="30">
-                                <Label
-                                    Text="Native Touch"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center" />
-
+                                
                                 <Grid.Effects>
-                                    <touch:TouchEff />
+                                   <touch:TouchEff x:Name="tochEffect"/>
                                 </Grid.Effects>
+
+                                <Label
+                                    Text="Native Touch Colored"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                                    
+
+                                    <!--<Label.Triggers>
+                                        <DataTrigger
+                                            TargetType="Label"
+                                            Binding="{Binding Source={x:Reference nativeTocuh},Path=IsToggled}">
+                                            <DataTrigger.Value>
+                                                true
+                                            </DataTrigger.Value>
+                                            
+                                            <Setter Property="TextColor" Value="Red"/> 
+                                        </DataTrigger>
+                                    </Label.Triggers>-->
+                                    </Label>
+
+
                             </Grid>
                         </Frame>
 
@@ -238,6 +257,7 @@
                                 <Label.Triggers>
                                     <DataTrigger
                                         TargetType="Label"
+                                        
                                         Binding="{Binding Source={x:Reference chk2}, Path=IsChecked}"
                                         Value="true">
                                         <Setter Property="TextColor" Value="{DynamicResource SuccessColor}" />
