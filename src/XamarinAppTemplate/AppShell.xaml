@@ -235,6 +235,7 @@
 
                 <Image
                     x:Name="iconImage"
+                    VerticalOptions="Center"
                     Source="{Binding Icon}">
                     <Image.Triggers>
                         <DataTrigger
@@ -256,6 +257,7 @@
                     Margin="5,5"
                     Grid.Column="1"
                     FontSize="Subtitle"
+                    VerticalOptions="Center"
                     TextColor="{DynamicResource FlyoutTextColor}"
                     Text="{Binding Title}">
                     <Label.Triggers>
