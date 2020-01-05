@@ -14,6 +14,117 @@
             Padding="0"
             Spacing="10">
 
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Date Picker" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <DatePicker Format="yyyy-MM-dd" />
+                        <TimePicker />
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Indicators and Progress" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <ProgressBar
+                            ProgressColor="{DynamicResource BrandColor}"
+                            Progress="0.4" />
+                        <ActivityIndicator
+                            Color="{DynamicResource BrandColor}"
+                            IsRunning="True" />
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Sliders" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <Slider
+                            MaximumTrackColor="{DynamicResource TextColor}"
+                            MinimumTrackColor="{DynamicResource BrandColor}"
+                            ThumbColor="{DynamicResource BrandColor}"
+                            Maximum="100"
+                            Value="70" />
+
+                        <Slider
+                            MaximumTrackColor="{DynamicResource TextColor}"
+                            MinimumTrackColor="{DynamicResource BrandColor}"
+                            ThumbColor="{DynamicResource BrandColor}"
+                            HeightRequest="30"
+                            Maximum="100"
+                            Value="40" />
+
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label Text="Boxes" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal">
+                            <BoxView
+                                BackgroundColor="{DynamicResource BrandColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+
+                            <BoxView
+                                BackgroundColor="{DynamicResource TextColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+
+                            <BoxView
+                                BackgroundColor="{DynamicResource PrimaryColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+                            <BoxView
+                                BackgroundColor="{DynamicResource SuccessColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal">
+                            <BoxView
+                                BackgroundColor="{DynamicResource WarningColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+
+                            <BoxView
+                                BackgroundColor="{DynamicResource DangerColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+
+                            <BoxView
+                                BackgroundColor="{DynamicResource FlyoutBackgroundColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+                            <BoxView
+                                BackgroundColor="{DynamicResource FlyoutItemSelectedBackgroundColor}"
+                                HeightRequest="60"
+                                WidthRequest="60" />
+
+                        </StackLayout>
+                    </StackLayout>
+
+                </local:Portlet.Body>
+            </local:Portlet>
 
             <local:Portlet>
                 <local:Portlet.Header>
@@ -82,27 +193,21 @@
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
+
             <local:Portlet>
                 <local:Portlet.Header>
                     <Label Text="Inputs" />
                 </local:Portlet.Header>
                 <local:Portlet.Body>
                     <StackLayout>
-                        <Entry Placeholder="Write your name" />
 
+                        <Entry Placeholder="Write your name Entry" />
 
-                        <StackLayout Spacing="0">
-                            <Label
-                                VerticalOptions="Center"
-                                Text="Default Editor Input" />
-                            <Editor Placeholder="Write your name" />
-                        </StackLayout>
-
+                        <Editor Placeholder="Write your name Editor" />
 
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
-
 
             <local:Portlet>
                 <local:Portlet.Header>
@@ -165,7 +270,6 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
-
             <local:Portlet>
                 <local:Portlet.Header>
                     <Label Text="Switches" />
@@ -202,7 +306,6 @@
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
-
 
             <local:Portlet>
                 <local:Portlet.Header>
@@ -255,6 +358,8 @@
                     <SearchBar Placeholder="Search for text" />
                 </local:Portlet.Body>
             </local:Portlet>
+
+
         </StackLayout>
     </ScrollView>
 </local:BaseContentPage>

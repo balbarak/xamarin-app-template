@@ -84,13 +84,15 @@
     </FlyoutItem>
 
 
-
     <FlyoutItem Title="{x:Static res:AppResource.Tabs}">
+
         <FlyoutItem.Icon>
             <all:FontIcon
                 Glyph="{Static all:Icons.TABLE}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
+
+
         <ShellContent
             Title="{x:Static res:AppResource.Themes}"
             ContentTemplate="{DataTemplate local:ThemePage}">
@@ -114,6 +116,7 @@
                 <all:FontIcon Glyph="{Static all:Icons.LIST}" />
             </ShellContent.Icon>
         </ShellContent>
+
 
     </FlyoutItem>
 
