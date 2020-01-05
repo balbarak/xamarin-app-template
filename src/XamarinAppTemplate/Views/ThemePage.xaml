@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
     xmlns:local="clr-namespace:XamarinAppTemplate"
+    xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
     mc:Ignorable="d"
     x:Class="XamarinAppTemplate.Views.ThemePage">
 
@@ -113,7 +114,6 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
-
             <local:Portlet>
 
                 <local:Portlet.Header>
@@ -147,9 +147,67 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame
+                    HasShadow="False"
+                    Padding="5">
+                    <Grid
+                        touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
+                        touch:TouchEff.NativeAnimation="True">
+                        <StackLayout Padding="10">
+                            <Image>
+                                <Image.Source>
+                                    <local:FontIcon
+                                        Color="{DynamicResource BrandColor}"
+                                        Glyph="{x:Static local:Icons.PHONE}" />
+                                </Image.Source>
+                            </Image>
+                            <Label
+                                FontSize="Subtitle"
+                                TextColor="{DynamicResource BrandColor}"
+                                HorizontalOptions="Center"
+                                Text="Make a Call" />
+                        </StackLayout>
+                        <Grid.Effects>
+                            <touch:TouchEff />
+                        </Grid.Effects>
+                    </Grid>
+                </Frame>
+
+                <Frame
+                    Grid.Column="1"
+                    HasShadow="False"
+                    Padding="5">
+                    <Grid
+                        touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
+                        touch:TouchEff.NativeAnimation="True">
+                        <StackLayout Padding="10">
+                            <Image>
+                                <Image.Source>
+                                    <local:FontIcon
+                                        Color="{DynamicResource BrandColor}"
+                                        Glyph="{x:Static local:Icons.CALENDAR}" />
+                                </Image.Source>
+                            </Image>
+                            <Label
+                                FontSize="Subtitle"
+                                TextColor="{DynamicResource BrandColor}"
+                                HorizontalOptions="Center"
+                                Text="Calendar" />
+                        </StackLayout>
+                        <Grid.Effects>
+                            <touch:TouchEff />
+                        </Grid.Effects>
+                    </Grid>
+                </Frame>
+            </Grid>
 
         </StackLayout>
-
     </ScrollView>
 
 </local:BaseContentPage>

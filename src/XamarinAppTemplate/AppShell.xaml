@@ -28,6 +28,7 @@
             <Setter Property="Shell.BackgroundColor" Value="{DynamicResource NavigationBarBackgroundColor}" />
             <Setter Property="Shell.ForegroundColor" Value="{DynamicResource NavigationBarColor}" />
 
+
             <!--<Setter Property="Shell.TitleColor" Value="{DynamicResource NavigationBarColor}" />-->
 
             <Setter Property="Shell.NavBarHasShadow" Value="False" />
@@ -94,8 +95,7 @@
             Title="{x:Static res:AppResource.Themes}"
             ContentTemplate="{DataTemplate local:ThemePage}">
             <ShellContent.Icon>
-                <all:FontIcon
-                    Glyph="{Static all:Icons.FEATHER}" />
+                <all:FontIcon Glyph="{Static all:Icons.FEATHER}" />
             </ShellContent.Icon>
         </ShellContent>
 
@@ -103,8 +103,7 @@
             Title="{x:Static res:AppResource.Controls}"
             ContentTemplate="{DataTemplate local:ControlPage}">
             <ShellContent.Icon>
-                <all:FontIcon
-                    Glyph="{Static all:Icons.COG}" />
+                <all:FontIcon Glyph="{Static all:Icons.COG}" />
             </ShellContent.Icon>
         </ShellContent>
 
@@ -112,8 +111,7 @@
             Title="{x:Static res:AppResource.Countries}"
             ContentTemplate="{DataTemplate local:CountryPage}">
             <ShellContent.Icon>
-                <all:FontIcon
-                    Glyph="{Static all:Icons.LIST}" />
+                <all:FontIcon Glyph="{Static all:Icons.LIST}" />
             </ShellContent.Icon>
         </ShellContent>
 
