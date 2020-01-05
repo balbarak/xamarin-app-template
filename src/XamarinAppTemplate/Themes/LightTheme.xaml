@@ -25,7 +25,8 @@
 
     <Color x:Key="FlyoutBackgroundColor">#1e1e2d</Color>
     <Color x:Key="FlyoutTextColor">#a2a3b7</Color>
-    <Color x:Key="FlyoutItemSelectedBackgroundColor">#1b1b28</Color>
+    <!--<Color x:Key="FlyoutItemSelectedBackgroundColor">#1b1b28</Color>-->
+    <Color x:Key="FlyoutItemSelectedBackgroundColor">#46467A</Color>
 
 
     <Color x:Key="FlyoutItemSelectedColor">White</Color>
