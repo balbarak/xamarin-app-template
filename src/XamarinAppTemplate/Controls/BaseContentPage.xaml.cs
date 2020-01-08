@@ -17,8 +17,6 @@ namespace XamarinAppTemplate
         private NavigationService _navService;
         private BaseViewModel _viewModel;
 
-        public bool IsInitialized { get; set; }
-
         public BaseContentPage()
         {
             InitializeComponent();
@@ -31,20 +29,11 @@ namespace XamarinAppTemplate
 
         public Task InitializeViewModel(object data)
         {
-            IsInitialized = true;
-
-            return _viewModel.InitializeAsync(data);
+            return Task.Run(()=>_viewModel.InitializeAsync(data));
         }
 
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
-            if (!IsInitialized)
-            {
-                await _viewModel.InitializeAsync(null);
-
-                IsInitialized = true;
-            }
-
 
             if (FlowDirection != LanguageManager.CurrentFlowDirection)
                 FlowDirection = LanguageManager.CurrentFlowDirection;

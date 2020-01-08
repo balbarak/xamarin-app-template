@@ -62,13 +62,10 @@ namespace XamarinAppTemplate.Services
 
             var page = Activator.CreateInstance(pageType) as BaseContentPage;
 
-            page.IsInitialized = true;
+            await Shell.Current.Navigation.PushAsync(page)
+                .ConfigureAwait(false);
 
-            var pushTask =  Shell.Current.Navigation.PushAsync(page);
-
-            var initTask = page.InitializeViewModel(data);
-
-            await Task.WhenAll(pushTask, initTask);
+            await page.InitializeViewModel(data);
         }
 
         private void MapViewModels()
