@@ -67,7 +67,7 @@ namespace XamarinAppTemplate.ViewModels
 
             SelectedCountry = null;
 
-            return _navService.PushAsync<CountryDetailsViewModel>(entity);
+            return _navService.GoToAsync<CountryDetailsViewModel>(entity);
         }
     }
 }

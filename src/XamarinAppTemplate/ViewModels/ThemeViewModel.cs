@@ -14,6 +14,8 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand ShowToasterCommand => new Command(ShowToaster);
 
+        public ICommand ShowModalCommand => new Command(async () => await _navService.ShowModal<ModalViewModel>());
+
         public ThemeViewModel()
         {
             Title = Resx.AppResource.Themes;

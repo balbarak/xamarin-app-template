@@ -9,7 +9,7 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
-        public ICommand LoginCommand => new Command(async () => await _navService.PushAsync<LoginViewModel>());
+        public ICommand LoginCommand => new Command(async () => await _navService.GoToAsync<LoginViewModel>());
 
         public HomeViewModel()
         {

@@ -53,6 +53,8 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddSingleton<AppShellViewModel>();
 
+            serviceCollections.AddTransient<ModalViewModel>();
+
             return serviceCollections;
         }
     }

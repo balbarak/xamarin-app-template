@@ -6,8 +6,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:svg="clr-namespace:Xamarin.Forms.Svg;assembly=SvgImageSource"
     xmlns:local="clr-namespace:XamarinAppTemplate"
+    xmlns:vm="clr-namespace:XamarinAppTemplate.ViewModels"
     xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
     mc:Ignorable="d"
+    x:DataType="vm:ThemeViewModel"
     x:Class="XamarinAppTemplate.Views.ThemePage">
 
 
@@ -111,6 +113,23 @@
                             </Image.Source>
                         </Image>
                     </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+
+                <local:Portlet.Header>
+                    <Label Text="Modals" />
+
+                </local:Portlet.Header>
+
+                <local:Portlet.Body>
+                    <Grid>
+                        <Button
+                            Command="{Binding ShowModalCommand}"
+                            Style="{DynamicResource btn-success}"
+                            Text="Show Modal" />
+                    </Grid>
                 </local:Portlet.Body>
             </local:Portlet>
 

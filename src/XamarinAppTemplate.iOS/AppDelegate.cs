@@ -58,6 +58,7 @@ namespace XamarinAppTemplate.iOS
 
             Xamarin.Forms.Svg.iOS.SvgImage.Init();  //need to write here
 
+            Rg.Plugins.Popup.Popup.Init();
 
             var ignore = typeof(SvgCachedImage);
             CachedImageRenderer.Init(); // Initializing FFImageLoading

@@ -8,7 +8,9 @@
 
     <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource BrandColor}" />
-        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="HeightRequest" Value="36" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
     </Style>
 
@@ -16,7 +18,6 @@
         x:Key="btn-danger"
         TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource DangerColor}" />
-        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
     </Style>
 
@@ -24,7 +25,6 @@
         x:Key="btn-success"
         TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource SuccessColor}" />
-        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
     </Style>
 
@@ -33,7 +33,6 @@
         x:Key="btn-warning"
         TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource WarningColor}" />
-        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="TextColor" Value="{DynamicResource ButtonColorReverse}" />
     </Style>
 

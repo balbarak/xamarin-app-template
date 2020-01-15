@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinAppTemplate.Helpers;
 using XamarinAppTemplate.ViewModels;
 using XamarinAppTemplate.Views;
 
@@ -11,85 +14,78 @@ namespace XamarinAppTemplate.Services
 {
     public class NavigationService
     {
-        private readonly Dictionary<Type, Type> _mappings;
-
         public NavigationService()
         {
-            _mappings = new Dictionary<Type, Type>();
-
-            MapViewModels();
+            RegisterRoutes();
         }
 
-        public Task Init()
+        public Task GoToAsync<TViewModelType>(object data = null) where TViewModelType : BaseViewModel
         {
+            if (data != null)
+                CachHelper.PassedData = data;
+
+            var type = typeof(TViewModelType);
+
+            return Shell.Current.GoToAsync(type.Name, true);
+        }
+
+        public async Task ShowModal<TModel>(object data = null) where TModel : BaseViewModel
+        {
+            if (data != null)
+                CachHelper.PassedData = data;
+
+            var pageType = XamarinAppTemplateRoute.GetPageByViewModel(typeof(TModel));
+
+            var page = Activator.CreateInstance(pageType) as PopupPage;
+
+            var viewModel = AppServiceLocator.Current.GetService<TModel>();
+
+            page.BindingContext = viewModel;
+
+            await PopupNavigation.Instance.PushAsync(page, true);
+
+            await Task.Run(() => viewModel.InitializeAsync(data));
+        }
+
+        public Task CloseModal()
+        {
+            if (PopupNavigation.Instance.PopupStack.Count > 0)
+            {
+                return PopupNavigation.Instance.PopAsync();
+            }
+
             return Task.CompletedTask;
         }
 
-        public Task GoToAsync(string nav)
+        public Task GoToHome()
         {
-            return Shell.Current.GoToAsync(nav);
+            return Shell.Current.Navigation.PopToRootAsync();
         }
 
-        public Task PushAsync<TViewModel>(object data) where TViewModel : BaseViewModel => PushAsyncInternal<TViewModel>(data);
-
-        public Task PushAsync<TViewModel>() where TViewModel : BaseViewModel => PushAsyncInternal<TViewModel>(null);
-
-        public Type GetPageViewModelType(Type page)
+        private void RegisterRoutes()
         {
-
-            if (!_mappings.ContainsValue(page))
-            {
-                throw new KeyNotFoundException($"No map for ${page} was found on navigation mappings");
-            }
-
-            return _mappings.FirstOrDefault(x => x.Value == page).Key;
-        }
-
-        public Type GetViewModelPage(Type viewModel)
-        {
-
-            if (!_mappings.ContainsKey(viewModel))
-            {
-                throw new KeyNotFoundException($"No map for ${viewModel} was found on navigation mappings");
-            }
-
-            return _mappings[viewModel];
-        }
-
-        private async Task PushAsyncInternal<TViewModel>(object data) where TViewModel : BaseViewModel
-        {
-            var pageType = GetViewModelPage(typeof(TViewModel));
-
-            var page = Activator.CreateInstance(pageType) as BaseContentPage;
-
-            await Shell.Current.Navigation.PushAsync(page)
-                .ConfigureAwait(false);
-
-            await page.InitializeViewModel(data);
-        }
-
-        private void MapViewModels()
-        {
-            _mappings.Add(typeof(HomeViewModel),typeof(HomePage));
-
-            _mappings.Add(typeof(LoginViewModel),typeof(LoginPage));
+            XamarinAppTemplateRoute.Register(typeof(HomeViewModel), typeof(HomePage));
             
-            _mappings.Add(typeof(RegisterViewModel),typeof(RegisterPage));
+            XamarinAppTemplateRoute.Register(typeof(LoginViewModel), typeof(LoginPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(RegisterViewModel), typeof(RegisterPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(AboutViewModel), typeof(AboutPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(TypographyViewModel), typeof(TypographyPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(ThemeViewModel), typeof(ThemePage));
+            
+            XamarinAppTemplateRoute.Register(typeof(SettingsViewModel), typeof(SettingsPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(CountryViewModel), typeof(CountryPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(CountryDetailsViewModel), typeof(CountryDetailsPage));
+            
+            XamarinAppTemplateRoute.Register(typeof(ControlViewModel), typeof(ControlPage));
 
-            _mappings.Add(typeof(AboutViewModel),typeof(AboutPage));
-
-            _mappings.Add(typeof(TypographyViewModel),typeof(TypographyPage));
-
-            _mappings.Add(typeof(ThemeViewModel),typeof(ThemePage));
-
-            _mappings.Add(typeof(SettingsViewModel),typeof(SettingsPage));
-
-            _mappings.Add(typeof(CountryViewModel), typeof(CountryPage));
-
-            _mappings.Add(typeof(CountryDetailsViewModel), typeof(CountryDetailsPage));
-
-            _mappings.Add(typeof(ControlViewModel), typeof(ControlPage));
-
+            XamarinAppTemplateRoute.Register(typeof(ModalViewModel), typeof(ModalPage));
         }
+
     }
 }

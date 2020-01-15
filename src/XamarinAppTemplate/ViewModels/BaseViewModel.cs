@@ -32,6 +32,10 @@ namespace XamarinAppTemplate.ViewModels
 
         public virtual Task InitializeAsync(object navigationData) => Task.FromResult(false);
 
+        public virtual Task OnAppearing() => Task.FromResult(false);
+
+        public virtual Task OnDisappearing() => Task.FromResult(false);
+
         public void SwitchDirection(LanguageDirection dir)
         {
             var shellBinding = Shell.Current.BindingContext as BaseViewModel;

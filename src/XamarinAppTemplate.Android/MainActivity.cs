@@ -55,6 +55,8 @@ namespace XamarinAppTemplate.Droid
             Xamarin.Forms.Svg.Droid.SvgImage.Init(this); //need to write here
 
             ToastNotification.Init(this);
+            
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: false);
 
