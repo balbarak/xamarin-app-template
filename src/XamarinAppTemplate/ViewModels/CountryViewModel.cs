@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using XamarinAppTemplate.Models;
 using XamarinAppTemplate.Services;
@@ -15,7 +17,9 @@ namespace XamarinAppTemplate.ViewModels
     {
         private readonly CountryService _service;
 
-        public ObservableCollection<CountryWrapper> Countries { get; private set; } = new ObservableCollection<CountryWrapper>();
+        private ObservableCollection<CountryWrapper> _countries;
+
+        public ObservableCollection<CountryWrapper> Countries { get => _countries; set => SetProperty(ref _countries, value); }
 
         public ICommand DetailsCommand => new Command(async (arg) => await Details(arg));
 
@@ -47,17 +51,16 @@ namespace XamarinAppTemplate.ViewModels
 
             var countries = await _service.GetAll();
 
+            var collections = new ObservableCollection<CountryWrapper>();
+
             foreach (var item in countries)
             {
-                Countries.Add(new CountryWrapper(item));
-
-                if (isIos)
-                    await Task.Delay(10);
+                collections.Add(new CountryWrapper(item));
             }
 
+            Countries = collections;
+
             IsBusy = false;
-
-
         }
 
         public Task Details(object entity)
