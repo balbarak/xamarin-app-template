@@ -282,4 +282,22 @@
   <data name="Validation_Email" xml:space="preserve">
     <value>Email is invalid. Please entry a valid email.</value>
   </data>
+  <data name="Demo_Checkboxes" xml:space="preserve">
+    <value>Checkboxes</value>
+  </data>
+  <data name="Demo_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Demo_OptionOne" xml:space="preserve">
+    <value>Option One</value>
+  </data>
+  <data name="Demo_OptionTwo" xml:space="preserve">
+    <value>Option Two</value>
+  </data>
+  <data name="Demo_Checked" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="Demo_NotCheck" xml:space="preserve">
+    <value>Not Checked</value>
+  </data>
 </root>

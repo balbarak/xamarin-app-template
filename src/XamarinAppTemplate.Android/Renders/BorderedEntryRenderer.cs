@@ -42,16 +42,16 @@ namespace XamarinAppTemplate.Droid.Renders
             }
             else if (e.PropertyName == "IsFocused")
             {
-                if (BorderEntryElement.IsFocued)
-                {
-                    UpdateBackground();
-                    BorderEntryElement.IsFocued = false;
-                }
-                else
-                {
-                    BorderEntryElement.IsFocued = true;
-                    UpdateFocusColor(Control);
-                }
+                //if (BorderEntryElement.IsFocued)
+                //{
+                //    UpdateBackground();
+                //    BorderEntryElement.IsFocued = false;
+                //}
+                //else
+                //{
+                //    BorderEntryElement.IsFocued = true;
+                //    UpdateFocusColor(Control);
+                //}
 
             }
 

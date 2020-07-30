@@ -9,7 +9,7 @@
     xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     x:Class="XamarinAppTemplate.Views.FormPage">
 
-    <StackLayout>
+    <StackLayout Spacing="10">
         <local:Portlet>
             <local:Portlet.Header>
                 <Label
@@ -32,6 +32,47 @@
                     Command="{Binding SubmitCommand}"
                     Text="{x:Static resx:AppResource.Submit}" />
             </local:Portlet.Footer>
+        </local:Portlet>
+
+        <local:Portlet>
+            <local:Portlet.Header>
+                <Label
+                    FontSize="Subtitle"
+                    Text="{x:Static resx:AppResource.Demo_Checkboxes}" />
+            </local:Portlet.Header>
+            <local:Portlet.Body>
+                <StackLayout>
+                    <local:ClickableStackLayout
+                        Orientation="Horizontal"
+                        Spacing="1">
+                        <CheckBox VerticalOptions="Center" />
+                        <Label
+                            VerticalOptions="Center"
+                            Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+
+                        <local:ClickableStackLayout.Triggers>
+                            <EventTrigger Event="OnClicked">
+                                <local:CheckboxTriggerAction />
+                            </EventTrigger>
+                        </local:ClickableStackLayout.Triggers>
+                    </local:ClickableStackLayout>
+
+                    <local:ClickableStackLayout
+                        Orientation="Horizontal"
+                        Spacing="1">
+                        <CheckBox VerticalOptions="Center" />
+                        <Label
+                            VerticalOptions="Center"
+                            Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+
+                        <local:ClickableStackLayout.Triggers>
+                            <EventTrigger Event="OnClicked">
+                                <local:CheckboxTriggerAction />
+                            </EventTrigger>
+                        </local:ClickableStackLayout.Triggers>
+                    </local:ClickableStackLayout>
+                </StackLayout>
+            </local:Portlet.Body>
         </local:Portlet>
     </StackLayout>
 </local:BaseContentPage>

@@ -160,6 +160,24 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خانات الاختيار.
+        /// </summary>
+        public static string Demo_Checkboxes {
+            get {
+                return ResourceManager.GetString("Demo_Checkboxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم الاختيار.
+        /// </summary>
+        public static string Demo_Checked {
+            get {
+                return ResourceManager.GetString("Demo_Checked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الوان.
         /// </summary>
         public static string Demo_Colors {
@@ -246,6 +264,42 @@ namespace XamarinAppTemplate.Resx {
         public static string Demo_Modals {
             get {
                 return ResourceManager.GetString("Demo_Modals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لم يتم الاختيار.
+        /// </summary>
+        public static string Demo_NotCheck {
+            get {
+                return ResourceManager.GetString("Demo_NotCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اختبار.
+        /// </summary>
+        public static string Demo_Option {
+            get {
+                return ResourceManager.GetString("Demo_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اختيار واحد.
+        /// </summary>
+        public static string Demo_OptionOne {
+            get {
+                return ResourceManager.GetString("Demo_OptionOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اختيار اثنين.
+        /// </summary>
+        public static string Demo_OptionTwo {
+            get {
+                return ResourceManager.GetString("Demo_OptionTwo", resourceCulture);
             }
         }
         

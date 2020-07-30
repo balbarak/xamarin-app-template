@@ -282,4 +282,22 @@
   <data name="Validation_Email" xml:space="preserve">
     <value>الرجاء ادخال البريد الالكتروني بطريقة صحيحة</value>
   </data>
+  <data name="Demo_Checkboxes" xml:space="preserve">
+    <value>خانات الاختيار</value>
+  </data>
+  <data name="Demo_Option" xml:space="preserve">
+    <value>اختبار</value>
+  </data>
+  <data name="Demo_OptionOne" xml:space="preserve">
+    <value>اختيار واحد</value>
+  </data>
+  <data name="Demo_OptionTwo" xml:space="preserve">
+    <value>اختيار اثنين</value>
+  </data>
+  <data name="Demo_Checked" xml:space="preserve">
+    <value>تم الاختيار</value>
+  </data>
+  <data name="Demo_NotCheck" xml:space="preserve">
+    <value>لم يتم الاختيار</value>
+  </data>
 </root>

@@ -27,10 +27,15 @@ namespace XamarinAppTemplate.ViewModels
         }
 
 
-        private async Task Submit()
+        private Task Submit()
         {
             var isValidEmail = Email.Validate();
             var isValidPassword = Password.Validate();
+
+            var email = Email.Value;
+            var pass = Password.Value;
+
+            return Task.CompletedTask;
         }
 
         private void AddValidations()
