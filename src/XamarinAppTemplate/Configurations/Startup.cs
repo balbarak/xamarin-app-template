@@ -23,6 +23,8 @@ namespace XamarinAppTemplate
             Xamarin.Forms.Svg.SvgImageSource.RegisterAssembly();
 
             AppServiceLocator.Configure(_serviceCollection);
+
+            NavigationService.RegisterRoutes();
         }
 
         private static IServiceCollection ConfigureServices(IServiceCollection serviceCollections)
@@ -54,6 +56,8 @@ namespace XamarinAppTemplate
             serviceCollections.AddTransient<AppShellViewModel>();
 
             serviceCollections.AddTransient<ModalViewModel>();
+
+            serviceCollections.AddTransient<HeaderViewModel>();
 
             return serviceCollections;
         }

@@ -98,7 +98,7 @@
         <local:ShellItemGrid
             x:Name="grid"
             Padding="10,10"
-            FlowDirection="{Binding }"
+            FlowDirection="{Binding}"
             Style="{StaticResource FlyoutItemStyle}">
             <local:ShellItemGrid.ColumnDefinitions>
                 <ColumnDefinition Width="20" />

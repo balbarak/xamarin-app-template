@@ -4,16 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:res="clr-namespace:XamarinAppTemplate.Resx"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
-    xmlns:local="clr-namespace:XamarinAppTemplate.Views"
-    xmlns:vm="clr-namespace:XamarinAppTemplate.ViewModels"
-    xmlns:all="clr-namespace:XamarinAppTemplate"
+    xmlns:views="clr-namespace:XamarinAppTemplate.Views"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
     FlowDirection="{Binding FlowDirection}"
     FlyoutBehavior="Flyout"
     FlyoutBackgroundColor="{DynamicResource FlyoutBackgroundColor}"
     Shell.ItemTemplate="{StaticResource ShellItemTemplate}"
     Shell.MenuItemTemplate="{StaticResource ShellItemTemplate}"
+    FlyoutHeaderTemplate="{DataTemplate views:HeaderView}"
     x:Name="mainShell"
     FlyoutHeaderBehavior="CollapseOnScroll"
     Title="XamarinAppTemplate"
@@ -22,53 +22,53 @@
 
     <FlyoutItem
         Route="main"
-        Title="{x:Static res:AppResource.Themes}">
+        Title="{x:Static resx:AppResource.Themes}">
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.FEATHER}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.FEATHER}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
         <ShellContent
             Route="theme"
             Title="Theme"
-            ContentTemplate="{DataTemplate local:ThemePage}" />
+            ContentTemplate="{DataTemplate views:ThemePage}" />
     </FlyoutItem>
 
     <FlyoutItem
         Route="main"
-        Title="{x:Static res:AppResource.Tabs}">
+        Title="{x:Static resx:AppResource.Tabs}">
 
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.TABLE}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.TABLE}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
 
 
         <ShellContent
             Route="themeTab"
-            Title="{x:Static res:AppResource.Themes}"
-            ContentTemplate="{DataTemplate local:ThemePage}">
+            Title="{x:Static resx:AppResource.Themes}"
+            ContentTemplate="{DataTemplate views:ThemePage}">
             <ShellContent.Icon>
-                <all:FontIcon Glyph="{Static all:Icons.FEATHER}" />
+                <local:FontIcon Glyph="{Static local:Icons.FEATHER}" />
             </ShellContent.Icon>
         </ShellContent>
 
         <ShellContent
             Route="controlTab"
-            Title="{x:Static res:AppResource.Controls}"
-            ContentTemplate="{DataTemplate local:ControlPage}">
+            Title="{x:Static resx:AppResource.Controls}"
+            ContentTemplate="{DataTemplate views:ControlPage}">
             <ShellContent.Icon>
-                <all:FontIcon Glyph="{Static all:Icons.COG}" />
+                <local:FontIcon Glyph="{Static local:Icons.COG}" />
             </ShellContent.Icon>
         </ShellContent>
 
         <ShellContent
             Route="countryTab"
-            Title="{x:Static res:AppResource.Countries}"
-            ContentTemplate="{DataTemplate local:CountryPage}">
+            Title="{x:Static resx:AppResource.Countries}"
+            ContentTemplate="{DataTemplate views:CountryPage}">
             <ShellContent.Icon>
-                <all:FontIcon Glyph="{Static all:Icons.LIST}" />
+                <local:FontIcon Glyph="{Static local:Icons.LIST}" />
             </ShellContent.Icon>
         </ShellContent>
 
@@ -77,72 +77,72 @@
 
     <FlyoutItem
         Route="main"
-        Title="{x:Static res:AppResource.Controls}">
+        Title="{x:Static resx:AppResource.Controls}">
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.COG}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.COG}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
 
         <ShellContent
             Route="controls"
-            Title="{x:Static res:AppResource.Controls}"
-            ContentTemplate="{DataTemplate local:ControlPage}" />
+            Title="{x:Static resx:AppResource.Controls}"
+            ContentTemplate="{DataTemplate views:ControlPage}" />
     </FlyoutItem>
 
     <FlyoutItem
         Route="main"
-        Title="{x:Static res:AppResource.Settings}">
+        Title="{x:Static resx:AppResource.Settings}">
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.COGS}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.COGS}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
         <ShellContent
             Route="settings"
-            ContentTemplate="{DataTemplate local:SettingsPage}" />
+            ContentTemplate="{DataTemplate views:SettingsPage}" />
     </FlyoutItem>
 
     <FlyoutItem
         Route="main"
-        Title="{x:Static res:AppResource.Countries}">
+        Title="{x:Static resx:AppResource.Countries}">
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.LIST}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.LIST}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
         <ShellContent
             Route="country"
-            Title="{x:Static res:AppResource.Countries}"
-            ContentTemplate="{DataTemplate local:CountryPage}" />
+            Title="{x:Static resx:AppResource.Countries}"
+            ContentTemplate="{DataTemplate views:CountryPage}" />
     </FlyoutItem>
 
     <FlyoutItem
         Route="main"
         Title="Typography">
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.FONT}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.FONT}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
         <ShellContent
             Route="typography"
             Title="Typography"
-            ContentTemplate="{DataTemplate local:TypographyPage}" />
+            ContentTemplate="{DataTemplate views:TypographyPage}" />
     </FlyoutItem>
 
     <FlyoutItem
         Route="main"
         Title="Home">
         <FlyoutItem.Icon>
-            <all:FontIcon
-                Glyph="{Static all:Icons.HOME}"
+            <local:FontIcon
+                Glyph="{Static local:Icons.HOME}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
         <ShellContent
             Route="home"
             Title="Home"
-            ContentTemplate="{DataTemplate local:HomePage}" />
+            ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
 
     <FlyoutItem
@@ -150,7 +150,7 @@
         Title="Register">
         <ShellContent
             Route="register"
-            ContentTemplate="{DataTemplate local:RegisterPage}" />
+            ContentTemplate="{DataTemplate views:RegisterPage}" />
     </FlyoutItem>
 
     <FlyoutItem
@@ -158,7 +158,7 @@
         Title="Login">
         <ShellContent
             Route="login"
-            ContentTemplate="{DataTemplate local:LoginPage}" />
+            ContentTemplate="{DataTemplate views:LoginPage}" />
     </FlyoutItem>
 
     <FlyoutItem
@@ -166,24 +166,7 @@
         Title="About">
         <ShellContent
             Route="about"
-            ContentTemplate="{DataTemplate local:AboutPage}" />
+            ContentTemplate="{DataTemplate views:AboutPage}" />
     </FlyoutItem>
-
-
-    <Shell.FlyoutHeader>
-        <Grid
-            HeightRequest="200"
-            BackgroundColor="#1F1E2E">
-
-            <Label
-                Text="XamarinAppTemplate"
-                TextColor="White"
-                FontAttributes="Bold"
-                FontSize="Title"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center" />
-        </Grid>
-    </Shell.FlyoutHeader>
-
 
 </Shell>

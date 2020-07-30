@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<local:BaseContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="XamarinAppTemplate.Views.HeaderView">
+    <Grid
+        HeightRequest="150"
+        BackgroundColor="{DynamicResource FlyoutBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <Label
+            FontSize="Title"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="{DynamicResource TextColor}"
+            Text="Hello, Welcom Back !" />
+
+        <BoxView
+            Grid.Row="1"
+            VerticalOptions="Start"
+            HeightRequest="1"
+            Color="{DynamicResource TextColor}" />
+    </Grid>
+</local:BaseContentView>

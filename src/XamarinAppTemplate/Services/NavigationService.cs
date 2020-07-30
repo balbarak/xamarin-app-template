@@ -14,11 +14,6 @@ namespace XamarinAppTemplate.Services
 {
     public class NavigationService
     {
-        public NavigationService()
-        {
-            RegisterRoutes();
-        }
-
         public Task GoToAsync<TViewModelType>(object data = null) where TViewModelType : BaseViewModel
         {
             if (data != null)
@@ -60,7 +55,12 @@ namespace XamarinAppTemplate.Services
             return Shell.Current.Navigation.PopToRootAsync();
         }
 
-        private void RegisterRoutes()
+        public Task GoBack()
+        {
+            return Shell.Current.Navigation.PopAsync();
+        }
+
+        public static void RegisterRoutes()
         {
             XamarinAppTemplateRoute.Register(typeof(HomeViewModel), typeof(HomePage));
             
@@ -83,6 +83,9 @@ namespace XamarinAppTemplate.Services
             XamarinAppTemplateRoute.Register(typeof(ControlViewModel), typeof(ControlPage));
 
             XamarinAppTemplateRoute.Register(typeof(ModalViewModel), typeof(ModalPage));
+
+            XamarinAppTemplateRoute.Register(typeof(HeaderViewModel), typeof(HeaderView));
+
         }
 
     }
