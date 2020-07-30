@@ -74,8 +74,6 @@ namespace XamarinAppTemplate.Services
             
             XamarinAppTemplateRoute.Register(typeof(ThemeViewModel), typeof(ThemePage));
             
-            XamarinAppTemplateRoute.Register(typeof(SettingsViewModel), typeof(SettingsPage));
-            
             XamarinAppTemplateRoute.Register(typeof(CountryViewModel), typeof(CountryPage));
             
             XamarinAppTemplateRoute.Register(typeof(CountryDetailsViewModel), typeof(CountryDetailsPage));

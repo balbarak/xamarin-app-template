@@ -119,18 +119,7 @@
             ContentTemplate="{DataTemplate views:ControlPage}" />
     </FlyoutItem>
 
-    <FlyoutItem
-        Route="main"
-        Title="{x:Static resx:AppResource.Settings}">
-        <FlyoutItem.Icon>
-            <local:FontIcon
-                Glyph="{Static local:Icons.COGS}"
-                Color="{DynamicResource FlyoutTextColor}" />
-        </FlyoutItem.Icon>
-        <ShellContent
-            Route="settings"
-            ContentTemplate="{DataTemplate views:SettingsPage}" />
-    </FlyoutItem>
+
 
     <FlyoutItem
         Route="main"
