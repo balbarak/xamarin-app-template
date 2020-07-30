@@ -2,6 +2,7 @@
 <ResourceDictionary
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
     x:Uid="ss"
     x:Class="XamarinAppTemplate.AppStyle">
 
@@ -50,6 +51,98 @@
         <Setter Property="ThumbColor" Value="{DynamicResource TextColorReverse}" />
     </Style>
 
+    <!--  =========================================== SHELL STYLE =====================================  -->
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
+        <Setter Property="BarTextColor" Value="{DynamicResource SecondaryColor}" />
+    </Style>
+
+    <Style TargetType="ShellContent">
+        <Setter Property="Shell.BackgroundColor" Value="{DynamicResource NavigationBarBackgroundColor}" />
+        <Setter Property="Shell.ForegroundColor" Value="{DynamicResource NavigationBarColor}" />
+        <!--<Setter Property="Shell.TitleColor" Value="{DynamicResource NavigationBarColor}" />-->
+        <Setter Property="Shell.NavBarHasShadow" Value="False" />
+
+        <!--  Tabs Style  -->
+        <Setter Property="Shell.TitleColor" Value="{DynamicResource FlyoutItemSelectedColor}" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource NavigationBarColor}" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource FlyoutBackgroundColor}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="Red" />
+
+    </Style>
+
+    <Style
+        x:Key="FlyoutItemStyle"
+        TargetType="local:ShellItemGrid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{DynamicResource FlyoutBackgroundColor}" />
+                            <Setter Property="IsSelected" Value="False" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{DynamicResource FlyoutItemSelectedBackgroundColor}" />
+                            <Setter Property="IsSelected" Value="True" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="ShellItemTemplate">
+        <local:ShellItemGrid
+            x:Name="grid"
+            Padding="10,10"
+            FlowDirection="{Binding }"
+            Style="{StaticResource FlyoutItemStyle}">
+            <local:ShellItemGrid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </local:ShellItemGrid.ColumnDefinitions>
+
+            <Image
+                x:Name="iconImage"
+                VerticalOptions="Center"
+                Source="{Binding Icon}">
+                <Image.Triggers>
+                    <DataTrigger
+                        TargetType="Image"
+                        Binding="{Binding Source={x:Reference grid}, Path=IsSelected}"
+                        Value="True">
+                        <Setter Property="Source">
+                            <Setter.Value>
+                                <local:FontIcon
+                                    Glyph="{Binding Icon.Glyph}"
+                                    Color="{DynamicResource FlyoutItemSelectedColor}" />
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+
+            <Label
+                Margin="5,5"
+                Grid.Column="1"
+                FontSize="Subtitle"
+                VerticalOptions="Center"
+                TextColor="{DynamicResource FlyoutTextColor}"
+                Text="{Binding Title}">
+                <Label.Triggers>
+                    <DataTrigger
+                        TargetType="Label"
+                        Binding="{Binding Source={x:Reference grid}, Path=IsSelected}"
+                        Value="True">
+                        <Setter Property="TextColor" Value="{DynamicResource FlyoutItemSelectedColor}" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+        </local:ShellItemGrid>
+    </DataTemplate>
 
 
 </ResourceDictionary>

@@ -49,9 +49,9 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddTransient<ControlViewModel>();
 
-            serviceCollections.AddSingleton<SettingsViewModel>();
+            serviceCollections.AddTransient<SettingsViewModel>();
 
-            serviceCollections.AddSingleton<AppShellViewModel>();
+            serviceCollections.AddTransient<AppShellViewModel>();
 
             serviceCollections.AddTransient<ModalViewModel>();
 

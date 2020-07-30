@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinAppTemplate.Services;
 
@@ -14,15 +15,22 @@ namespace XamarinAppTemplate.ViewModels
         private string _title;
         private FlowDirection _flowDirection;
         private LanguageManager _langugaeManager;
-
+        private string _languageText;
         protected NavigationService _navService;
 
         public FlowDirection FlowDirection { get => _flowDirection; set => SetProperty(ref _flowDirection, value); }
+        
         public string Title { get => _title; set => SetProperty(ref _title, value); }
+        
         public bool IsBusy { get { return _isBusy; } set { SetProperty(ref _isBusy, value); OnPropertyChanged(nameof(IsNotBusy)); } }
+        
         public bool IsNotBusy { get => !_isBusy; }
 
+        public string LanguageText { get => _languageText; set => SetProperty(ref _languageText, value); }
+
         public bool IsInitialized { get; set; }
+
+        public ICommand SwitchLanguageCommand => new Command(SwitchLangauge);
 
         public BaseViewModel()
         {
@@ -30,6 +38,12 @@ namespace XamarinAppTemplate.ViewModels
             _langugaeManager = AppServiceLocator.Current.GetService<LanguageManager>();
 
             FlowDirection = LanguageManager.CurrentFlowDirection;
+
+
+            if (LanguageManager.IsEnglish)
+                LanguageText = "عربي";
+            else
+                LanguageText = "En";
         }
 
         public virtual Task InitializeAsync(object navigationData) => Task.FromResult(false);
@@ -37,6 +51,14 @@ namespace XamarinAppTemplate.ViewModels
         public virtual Task OnAppearing() => Task.FromResult(false);
 
         public virtual Task OnDisappearing() => Task.FromResult(false);
+
+        public void SwitchLangauge()
+        {
+            if (LanguageManager.IsEnglish)
+                SwitchDirection(LanguageDirection.Rtl);
+            else
+                SwitchDirection(LanguageDirection.Ltr);
+        }
 
         public void SwitchDirection(LanguageDirection dir)
         {

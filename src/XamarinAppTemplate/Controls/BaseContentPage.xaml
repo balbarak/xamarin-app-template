@@ -15,11 +15,27 @@
 
     <Shell.TitleView>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+            </Grid.ColumnDefinitions>
             <Label
                 VerticalOptions="Center"
                 FontSize="Title"
+                Grid.Column="0"
+                LineBreakMode="TailTruncation"
                 HorizontalOptions="Start"
                 Text="{Binding Title}" />
+
+            <Button
+                Command="{Binding SwitchLanguageCommand}"
+                Text="{Binding LanguageText}"
+                FontSize="Micro"
+                VerticalOptions="Center"
+                Margin="10,0"
+                WidthRequest="30"
+                HorizontalOptions="End"
+                Grid.Column="1" />
         </Grid>
     </Shell.TitleView>
 </ContentPage>

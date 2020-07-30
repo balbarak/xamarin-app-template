@@ -12,7 +12,7 @@ namespace XamarinAppTemplate
 {
     public class LanguageManager
     {
-        public static CultureInfo ArabicCulture => new CultureInfo("ar-SA");
+        public static CultureInfo ArabicCulture => new CultureInfo("ar-EG");
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
 
         public static bool IsEnglish

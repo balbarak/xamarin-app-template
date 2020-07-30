@@ -13,6 +13,7 @@ namespace XamarinAppTemplate
         {
             InitializeComponent();
 
+            BindingContext = AppServiceLocator.Current.GetService<AppShellViewModel>();
         }
 
         protected override void OnNavigating(ShellNavigatingEventArgs args)
