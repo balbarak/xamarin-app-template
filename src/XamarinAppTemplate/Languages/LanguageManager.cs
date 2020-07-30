@@ -52,7 +52,21 @@ namespace XamarinAppTemplate
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                Application.Current.MainPage = new AppShell();
+                var type = Application.Current.MainPage.GetType();
+                var app = Activator.CreateInstance(type) as Page;
+
+                if (Application.Current.MainPage is Shell shell)
+                {
+                    var uri = shell.CurrentState.Location;
+                    Application.Current.MainPage = app;
+
+                    Shell.Current.GoToAsync(uri, false);
+                }
+                else
+                {
+                    Application.Current.MainPage = app;
+                }
+
             });
         }
 

@@ -16,7 +16,6 @@ namespace XamarinAppTemplate
     public partial class BaseContentPage : ContentPage
     {
         private BaseViewModel _viewModel;
-        private readonly Task _initTask;
 
         public BaseContentPage()
         {
@@ -24,8 +23,6 @@ namespace XamarinAppTemplate
 
             _viewModel = GetViewModel();
             BindingContext = _viewModel;
-
-            _initTask = Task.Run(() => _viewModel.InitializeAsync(CachHelper.PassedData));
         }
 
         protected override async void OnAppearing()
@@ -33,8 +30,13 @@ namespace XamarinAppTemplate
             if (FlowDirection != LanguageManager.CurrentFlowDirection)
                 FlowDirection = LanguageManager.CurrentFlowDirection;
 
-            await Task.WhenAny(_initTask);
+            if (!_viewModel.IsInitialized)
+            {
+                _viewModel.IsInitialized = true;
 
+                await _viewModel.InitializeAsync(CachHelper.PassedData);
+            }
+            
             await _viewModel.OnAppearing();
 
             base.OnAppearing();

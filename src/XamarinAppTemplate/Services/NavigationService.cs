@@ -31,8 +31,6 @@ namespace XamarinAppTemplate.Services
 
         public async Task ShowModal<TModel>(object data = null) where TModel : BaseViewModel
         {
-            if (data != null)
-                CachHelper.PassedData = data;
 
             var pageType = XamarinAppTemplateRoute.GetPageByViewModel(typeof(TModel));
 

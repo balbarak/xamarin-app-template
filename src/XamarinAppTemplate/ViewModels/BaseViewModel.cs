@@ -22,6 +22,8 @@ namespace XamarinAppTemplate.ViewModels
         public bool IsBusy { get { return _isBusy; } set { SetProperty(ref _isBusy, value); OnPropertyChanged(nameof(IsNotBusy)); } }
         public bool IsNotBusy { get => !_isBusy; }
 
+        public bool IsInitialized { get; set; }
+
         public BaseViewModel()
         {
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
