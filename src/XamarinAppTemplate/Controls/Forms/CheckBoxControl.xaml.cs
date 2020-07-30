@@ -18,6 +18,12 @@ namespace XamarinAppTemplate
         typeof(CheckBoxControl),
         null);
 
+        public static readonly BindableProperty IsCheckedProperty = BindableProperty.Create(
+        nameof(IsChecked),
+        typeof(bool),
+        typeof(CheckBoxControl),
+        false);
+
         public static readonly BindableProperty CheckedTextProperty = BindableProperty.Create(
         nameof(CheckedText),
         typeof(string),
@@ -55,6 +61,7 @@ namespace XamarinAppTemplate
         public Color TextColor { get { return (Color)GetValue(TextColorProperty); } set { SetValue(TextColorProperty, value); } }
         public Color CheckedColor { get { return (Color)GetValue(CheckedColorProperty); } set { SetValue(CheckedColorProperty, value); } }
         public Color CheckedTextColor { get { return (Color)GetValue(CheckedTextColorProperty); } set { SetValue(CheckedTextColorProperty, value); } }
+        public bool IsChecked { get { return (bool)GetValue(IsCheckedProperty); } set { SetValue(IsCheckedProperty, value); } }
 
 
         public CheckBoxControl()

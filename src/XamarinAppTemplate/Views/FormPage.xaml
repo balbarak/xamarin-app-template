@@ -43,7 +43,9 @@
                 </local:Portlet.Header>
                 <local:Portlet.Body>
                     <StackLayout>
-                        <local:CheckBoxControl Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+                        <local:CheckBoxControl
+                            IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                            Text="{x:Static resx:AppResource.Demo_OptionOne}" />
 
 
                         <local:CheckBoxControl
@@ -73,15 +75,7 @@
                 </local:Portlet.Header>
                 <local:Portlet.Body>
                     <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Switch
-                                ThumbColor="{DynamicResource TextColor}"
-                                Scale="1.4"
-                                IsToggled="True" />
-                            <Label
-                                VerticalOptions="Center"
-                                Text="Switch off" />
-                        </StackLayout>
+                        <local:SwitchControl />
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>

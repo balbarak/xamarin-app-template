@@ -19,6 +19,12 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand SubmitCommand => new Command(async () => await Submit());
 
+        private bool _isChecked = true;
+
+        public bool IsChecked { get => _isChecked; set => SetProperty(ref _isChecked, value); }
+        
+
+
         public FormViewModel()
         {
             Title = AppResource.Demo_Forms;

@@ -13,6 +13,8 @@
             Orientation="Horizontal">
             <CheckBox
                 x:Name="checkBox"
+                Scale="1.2"
+                IsChecked="{Binding IsChecked, Source={x:Reference self}}"
                 Color="{Binding Color, Source={x:Reference self}}"
                 VerticalOptions="Center">
                 <CheckBox.Triggers>
