@@ -9,70 +9,120 @@
     xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     x:Class="XamarinAppTemplate.Views.FormPage">
 
-    <StackLayout Spacing="10">
-        <local:Portlet>
-            <local:Portlet.Header>
-                <Label
-                    FontSize="Subtitle"
-                    Text="{x:Static resx:AppResource.Demo_FormValidation}" />
-            </local:Portlet.Header>
-            <local:Portlet.Body>
-                <StackLayout>
-                    <local:FormGroupEntry
-                        Text="{Binding Email}"
-                        Label="{x:Static resx:AppResource.Email}" />
-                    <local:FormGroupEntry
-                        Text="{Binding Password}"
-                        IsPassword="True"
-                        Label="{x:Static resx:AppResource.Password}" />
-                </StackLayout>
-            </local:Portlet.Body>
-            <local:Portlet.Footer>
-                <Button
-                    Command="{Binding SubmitCommand}"
-                    Text="{x:Static resx:AppResource.Submit}" />
-            </local:Portlet.Footer>
-        </local:Portlet>
+    <ScrollView>
+        <StackLayout Spacing="10">
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label
+                        FontSize="Subtitle"
+                        Text="{x:Static resx:AppResource.Demo_FormValidation}" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <local:FormGroupEntry
+                            Text="{Binding Email}"
+                            Label="{x:Static resx:AppResource.Email}" />
+                        <local:FormGroupEntry
+                            Text="{Binding Password}"
+                            IsPassword="True"
+                            Label="{x:Static resx:AppResource.Password}" />
+                    </StackLayout>
+                </local:Portlet.Body>
+                <local:Portlet.Footer>
+                    <Button
+                        Command="{Binding SubmitCommand}"
+                        Text="{x:Static resx:AppResource.Submit}" />
+                </local:Portlet.Footer>
+            </local:Portlet>
 
-        <local:Portlet>
-            <local:Portlet.Header>
-                <Label
-                    FontSize="Subtitle"
-                    Text="{x:Static resx:AppResource.Demo_Checkboxes}" />
-            </local:Portlet.Header>
-            <local:Portlet.Body>
-                <StackLayout>
-                    <local:ClickableStackLayout
-                        Orientation="Horizontal"
-                        Spacing="1">
-                        <CheckBox VerticalOptions="Center" />
-                        <Label
-                            VerticalOptions="Center"
-                            Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label
+                        FontSize="Subtitle"
+                        Text="{x:Static resx:AppResource.Demo_Checkboxes}" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <local:ClickableStackLayout
+                            Orientation="Horizontal"
+                            Spacing="1">
+                            <CheckBox
+                                x:Name="chk1"
+                                VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="{x:Static resx:AppResource.Demo_NotCheck}">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Source={x:Reference chk1}, Path=IsChecked}"
+                                        Value="true">
+                                        <Setter Property="TextColor" Value="{DynamicResource SuccessColor}" />
+                                        <Setter Property="Text" Value="{x:Static resx:AppResource.Demo_Checked}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
 
-                        <local:ClickableStackLayout.Triggers>
-                            <EventTrigger Event="OnClicked">
-                                <local:CheckboxTriggerAction />
-                            </EventTrigger>
-                        </local:ClickableStackLayout.Triggers>
-                    </local:ClickableStackLayout>
+                            <local:ClickableStackLayout.Triggers>
+                                <EventTrigger Event="OnClicked">
+                                    <local:CheckboxTriggerAction />
+                                </EventTrigger>
+                            </local:ClickableStackLayout.Triggers>
+                        </local:ClickableStackLayout>
 
-                    <local:ClickableStackLayout
-                        Orientation="Horizontal"
-                        Spacing="1">
-                        <CheckBox VerticalOptions="Center" />
-                        <Label
-                            VerticalOptions="Center"
-                            Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+                        <local:ClickableStackLayout
+                            Orientation="Horizontal"
+                            Spacing="1">
+                            <CheckBox VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="{x:Static resx:AppResource.Demo_OptionOne}" />
 
-                        <local:ClickableStackLayout.Triggers>
-                            <EventTrigger Event="OnClicked">
-                                <local:CheckboxTriggerAction />
-                            </EventTrigger>
-                        </local:ClickableStackLayout.Triggers>
-                    </local:ClickableStackLayout>
-                </StackLayout>
-            </local:Portlet.Body>
-        </local:Portlet>
-    </StackLayout>
+                            <local:ClickableStackLayout.Triggers>
+                                <EventTrigger Event="OnClicked">
+                                    <local:CheckboxTriggerAction />
+                                </EventTrigger>
+                            </local:ClickableStackLayout.Triggers>
+                        </local:ClickableStackLayout>
+
+                        <local:ClickableStackLayout
+                            Orientation="Horizontal"
+                            Spacing="1">
+                            <CheckBox VerticalOptions="Center" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+
+                            <local:ClickableStackLayout.Triggers>
+                                <EventTrigger Event="OnClicked">
+                                    <local:CheckboxTriggerAction />
+                                </EventTrigger>
+                            </local:ClickableStackLayout.Triggers>
+                        </local:ClickableStackLayout>
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet Margin="0,0,0,30">
+                <local:Portlet.Header>
+                    <Label
+                        FontSize="Subtitle"
+                        Text="{x:Static resx:AppResource.Demo_Switch}" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Switch
+                                ThumbColor="{DynamicResource TextColor}"
+                                Scale="1.4"
+                                IsToggled="True" />
+                            <Label
+                                VerticalOptions="Center"
+                                Text="Switch off" />
+                        </StackLayout>
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+        </StackLayout>
+    </ScrollView>
 </local:BaseContentPage>

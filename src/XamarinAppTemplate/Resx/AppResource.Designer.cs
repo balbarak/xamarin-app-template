@@ -385,6 +385,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تفعيل.
+        /// </summary>
+        public static string Demo_Switch {
+            get {
+                return ResourceManager.GetString("Demo_Switch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to عنوان.
         /// </summary>
         public static string Demo_Title {

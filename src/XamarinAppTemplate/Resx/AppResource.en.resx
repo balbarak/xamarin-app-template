@@ -300,4 +300,7 @@
   <data name="Demo_NotCheck" xml:space="preserve">
     <value>Not Checked</value>
   </data>
+  <data name="Demo_Switch" xml:space="preserve">
+    <value>Switch</value>
+  </data>
 </root>
