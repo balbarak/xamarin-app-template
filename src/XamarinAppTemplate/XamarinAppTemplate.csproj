@@ -60,7 +60,10 @@
     <EmbeddedResource Update="Controls\ButtonIcon.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Controls\FormGroupEntry.xaml">
+    <EmbeddedResource Update="Controls\Forms\CheckBoxControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Forms\FormGroupEntry.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\Loading.xaml">

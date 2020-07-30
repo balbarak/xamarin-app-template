@@ -43,62 +43,24 @@
                 </local:Portlet.Header>
                 <local:Portlet.Body>
                     <StackLayout>
-                        <local:ClickableStackLayout
-                            Orientation="Horizontal"
-                            Spacing="1">
-                            <CheckBox
-                                x:Name="chk1"
-                                VerticalOptions="Center" />
-                            <Label
-                                VerticalOptions="Center"
-                                Text="{x:Static resx:AppResource.Demo_NotCheck}">
-                                <Label.Triggers>
-                                    <DataTrigger
-                                        TargetType="Label"
-                                        Binding="{Binding Source={x:Reference chk1}, Path=IsChecked}"
-                                        Value="true">
-                                        <Setter Property="TextColor" Value="{DynamicResource SuccessColor}" />
-                                        <Setter Property="Text" Value="{x:Static resx:AppResource.Demo_Checked}" />
-                                    </DataTrigger>
-                                </Label.Triggers>
-                            </Label>
+                        <local:CheckBoxControl Text="{x:Static resx:AppResource.Demo_OptionOne}" />
 
-                            <local:ClickableStackLayout.Triggers>
-                                <EventTrigger Event="OnClicked">
-                                    <local:CheckboxTriggerAction />
-                                </EventTrigger>
-                            </local:ClickableStackLayout.Triggers>
-                        </local:ClickableStackLayout>
 
-                        <local:ClickableStackLayout
-                            Orientation="Horizontal"
-                            Spacing="1">
-                            <CheckBox VerticalOptions="Center" />
-                            <Label
-                                VerticalOptions="Center"
-                                Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+                        <local:CheckBoxControl
+                            Color="{DynamicResource DangerColor}"
+                            Text="{x:Static resx:AppResource.Demo_Option}" />
 
-                            <local:ClickableStackLayout.Triggers>
-                                <EventTrigger Event="OnClicked">
-                                    <local:CheckboxTriggerAction />
-                                </EventTrigger>
-                            </local:ClickableStackLayout.Triggers>
-                        </local:ClickableStackLayout>
 
-                        <local:ClickableStackLayout
-                            Orientation="Horizontal"
-                            Spacing="1">
-                            <CheckBox VerticalOptions="Center" />
-                            <Label
-                                VerticalOptions="Center"
-                                Text="{x:Static resx:AppResource.Demo_OptionOne}" />
+                        <local:CheckBoxControl
+                            Color="{DynamicResource WarningColor}"
+                            Text="{x:Static resx:AppResource.Demo_OptionTwo}" />
 
-                            <local:ClickableStackLayout.Triggers>
-                                <EventTrigger Event="OnClicked">
-                                    <local:CheckboxTriggerAction />
-                                </EventTrigger>
-                            </local:ClickableStackLayout.Triggers>
-                        </local:ClickableStackLayout>
+                        <local:CheckBoxControl
+                            CheckedColor="{DynamicResource SuccessColor}"
+                            CheckedTextColor="{DynamicResource SuccessColor}"
+                            CheckedText="{x:Static resx:AppResource.Demo_Checked}"
+                            Text="{x:Static resx:AppResource.Demo_NotCheck}" />
+
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="self"
+    x:Class="XamarinAppTemplate.CheckBoxControl">
+    <ContentView.Content>
+        <StackLayout
+            Spacing="1"
+            Orientation="Horizontal">
+            <CheckBox
+                x:Name="checkBox"
+                Color="{Binding Color, Source={x:Reference self}}"
+                VerticalOptions="Center">
+                <CheckBox.Triggers>
+                    <DataTrigger
+                        TargetType="CheckBox"
+                        Value="true"
+                        Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}">
+                        <Setter Property="Color" Value="{Binding CheckedColor, Source={x:Reference self}}" />
+                    </DataTrigger>
+                </CheckBox.Triggers>
+            </CheckBox>
+            <Label
+                VerticalOptions="Center"
+                TextColor="{Binding TextColor, Source={x:Reference self}}"
+                Text="{Binding Text, Source={x:Reference self}}">
+                <Label.Triggers>
+                    <DataTrigger
+                        TargetType="Label"
+                        Value="true"
+                        Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}">
+                        <Setter Property="Text" Value="{Binding CheckedText, Source={x:Reference self}}" />
+                        <Setter Property="TextColor" Value="{Binding CheckedTextColor, Source={x:Reference self}}" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

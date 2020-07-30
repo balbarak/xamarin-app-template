@@ -22,6 +22,21 @@
 
     <FlyoutItem
         Route="main"
+        Title="{x:Static resx:AppResource.Demo_Forms}">
+        <FlyoutItem.Icon>
+            <local:FontIcon
+                Glyph="{Static local:Icons.LIST}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
+
+        <ShellContent
+            Route="forms"
+            ContentTemplate="{DataTemplate views:FormPage}" />
+    </FlyoutItem>
+
+
+    <FlyoutItem
+        Route="main"
         Title="{x:Static resx:AppResource.Themes}">
         <FlyoutItem.Icon>
             <local:FontIcon
@@ -104,19 +119,6 @@
 
     </FlyoutItem>
 
-    <FlyoutItem
-        Route="main"
-        Title="{x:Static resx:AppResource.Demo_Forms}">
-        <FlyoutItem.Icon>
-            <local:FontIcon
-                Glyph="{Static local:Icons.LIST}"
-                Color="{DynamicResource FlyoutTextColor}" />
-        </FlyoutItem.Icon>
-
-        <ShellContent
-            Route="forms"
-            ContentTemplate="{DataTemplate views:FormPage}" />
-    </FlyoutItem>
 
 
 
