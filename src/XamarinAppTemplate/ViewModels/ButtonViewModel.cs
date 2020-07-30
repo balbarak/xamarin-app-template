@@ -4,11 +4,11 @@ using System.Text;
 
 namespace XamarinAppTemplate.ViewModels
 {
-    public class TypographyViewModel : BaseViewModel
+    public class ButtonViewModel : BaseViewModel
     {
-        public TypographyViewModel()
+        public ButtonViewModel()
         {
-            Title = Resx.AppResource.Demo_Typography;
+            Title = Resx.AppResource.Demo_Buttons;
         }
     }
 }

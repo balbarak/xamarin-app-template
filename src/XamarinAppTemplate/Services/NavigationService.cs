@@ -86,7 +86,12 @@ namespace XamarinAppTemplate.Services
 
             XamarinAppTemplateRoute.Register(typeof(HeaderViewModel), typeof(HeaderView));
 
-        }
+            XamarinAppTemplateRoute.Register(typeof(ButtonViewModel), typeof(ButtonPage));
 
+            XamarinAppTemplateRoute.Register(typeof(SuccessModalViewModel), typeof(SuccessModal));
+
+            XamarinAppTemplateRoute.Register(typeof(ErrorModalViewModel), typeof(ErrorModal));
+
+        }
     }
 }

@@ -32,6 +32,8 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand SwitchDirectionCommand => new Command(()=> SwitchDirection());
 
+        public ICommand CloseModalCommand => new Command(async () => await _navService.CloseModal());
+
         public BaseViewModel()
         {
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
@@ -63,6 +65,21 @@ namespace XamarinAppTemplate.ViewModels
         protected virtual void OnDirectionChanged(object sender,LanguageDirection dir)
         {
             
+        }
+
+        protected Task ShowSuccessModal()
+        {
+            return _navService.ShowModal<SuccessModalViewModel>();
+        }
+
+        protected Task ShowSuccessModal(string title)
+        {
+            return _navService.ShowModal<SuccessModalViewModel>(title);
+        }
+
+        protected Task ShowErrorModal(string error)
+        {
+            return _navService.ShowModal<ErrorModalViewModel>(error);
         }
 
         private void SwitchDirection(LanguageDirection dir)

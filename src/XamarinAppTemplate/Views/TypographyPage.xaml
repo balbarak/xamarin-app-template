@@ -5,107 +5,137 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:local="clr-namespace:XamarinAppTemplate"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
-    Title="Typography"
+    Title="{Binding Title}"
     x:Class="XamarinAppTemplate.Views.TypographyPage">
 
-    <ScrollView Padding="0">
-        <StackLayout
-            Padding="0"
-            Spacing="10">
-            <Frame
-                HasShadow="False"
-                Padding="0"
-                VerticalOptions="Start">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
+    <ScrollView>
+        <StackLayout Spacing="10">
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label
+                        FontSize="Subtitle"
+                        Text="{x:Static resx:AppResource.Demo_Colors}" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
                     <StackLayout>
                         <Label
-                            FontSize="Subtitle"
-                            Padding="15,10"
-                            Text="Buttons" />
-                        <BoxView
-                            BackgroundColor="#EBEDF2"
-                            HeightRequest="1" />
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextColor="{DynamicResource BrandColor}"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextColor="{DynamicResource SuccessColor}"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextColor="{DynamicResource WarningColor}"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextColor="{DynamicResource DangerColor}"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextColor="{DynamicResource TextColor}"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextColor="{DynamicResource PrimaryColor}"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            Padding="5,0"
+                            TextColor="{DynamicResource TextColorReverse}"
+                            BackgroundColor="{DynamicResource ButtonColorReverse}"
+                            FontSize="Body" />
                     </StackLayout>
-                    <StackLayout
-                        Padding="20"
-                        Grid.Row="1"
-                        Spacing="10">
-                        <Button
-                            Command="{Binding LoginCommand}"
-                            Text="Login" />
+                </local:Portlet.Body>
+            </local:Portlet>
 
-                        <Button
-                            Style="{StaticResource btn-danger}"
-                            Text="Danger" />
-
-                        <Button
-                            Style="{StaticResource btn-success}"
-                            Text="Success" />
-
-                        <Button
-                            Style="{StaticResource btn-warning}"
-                            Text="Warning" />
-                    </StackLayout>
-                </Grid>
-            </Frame>
-
-
-            <Frame
-                HasShadow="False"
-                Padding="0"
-                VerticalOptions="Start">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label
+                        Text="{x:Static resx:AppResource.Demo_Sizes}"
+                        FontSize="Subtitle" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
                     <StackLayout>
                         <Label
-                            FontSize="Subtitle"
-                            Padding="15,10"
-                            Text="Text Colors" />
-                        <BoxView
-                            BackgroundColor="#EBEDF2"
-                            HeightRequest="1" />
-                    </StackLayout>
-                    <StackLayout
-                        Padding="20"
-                        Grid.Row="1"
-                        Spacing="10">
+                            Text="{x:Static resx:AppResource.Demo_LargeFont}"
+                            FontSize="Large" />
                         <Label
-                            FontSize="Body"
-                            Text="1. Primary Color"
-                            TextColor="{DynamicResource PrimaryColor}" />
-                        <Label
-                            FontSize="Body"
-                            Text="2. Brand Color"
-                            TextColor="{DynamicResource BrandColor}" />
-                        <Label
-                            FontSize="Body"
-                            Text="3. Success Color"
-                            TextColor="{DynamicResource SuccessColor}" />
-                        <Label
-                            FontSize="Body"
-                            Text="4. Warning Color"
-                            TextColor="{DynamicResource WarningColor}" />
-                        <Label
-                            FontSize="Body"
-                            Text="5. Danger Color"
-                            TextColor="{DynamicResource DangerColor}" />
+                            Text="{x:Static resx:AppResource.Demo_MediumFont}"
+                            FontSize="Medium" />
 
                         <Label
-                            FontSize="Body"
-                            Text="6. Normal"
-                            TextColor="{DynamicResource TextColor}" />
+                            Text="{x:Static resx:AppResource.Demo_SmallFont}"
+                            FontSize="Small" />
+
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_MicroFont}"
+                            FontSize="Micro" />
+
                     </StackLayout>
-                </Grid>
-            </Frame>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label
+                        Text="{x:Static resx:AppResource.Demo_Titles}"
+                        FontSize="Subtitle" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_Title}"
+                            FontSize="Title" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_Subtitle}"
+                            FontSize="Subtitle" />
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
+            <local:Portlet>
+                <local:Portlet.Header>
+                    <Label
+                        Text="{x:Static resx:AppResource.Demo_Properties}"
+                        FontSize="Subtitle" />
+                </local:Portlet.Header>
+                <local:Portlet.Body>
+                    <StackLayout>
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            FontAttributes="Bold"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            FontAttributes="Italic"
+                            FontSize="Body" />
+
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            FontSize="Body" />
+
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextDecorations="Strikethrough"
+                            FontSize="Body" />
+                        <Label
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            TextDecorations="Underline"
+                            FontSize="Body" />
+
+                    </StackLayout>
+                </local:Portlet.Body>
+            </local:Portlet>
+
         </StackLayout>
-
     </ScrollView>
+
 </local:BaseContentPage>

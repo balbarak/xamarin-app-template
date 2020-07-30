@@ -59,6 +59,12 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddTransient<HeaderViewModel>();
 
+            serviceCollections.AddTransient<ButtonViewModel>();
+
+            serviceCollections.AddTransient<SuccessModalViewModel>();
+
+            serviceCollections.AddTransient<ErrorModalViewModel>();
+
             return serviceCollections;
         }
     }

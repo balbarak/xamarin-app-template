@@ -106,6 +106,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اغلاق.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الرمز.
         /// </summary>
         public static string Code {
@@ -133,11 +142,218 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هوية.
+        /// </summary>
+        public static string Demo_Brand {
+            get {
+                return ResourceManager.GetString("Demo_Brand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الأزرار.
+        /// </summary>
+        public static string Demo_Buttons {
+            get {
+                return ResourceManager.GetString("Demo_Buttons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الوان.
+        /// </summary>
+        public static string Demo_Colors {
+            get {
+                return ResourceManager.GetString("Demo_Colors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطر.
+        /// </summary>
+        public static string Demo_Danger {
+            get {
+                return ResourceManager.GetString("Demo_Danger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اظهار مربع نص الخطأ.
+        /// </summary>
+        public static string Demo_ErrorModal {
+            get {
+                return ResourceManager.GetString("Demo_ErrorModal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خط كبير.
+        /// </summary>
+        public static string Demo_LargeFont {
+            get {
+                return ResourceManager.GetString("Demo_LargeFont", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خط متوسط.
+        /// </summary>
+        public static string Demo_MediumFont {
+            get {
+                return ResourceManager.GetString("Demo_MediumFont", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خط مجهري.
+        /// </summary>
+        public static string Demo_MicroFont {
+            get {
+                return ResourceManager.GetString("Demo_MicroFont", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مربعات النص.
+        /// </summary>
+        public static string Demo_Modals {
+            get {
+                return ResourceManager.GetString("Demo_Modals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الخصائص.
+        /// </summary>
+        public static string Demo_Properties {
+            get {
+                return ResourceManager.GetString("Demo_Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هذا النص هو مثال لنص.
+        /// </summary>
+        public static string Demo_ShortText {
+            get {
+                return ResourceManager.GetString("Demo_ShortText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اظهار مربع النص.
+        /// </summary>
+        public static string Demo_ShowModal {
+            get {
+                return ResourceManager.GetString("Demo_ShowModal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الاحجام.
+        /// </summary>
+        public static string Demo_Sizes {
+            get {
+                return ResourceManager.GetString("Demo_Sizes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خط صغير.
+        /// </summary>
+        public static string Demo_SmallFont {
+            get {
+                return ResourceManager.GetString("Demo_SmallFont", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان فرعي.
+        /// </summary>
+        public static string Demo_Subtitle {
+            get {
+                return ResourceManager.GetString("Demo_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نجاح.
+        /// </summary>
+        public static string Demo_Success {
+            get {
+                return ResourceManager.GetString("Demo_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اظهار مربع نص النجاح.
+        /// </summary>
+        public static string Demo_SuccessModal {
+            get {
+                return ResourceManager.GetString("Demo_SuccessModal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان.
+        /// </summary>
+        public static string Demo_Title {
+            get {
+                return ResourceManager.GetString("Demo_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to العنواين.
+        /// </summary>
+        public static string Demo_Titles {
+            get {
+                return ResourceManager.GetString("Demo_Titles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هذا النص هو مثال لنص يمكن أن يستبدل بنص اخر بديل بنفس المساحة.
+        /// </summary>
+        public static string Demo_TitleText {
+            get {
+                return ResourceManager.GetString("Demo_TitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الخط.
+        /// </summary>
+        public static string Demo_Typography {
+            get {
+                return ResourceManager.GetString("Demo_Typography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحذير.
+        /// </summary>
+        public static string Demo_Warning {
+            get {
+                return ResourceManager.GetString("Demo_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string English {
             get {
                 return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطأ.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         
@@ -183,6 +399,15 @@ namespace XamarinAppTemplate.Resx {
         public static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تم تنفيذ العملية بنجاح !.
+        /// </summary>
+        public static string OperationSuccess {
+            get {
+                return ResourceManager.GetString("OperationSuccess", resourceCulture);
             }
         }
         

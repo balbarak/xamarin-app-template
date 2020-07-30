@@ -34,6 +34,35 @@
             ContentTemplate="{DataTemplate views:ThemePage}" />
     </FlyoutItem>
 
+
+
+    <FlyoutItem
+        Route="main"
+        Title="{x:Static resx:AppResource.Demo_Typography}">
+        <FlyoutItem.Icon>
+            <local:FontIcon
+                Glyph="{Static local:Icons.FONT}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
+        <ShellContent
+            Route="typography"
+            ContentTemplate="{DataTemplate views:TypographyPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem
+        Route="main"
+        Title="{x:Static resx:AppResource.Demo_Buttons}">
+        <FlyoutItem.Icon>
+            <local:FontIcon
+                Glyph="{Static local:Icons.LIST_OL}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
+        <ShellContent
+            Route="buttons"
+            ContentTemplate="{DataTemplate views:ButtonPage}" />
+    </FlyoutItem>
+
+
     <FlyoutItem
         Route="main"
         Title="{x:Static resx:AppResource.Tabs}">
@@ -117,19 +146,7 @@
             ContentTemplate="{DataTemplate views:CountryPage}" />
     </FlyoutItem>
 
-    <FlyoutItem
-        Route="main"
-        Title="Typography">
-        <FlyoutItem.Icon>
-            <local:FontIcon
-                Glyph="{Static local:Icons.FONT}"
-                Color="{DynamicResource FlyoutTextColor}" />
-        </FlyoutItem.Icon>
-        <ShellContent
-            Route="typography"
-            Title="Typography"
-            ContentTemplate="{DataTemplate views:TypographyPage}" />
-    </FlyoutItem>
+
 
     <FlyoutItem
         Route="main"

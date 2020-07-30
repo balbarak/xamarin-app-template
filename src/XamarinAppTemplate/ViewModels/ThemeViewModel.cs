@@ -16,6 +16,10 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand ShowModalCommand => new Command(async () => await _navService.ShowModal<ModalViewModel>());
 
+        public ICommand ShowSuccessModalCommand => new Command(async () => await ShowSuccessModal());
+
+        public ICommand ShowErrorModalCommand => new Command(async () => await ShowErrorModal(Resx.AppResource.Demo_ShortText));
+
         public ThemeViewModel()
         {
             Title = Resx.AppResource.Themes;

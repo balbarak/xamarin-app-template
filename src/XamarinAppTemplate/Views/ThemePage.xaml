@@ -8,6 +8,7 @@
     xmlns:local="clr-namespace:XamarinAppTemplate"
     xmlns:vm="clr-namespace:XamarinAppTemplate.ViewModels"
     xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
     mc:Ignorable="d"
     x:DataType="vm:ThemeViewModel"
     x:Class="XamarinAppTemplate.Views.ThemePage">
@@ -16,7 +17,7 @@
     <ScrollView>
         <StackLayout Spacing="10">
 
-            <local:Portlet>
+            <!--<local:Portlet>
                 <local:Portlet.Header>
                     <Label Text="Svg Icons" />
                 </local:Portlet.Header>
@@ -114,22 +115,29 @@
                         </Image>
                     </StackLayout>
                 </local:Portlet.Body>
-            </local:Portlet>
+            </local:Portlet>-->
 
             <local:Portlet>
 
                 <local:Portlet.Header>
-                    <Label Text="Modals" />
-
+                    <Label Text="{x:Static resx:AppResource.Demo_Modals}" />
                 </local:Portlet.Header>
 
                 <local:Portlet.Body>
-                    <Grid>
+                    <StackLayout Spacing="10">
                         <Button
                             Command="{Binding ShowModalCommand}"
+                            Style="{DynamicResource btn-brand}"
+                            Text="{x:Static resx:AppResource.Demo_Modals}" />
+                        <Button
+                            Command="{Binding ShowSuccessModalCommand}"
                             Style="{DynamicResource btn-success}"
-                            Text="Show Modal" />
-                    </Grid>
+                            Text="{x:Static resx:AppResource.Demo_SuccessModal}" />
+                        <Button
+                            Command="{Binding ShowErrorModalCommand}"
+                            Style="{DynamicResource btn-danger}"
+                            Text="{x:Static resx:AppResource.Demo_ErrorModal}" />
+                    </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
 

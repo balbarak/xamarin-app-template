@@ -180,4 +180,79 @@
   <data name="Tabs" xml:space="preserve">
     <value>التبويبات</value>
   </data>
+  <data name="Demo_Typography" xml:space="preserve">
+    <value>الخط</value>
+  </data>
+  <data name="Demo_Sizes" xml:space="preserve">
+    <value>الاحجام</value>
+  </data>
+  <data name="Demo_LargeFont" xml:space="preserve">
+    <value>خط كبير</value>
+  </data>
+  <data name="Demo_MediumFont" xml:space="preserve">
+    <value>خط متوسط</value>
+  </data>
+  <data name="Demo_SmallFont" xml:space="preserve">
+    <value>خط صغير</value>
+  </data>
+  <data name="Demo_MicroFont" xml:space="preserve">
+    <value>خط مجهري</value>
+  </data>
+  <data name="Demo_Titles" xml:space="preserve">
+    <value>العنواين</value>
+  </data>
+  <data name="Demo_TitleText" xml:space="preserve">
+    <value>هذا النص هو مثال لنص يمكن أن يستبدل بنص اخر بديل بنفس المساحة</value>
+  </data>
+  <data name="Demo_Title" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="Demo_Subtitle" xml:space="preserve">
+    <value>عنوان فرعي</value>
+  </data>
+  <data name="Demo_ShortText" xml:space="preserve">
+    <value>هذا النص هو مثال لنص</value>
+  </data>
+  <data name="Demo_Colors" xml:space="preserve">
+    <value>الوان</value>
+  </data>
+  <data name="Demo_Properties" xml:space="preserve">
+    <value>الخصائص</value>
+  </data>
+  <data name="Demo_Buttons" xml:space="preserve">
+    <value>الأزرار</value>
+  </data>
+  <data name="Demo_Success" xml:space="preserve">
+    <value>نجاح</value>
+  </data>
+  <data name="Demo_Danger" xml:space="preserve">
+    <value>خطر</value>
+  </data>
+  <data name="Demo_Brand" xml:space="preserve">
+    <value>هوية</value>
+  </data>
+  <data name="Demo_Warning" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="Demo_Modals" xml:space="preserve">
+    <value>مربعات النص</value>
+  </data>
+  <data name="Demo_ShowModal" xml:space="preserve">
+    <value>اظهار مربع النص</value>
+  </data>
+  <data name="Demo_SuccessModal" xml:space="preserve">
+    <value>اظهار مربع نص النجاح</value>
+  </data>
+  <data name="Demo_ErrorModal" xml:space="preserve">
+    <value>اظهار مربع نص الخطأ</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>اغلاق</value>
+  </data>
+  <data name="OperationSuccess" xml:space="preserve">
+    <value>تم تنفيذ العملية بنجاح !</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
 </root>

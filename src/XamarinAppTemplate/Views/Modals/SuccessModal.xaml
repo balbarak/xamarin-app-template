@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<modal:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modal="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    mc:Ignorable="d"
+    x:Class="XamarinAppTemplate.Views.SuccessModal">
+    <Grid
+        Margin="20"
+        VerticalOptions="Center">
+        <local:Portlet>
+
+            <local:Portlet.Body>
+                <StackLayout Spacing="1">
+
+                    <Label
+                        HorizontalOptions="Center"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Text="{x:Static resx:AppResource.OperationSuccess}" />
+                    <lottie:AnimationView
+                        HeightRequest="150"
+                        Animation="success.json"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        AutoPlay="True" />
+                </StackLayout>
+            </local:Portlet.Body>
+            <local:Portlet.Footer>
+                <Button
+                    Command="{Binding CloseModalCommand}"
+                    HorizontalOptions="End"
+                    Style="{DynamicResource btn-danger}"
+                    Text="{x:Static resx:AppResource.Close}" />
+            </local:Portlet.Footer>
+        </local:Portlet>
+    </Grid>
+</modal:PopupPage>

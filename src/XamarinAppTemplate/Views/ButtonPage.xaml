@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
+    mc:Ignorable="d"
+    x:Class="XamarinAppTemplate.Views.ButtonPage">
+
+    <StackLayout>
+        <local:Portlet>
+            <local:Portlet.Body>
+                <StackLayout Spacing="10">
+                    <Button Text="{x:Static resx:AppResource.Demo_Brand}" />
+
+                    <Button
+                        Style="{StaticResource btn-success}"
+                        Text="{x:Static resx:AppResource.Demo_Success}" />
+                    <Button
+                        Style="{StaticResource btn-warning}"
+                        Text="{x:Static resx:AppResource.Demo_Warning}" />
+                    <Button
+                        Style="{StaticResource btn-danger}"
+                        Text="{x:Static resx:AppResource.Demo_Danger}" />
+                </StackLayout>
+            </local:Portlet.Body>
+        </local:Portlet>
+    </StackLayout>
+</local:BaseContentPage>
