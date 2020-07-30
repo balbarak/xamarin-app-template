@@ -63,7 +63,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Lang\LanguageManageriOS.cs" />
+    <Compile Include="Lang\DirectionSwitcher.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renders\AppShellRenderer.cs" />

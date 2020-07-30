@@ -25,7 +25,7 @@ namespace XamarinAppTemplate.Models
 
         public override string ToString()
         {
-            if (LanguageManager.IsEnglish)
+            if (Localization.IsEnglish)
                 return English;
             else
                 return Arabic;

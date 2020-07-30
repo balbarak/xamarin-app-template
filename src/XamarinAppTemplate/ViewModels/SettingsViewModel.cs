@@ -8,7 +8,7 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class SettingsViewModel : BaseViewModel
     {
-        private readonly ILanguageManager _languageManager;
+        private readonly IDirectionSwitcher _languageManager;
 
         private bool _isDarkTheme;
         private bool _isArabic;
@@ -25,7 +25,7 @@ namespace XamarinAppTemplate.ViewModels
             set => SetProperty(ref _isDarkTheme, value, nameof(IsDarkTheme), OnThemeChanged);
         }
 
-        public SettingsViewModel(ILanguageManager manager)
+        public SettingsViewModel(IDirectionSwitcher manager)
         {
             _languageManager = manager;
         }
@@ -44,10 +44,7 @@ namespace XamarinAppTemplate.ViewModels
 
         private void OnLanguageChanged()
         {
-            if (IsArabic)
-                SwitchDirection(LanguageDirection.Rtl);
-            else
-                SwitchDirection(LanguageDirection.Ltr);
+            SwitchDirection();
         }
     }
 }

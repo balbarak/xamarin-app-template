@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XamarinAppTemplate
 {
-    public interface ILanguageManager
+    public interface IDirectionSwitcher
     {
         void SwitchDirection(LanguageDirection dir);
     }

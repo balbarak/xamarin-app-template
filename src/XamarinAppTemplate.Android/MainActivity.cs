@@ -23,7 +23,7 @@ namespace XamarinAppTemplate.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            Startup.Services.AddTransient<ILanguageManager, LanguageManagerAndroid>();
+            Startup.Services.AddTransient<IDirectionSwitcher, DirectionSwitcher>();
 
             base.OnCreate(savedInstanceState);
 

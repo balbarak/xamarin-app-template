@@ -28,7 +28,7 @@
                 Text="{Binding Title}" />
 
             <Button
-                Command="{Binding SwitchLanguageCommand}"
+                Command="{Binding SwitchDirectionCommand}"
                 Text="{Binding LanguageText}"
                 FontSize="Micro"
                 VerticalOptions="Center"

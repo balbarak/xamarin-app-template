@@ -28,7 +28,7 @@ namespace XamarinAppTemplate
         private static IServiceCollection ConfigureServices(IServiceCollection serviceCollections)
         {
             serviceCollections.AddSingleton<NavigationService>();
-            serviceCollections.AddSingleton<LanguageManager>();
+            serviceCollections.AddSingleton<Localization>();
             serviceCollections.AddSingleton<CountryService>();
 
             serviceCollections.AddTransient<HomeViewModel>();

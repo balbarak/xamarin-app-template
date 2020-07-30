@@ -39,7 +39,7 @@ namespace XamarinAppTemplate.iOS
 
             SetupPlugins();
 
-            Startup.Services.AddTransient<ILanguageManager, LanguageManageriOS>();
+            Startup.Services.AddTransient<IDirectionSwitcher, DirectionSwitcher>();
 
             LoadApplication(new App());
  

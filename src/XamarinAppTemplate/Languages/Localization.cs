@@ -10,9 +10,16 @@ using Xamarin.Forms;
 
 namespace XamarinAppTemplate
 {
-    public class LanguageManager
+    public enum LanguageDirection
+    {
+        Ltr = 1,
+        Rtl = 2
+    }
+
+    public class Localization
     {
         public static CultureInfo ArabicCulture => new CultureInfo("ar-EG");
+
         public static CultureInfo EnglishCulture => new CultureInfo("en-US");
 
         public static bool IsEnglish
@@ -20,12 +27,12 @@ namespace XamarinAppTemplate
             get
             {
                 return Thread.CurrentThread.CurrentCulture.Name.Contains("en");
-
             }
         }
+        
         public static FlowDirection CurrentFlowDirection { get; set; } = Device.FlowDirection;
 
-        public void SwitchDirection(LanguageDirection dir)
+        public void ChangeDirection(LanguageDirection dir)
         {
             if (dir == LanguageDirection.Rtl)
             {
@@ -41,7 +48,7 @@ namespace XamarinAppTemplate
                 Thread.CurrentThread.CurrentUICulture = EnglishCulture;
             }
 
-            var manager = AppServiceLocator.Current.GetService<ILanguageManager>();
+            var manager = AppServiceLocator.Current.GetService<IDirectionSwitcher>();
 
             if (dir == LanguageDirection.Ltr)
                 ThemeManager.SetDefaultTheme();

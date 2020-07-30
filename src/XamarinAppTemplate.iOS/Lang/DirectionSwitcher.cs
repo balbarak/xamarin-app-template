@@ -12,7 +12,7 @@ using CoreGraphics;
 
 namespace XamarinAppTemplate.iOS.Lang
 {
-    public class LanguageManageriOS : ILanguageManager
+    public class DirectionSwitcher : IDirectionSwitcher
     {
         private const string APPLE_LANGUAGES = "AppleLanguage";
 

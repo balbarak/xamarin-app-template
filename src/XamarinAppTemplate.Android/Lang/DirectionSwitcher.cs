@@ -3,7 +3,7 @@ using Plugin.CurrentActivity;
 
 namespace XamarinAppTemplate.Droid.Lang
 {
-    public class LanguageManagerAndroid : ILanguageManager
+    public class DirectionSwitcher : IDirectionSwitcher
     {
         public void SwitchDirection(LanguageDirection dir)
         {

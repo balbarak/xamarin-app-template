@@ -27,8 +27,8 @@ namespace XamarinAppTemplate
 
         protected override async void OnAppearing()
         {
-            if (FlowDirection != LanguageManager.CurrentFlowDirection)
-                FlowDirection = LanguageManager.CurrentFlowDirection;
+            if (FlowDirection != Localization.CurrentFlowDirection)
+                FlowDirection = Localization.CurrentFlowDirection;
 
             if (!_viewModel.IsInitialized)
             {

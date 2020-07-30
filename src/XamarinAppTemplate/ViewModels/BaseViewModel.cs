@@ -14,7 +14,7 @@ namespace XamarinAppTemplate.ViewModels
         private bool _isBusy = false;
         private string _title;
         private FlowDirection _flowDirection;
-        private LanguageManager _langugaeManager;
+        private Localization _langugaeManager;
         private string _languageText;
         protected NavigationService _navService;
 
@@ -30,17 +30,17 @@ namespace XamarinAppTemplate.ViewModels
 
         public bool IsInitialized { get; set; }
 
-        public ICommand SwitchLanguageCommand => new Command(SwitchLangauge);
+        public ICommand SwitchDirectionCommand => new Command(()=> SwitchDirection());
 
         public BaseViewModel()
         {
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
-            _langugaeManager = AppServiceLocator.Current.GetService<LanguageManager>();
+            _langugaeManager = AppServiceLocator.Current.GetService<Localization>();
 
-            FlowDirection = LanguageManager.CurrentFlowDirection;
+            FlowDirection = Localization.CurrentFlowDirection;
 
 
-            if (LanguageManager.IsEnglish)
+            if (Localization.IsEnglish)
                 LanguageText = "عربي";
             else
                 LanguageText = "En";
@@ -52,19 +52,24 @@ namespace XamarinAppTemplate.ViewModels
 
         public virtual Task OnDisappearing() => Task.FromResult(false);
 
-        public void SwitchLangauge()
+        public void SwitchDirection()
         {
-            if (LanguageManager.IsEnglish)
+            if (Localization.IsEnglish)
                 SwitchDirection(LanguageDirection.Rtl);
             else
                 SwitchDirection(LanguageDirection.Ltr);
         }
 
-        public void SwitchDirection(LanguageDirection dir)
+        protected virtual void OnDirectionChanged(object sender,LanguageDirection dir)
+        {
+            
+        }
+
+        private void SwitchDirection(LanguageDirection dir)
         {
             var shellBinding = Shell.Current.BindingContext as BaseViewModel;
 
-            _langugaeManager.SwitchDirection(dir);
+            _langugaeManager.ChangeDirection(dir);
 
             if (dir == LanguageDirection.Rtl)
             {
@@ -77,11 +82,7 @@ namespace XamarinAppTemplate.ViewModels
                 shellBinding.FlowDirection = FlowDirection.LeftToRight;
             }
 
-        }
-
-        protected virtual void OnDirectionChanged(object sender,LanguageDirection dir)
-        {
-            this.FlowDirection = LanguageManager.CurrentFlowDirection;
+            shellBinding.OnDirectionChanged(this, dir);
         }
 
         #region INotifyPropertyChanged
