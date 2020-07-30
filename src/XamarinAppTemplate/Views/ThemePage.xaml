@@ -141,10 +141,29 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <local:ButtonIcon
+                    Text="{x:Static resx:AppResource.Controls}"
+                    IconColor="{DynamicResource BrandColor}"
+                    TouchColor="{DynamicResource BrandColor}"
+                    TextColor="{DynamicResource BrandColor}"
+                    Icon="{x:Static local:Icons.USER_COG}" />
+
+                <local:ButtonIcon
+                    Grid.Column="1"
+                    IconColor="{DynamicResource BrandColor}"
+                    Icon="{x:Static local:Icons.PHONE_SLASH}"
+                    Text="{x:Static resx:AppResource.PhoneCode}" />
+            </Grid>
             <local:Portlet>
 
                 <local:Portlet.Header>
-                    <Label Text="Loading" />
+                    <Label Text="{x:Static resx:AppResource.Demo_Loading}" />
 
                 </local:Portlet.Header>
 
@@ -152,7 +171,7 @@
                     <Grid>
                         <Button
                             Command="{Binding StartLoadingCommand}"
-                            Text="Start Loading" />
+                            Text="{x:Static resx:AppResource.Demo_ShowLoading}" />
                     </Grid>
                 </local:Portlet.Body>
             </local:Portlet>
@@ -174,65 +193,6 @@
                 </local:Portlet.Body>
             </local:Portlet>
 
-            <Grid Margin="0,0,0,20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Frame
-                    HasShadow="False"
-                    Padding="5">
-                    <Grid
-                        touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
-                        touch:TouchEff.NativeAnimation="True">
-                        <StackLayout Padding="10">
-                            <Image>
-                                <Image.Source>
-                                    <local:FontIcon
-                                        Color="{DynamicResource BrandColor}"
-                                        Glyph="{x:Static local:Icons.PHONE}" />
-                                </Image.Source>
-                            </Image>
-                            <Label
-                                FontSize="Subtitle"
-                                TextColor="{DynamicResource BrandColor}"
-                                HorizontalOptions="Center"
-                                Text="Make a Call" />
-                        </StackLayout>
-                        <Grid.Effects>
-                            <touch:TouchEff />
-                        </Grid.Effects>
-                    </Grid>
-                </Frame>
-
-                <Frame
-                    Grid.Column="1"
-                    HasShadow="False"
-                    Padding="5">
-                    <Grid
-                        touch:TouchEff.NativeAnimationColor="{DynamicResource BrandColor}"
-                        touch:TouchEff.NativeAnimation="True">
-                        <StackLayout Padding="10">
-                            <Image>
-                                <Image.Source>
-                                    <local:FontIcon
-                                        Color="{DynamicResource BrandColor}"
-                                        Glyph="{x:Static local:Icons.CALENDAR}" />
-                                </Image.Source>
-                            </Image>
-                            <Label
-                                FontSize="Subtitle"
-                                TextColor="{DynamicResource BrandColor}"
-                                HorizontalOptions="Center"
-                                Text="Calendar" />
-                        </StackLayout>
-                        <Grid.Effects>
-                            <touch:TouchEff />
-                        </Grid.Effects>
-                    </Grid>
-                </Frame>
-            </Grid>
 
         </StackLayout>
     </ScrollView>

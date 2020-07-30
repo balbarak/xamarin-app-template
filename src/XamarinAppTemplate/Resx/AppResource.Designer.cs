@@ -196,6 +196,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مربع الانتظار.
+        /// </summary>
+        public static string Demo_Loading {
+            get {
+                return ResourceManager.GetString("Demo_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خط متوسط.
         /// </summary>
         public static string Demo_MediumFont {
@@ -237,6 +246,15 @@ namespace XamarinAppTemplate.Resx {
         public static string Demo_ShortText {
             get {
                 return ResourceManager.GetString("Demo_ShortText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اظهار مربع الإنتظار.
+        /// </summary>
+        public static string Demo_ShowLoading {
+            get {
+                return ResourceManager.GetString("Demo_ShowLoading", resourceCulture);
             }
         }
         

@@ -255,4 +255,10 @@
   <data name="Error" xml:space="preserve">
     <value>خطأ</value>
   </data>
+  <data name="Demo_Loading" xml:space="preserve">
+    <value>مربع الانتظار</value>
+  </data>
+  <data name="Demo_ShowLoading" xml:space="preserve">
+    <value>اظهار مربع الإنتظار</value>
+  </data>
 </root>

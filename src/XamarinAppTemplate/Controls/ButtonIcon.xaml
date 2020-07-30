@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:touch="clr-namespace:TouchEffect;assembly=TouchEffect"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    mc:Ignorable="d"
+    x:Name="self"
+    x:Class="XamarinAppTemplate.ButtonIcon">
+    <Frame
+        HasShadow="False"
+        VerticalOptions="Start"
+        Padding="5">
+        <Grid
+            touch:TouchEff.Command="{Binding Command, Source={x:Reference self}}"
+            touch:TouchEff.NativeAnimationColor="{Binding TouchColor, Source={x:Reference self}}"
+            touch:TouchEff.NativeAnimation="True">
+            <StackLayout Padding="10">
+                <Image>
+                    <Image.Source>
+                        <local:FontIcon
+                            Color="{Binding IconColor, Source={x:Reference self}}"
+                            Glyph="{Binding Icon, Source={x:Reference self}}" />
+                    </Image.Source>
+                </Image>
+                <Label
+                    FontSize="Subtitle"
+                    TextColor="{Binding TextColor, Source={x:Reference self}}"
+                    HorizontalOptions="Center"
+                    Text="{Binding Text, Source={x:Reference self}}" />
+            </StackLayout>
+            <Grid.Effects>
+                <touch:TouchEff />
+            </Grid.Effects>
+        </Grid>
+    </Frame>
+</ContentView>

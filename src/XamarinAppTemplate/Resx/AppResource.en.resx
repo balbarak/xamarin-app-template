@@ -255,4 +255,10 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Demo_Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Demo_ShowLoading" xml:space="preserve">
+    <value>Show Loading</value>
+  </data>
 </root>
