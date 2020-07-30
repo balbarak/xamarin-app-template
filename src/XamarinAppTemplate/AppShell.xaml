@@ -106,17 +106,16 @@
 
     <FlyoutItem
         Route="main"
-        Title="{x:Static resx:AppResource.Controls}">
+        Title="{x:Static resx:AppResource.Demo_Forms}">
         <FlyoutItem.Icon>
             <local:FontIcon
-                Glyph="{Static local:Icons.COG}"
+                Glyph="{Static local:Icons.LIST}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
 
         <ShellContent
-            Route="controls"
-            Title="{x:Static resx:AppResource.Controls}"
-            ContentTemplate="{DataTemplate views:ControlPage}" />
+            Route="forms"
+            ContentTemplate="{DataTemplate views:FormPage}" />
     </FlyoutItem>
 
 
@@ -126,7 +125,7 @@
         Title="{x:Static resx:AppResource.Countries}">
         <FlyoutItem.Icon>
             <local:FontIcon
-                Glyph="{Static local:Icons.LIST}"
+                Glyph="{Static local:Icons.GLOBE_AMERICAS}"
                 Color="{DynamicResource FlyoutTextColor}" />
         </FlyoutItem.Icon>
         <ShellContent
@@ -149,22 +148,6 @@
             Route="home"
             Title="Home"
             ContentTemplate="{DataTemplate views:HomePage}" />
-    </FlyoutItem>
-
-    <FlyoutItem
-        Route="main"
-        Title="Register">
-        <ShellContent
-            Route="register"
-            ContentTemplate="{DataTemplate views:RegisterPage}" />
-    </FlyoutItem>
-
-    <FlyoutItem
-        Route="main"
-        Title="Login">
-        <ShellContent
-            Route="login"
-            ContentTemplate="{DataTemplate views:LoginPage}" />
     </FlyoutItem>
 
     <FlyoutItem

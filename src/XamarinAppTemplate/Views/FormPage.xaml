@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    mc:Ignorable="d"
+    xmlns:resx="clr-namespace:XamarinAppTemplate.Resx"
+    x:Class="XamarinAppTemplate.Views.FormPage">
+
+    <StackLayout>
+        <local:Portlet>
+            <local:Portlet.Header>
+                <Label
+                    FontSize="Subtitle"
+                    Text="{x:Static resx:AppResource.Demo_FormValidation}" />
+            </local:Portlet.Header>
+            <local:Portlet.Body>
+                <StackLayout>
+                    <local:FormGroupEntry
+                        Text="{Binding Email}"
+                        Label="{x:Static resx:AppResource.Email}" />
+                    <local:FormGroupEntry
+                        Text="{Binding Password}"
+                        IsPassword="True"
+                        Label="{x:Static resx:AppResource.Password}" />
+                </StackLayout>
+            </local:Portlet.Body>
+            <local:Portlet.Footer>
+                <Button
+                    Command="{Binding SubmitCommand}"
+                    Text="{x:Static resx:AppResource.Submit}" />
+            </local:Portlet.Footer>
+        </local:Portlet>
+    </StackLayout>
+</local:BaseContentPage>

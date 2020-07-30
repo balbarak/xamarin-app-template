@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:XamarinAppTemplate"
+    mc:Ignorable="d"
+    x:Name="self"
+    x:Class="XamarinAppTemplate.FormGroupEntry">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <local:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+            <local:ValidationHasErrorConverter x:Key="HasErrorConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <StackLayout>
+        <Label
+            TextColor="{DynamicResource TextColor}"
+            Text="{Binding Label, Source={x:Reference self}}">
+            <Label.Triggers>
+                <DataTrigger
+                    TargetType="Label"
+                    Binding="{Binding Text.IsValid, Source={x:Reference self}}"
+                    Value="False">
+                    <Setter Property="TextColor" Value="{DynamicResource DangerColor}" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        <local:BorderedEntry
+            Text="{Binding Text.Value, Mode=TwoWay, Source={x:Reference self}}"
+            BorderThickness="1"
+            CornerRadius="5"
+            IsPassword="{Binding IsPassword, Source={x:Reference self}}"
+            Padding="8"
+            FocusColor="{DynamicResource BrandColor}"
+            BorderColor="{DynamicResource TextColor}">
+            <Entry.Behaviors>
+                <local:EventToCommandBehavior
+                    EventName="TextChanged"
+                    Command="{Binding Text.ValidateCommand, Source={x:Reference self}}" />
+            </Entry.Behaviors>
+            <Entry.Triggers>
+                <DataTrigger
+                    TargetType="{x:Type local:BorderedEntry}"
+                    Binding="{Binding Text.IsValid, Source={x:Reference self}}"
+                    Value="False">
+                    <Setter Property="BorderColor" Value="{DynamicResource DangerColor}" />
+                </DataTrigger>
+            </Entry.Triggers>
+        </local:BorderedEntry>
+        <Label
+            TextColor="{DynamicResource DangerColor}"
+            FontSize="Small"
+            IsVisible="{Binding Text.Errors, Source={x:Reference self}, Converter={StaticResource HasErrorConverter}}"
+            Text="{Binding Text.Errors, Source={x:Reference self}, Converter={StaticResource FirstValidationErrorConverter}}" />
+
+    </StackLayout>
+</ContentView>

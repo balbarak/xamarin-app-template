@@ -187,6 +187,24 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نماذج الادخال.
+        /// </summary>
+        public static string Demo_Forms {
+            get {
+                return ResourceManager.GetString("Demo_Forms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نموذج ادخال مع التحقق.
+        /// </summary>
+        public static string Demo_FormValidation {
+            get {
+                return ResourceManager.GetString("Demo_FormValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خط كبير.
         /// </summary>
         public static string Demo_LargeFont {
@@ -358,6 +376,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to البريد الالكتروني.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string English {
@@ -430,6 +457,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to كلمة المرور.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مفتاح الخط.
         /// </summary>
         public static string PhoneCode {
@@ -466,6 +502,15 @@ namespace XamarinAppTemplate.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال.
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to التبويبات.
         /// </summary>
         public static string Tabs {
@@ -480,6 +525,24 @@ namespace XamarinAppTemplate.Resx {
         public static string Themes {
             get {
                 return ResourceManager.GetString("Themes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الرجاء ادخال البريد الالكتروني بطريقة صحيحة.
+        /// </summary>
+        public static string Validation_Email {
+            get {
+                return ResourceManager.GetString("Validation_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حقل {0} مطلوب..
+        /// </summary>
+        public static string Validation_Required {
+            get {
+                return ResourceManager.GetString("Validation_Required", resourceCulture);
             }
         }
         

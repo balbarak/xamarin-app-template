@@ -261,4 +261,25 @@
   <data name="Demo_ShowLoading" xml:space="preserve">
     <value>اظهار مربع الإنتظار</value>
   </data>
+  <data name="Demo_Forms" xml:space="preserve">
+    <value>نماذج الادخال</value>
+  </data>
+  <data name="Demo_FormValidation" xml:space="preserve">
+    <value>نموذج ادخال مع التحقق</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="Validation_Required" xml:space="preserve">
+    <value>حقل {0} مطلوب.</value>
+  </data>
+  <data name="Validation_Email" xml:space="preserve">
+    <value>الرجاء ادخال البريد الالكتروني بطريقة صحيحة</value>
+  </data>
 </root>

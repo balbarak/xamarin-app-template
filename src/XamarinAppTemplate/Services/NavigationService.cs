@@ -90,6 +90,8 @@ namespace XamarinAppTemplate.Services
 
             XamarinAppTemplateRoute.Register(typeof(ErrorModalViewModel), typeof(ErrorModal));
 
+            XamarinAppTemplateRoute.Register(typeof(FormViewModel), typeof(FormPage));
+
         }
     }
 }

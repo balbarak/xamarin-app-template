@@ -63,6 +63,8 @@ namespace XamarinAppTemplate
 
             serviceCollections.AddTransient<ErrorModalViewModel>();
 
+            serviceCollections.AddTransient<FormViewModel>();
+
             return serviceCollections;
         }
     }

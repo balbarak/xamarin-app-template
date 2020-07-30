@@ -261,4 +261,25 @@
   <data name="Demo_ShowLoading" xml:space="preserve">
     <value>Show Loading</value>
   </data>
+  <data name="Demo_Forms" xml:space="preserve">
+    <value>Forms</value>
+  </data>
+  <data name="Demo_FormValidation" xml:space="preserve">
+    <value>Form Validation</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Validation_Required" xml:space="preserve">
+    <value>Field '{0}' is required.</value>
+  </data>
+  <data name="Validation_Email" xml:space="preserve">
+    <value>Email is invalid. Please entry a valid email.</value>
+  </data>
 </root>
