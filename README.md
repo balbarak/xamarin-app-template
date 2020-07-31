@@ -2,7 +2,7 @@
 
 A Startup project template for creating a new xamarin forms app.
 
-![](https://balbarakdata.blob.core.windows.net/images/screen1.png)
+![](https://balbarakdata.blob.core.windows.net/images/screen1.png | width=100)
 
 ## Introduction
 
