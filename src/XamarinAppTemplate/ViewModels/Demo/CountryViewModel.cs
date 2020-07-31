@@ -15,17 +15,17 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class CountryViewModel : BaseViewModel
     {
+        private CountryWrapper _selectedCountry;
         private readonly CountryService _service;
-
         private ObservableCollection<CountryWrapper> _countries;
 
         public ObservableCollection<CountryWrapper> Countries { get => _countries; set => SetProperty(ref _countries, value); }
-
+        
         public ICommand DetailsCommand => new Command(async (arg) => await Details(arg));
 
-        private CountryWrapper _selectedCountry;
-
         public CountryWrapper SelectedCountry { get => _selectedCountry; set => SetProperty(ref _selectedCountry, value); }
+
+        public bool Ok { get; set; } = true;
 
         public CountryViewModel(CountryService service)
         {

@@ -303,4 +303,7 @@
   <data name="Demo_Switch" xml:space="preserve">
     <value>تفعيل</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
 </root>

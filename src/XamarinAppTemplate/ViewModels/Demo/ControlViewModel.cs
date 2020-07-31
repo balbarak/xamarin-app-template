@@ -7,11 +7,14 @@ namespace XamarinAppTemplate.ViewModels
 {
     public class ControlViewModel : BaseViewModel
     {
+       
         public override Task InitializeAsync(object navigationData)
         {
             Title = Resx.AppResource.Controls;
 
             return base.InitializeAsync(navigationData);
+
+            
         }
     }
 }

@@ -38,6 +38,8 @@
 
 
 
+
+
     <FlyoutItem
         Route="main"
         Title="{x:Static resx:AppResource.Demo_Typography}">
@@ -140,7 +142,7 @@
 
     <FlyoutItem
         Route="main"
-        Title="Home">
+        Title="{x:Static resx:AppResource.Home}">
         <FlyoutItem.Icon>
             <local:FontIcon
                 Glyph="{Static local:Icons.HOME}"
@@ -155,6 +157,11 @@
     <FlyoutItem
         Route="main"
         Title="About">
+        <FlyoutItem.Icon>
+            <local:FontIcon
+                Glyph="{Static local:Icons.INFO_CIRCLE}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
         <ShellContent
             Route="about"
             ContentTemplate="{DataTemplate views:AboutPage}" />

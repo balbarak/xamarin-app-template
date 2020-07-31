@@ -7,83 +7,93 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ffmpeg="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     mc:Ignorable="d"
+    x:Name="countryPage"
     x:Class="XamarinAppTemplate.Views.CountryPage">
-    <ContentPage.Content>
-        <Grid>
 
-            <CollectionView
-                x:Name="countryCollection"
-                VerticalScrollBarVisibility="Always"
-                ItemsUpdatingScrollMode="KeepScrollOffset"
-                SelectionMode="Single"
-                SelectedItem="{Binding SelectedCountry, Mode=TwoWay}"
-                SelectionChangedCommand="{Binding DetailsCommand}"
-                SelectionChangedCommandParameter="{Binding Source={x:Reference countryCollection}, Path=SelectedItem}"
-                ItemsSource="{Binding Countries}">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout
-                        ItemSpacing="10"
-                        Orientation="Vertical" />
+    <Grid>
 
-                </CollectionView.ItemsLayout>
+        <CollectionView
+            x:Name="countryCollection"
+            VerticalScrollBarVisibility="Always"
+            ItemsUpdatingScrollMode="KeepScrollOffset"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedCountry, Mode=TwoWay}"
+            SelectionChangedCommand="{Binding DetailsCommand}"
+            SelectionChangedCommandParameter="{Binding Source={x:Reference countryCollection}, Path=SelectedItem}"
+            ItemsSource="{Binding Countries}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="10"
+                    Orientation="Vertical" />
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame
-                            HasShadow="False"
-                            VerticalOptions="Center"
-                            HeightRequest="50"
-                            Padding="10"
-                            Margin="50,0">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="20" />
-                                </Grid.ColumnDefinitions>
+            </CollectionView.ItemsLayout>
 
-                                <Frame
-                                    Padding="1"
-                                    HasShadow="False"
-                                    BorderColor="Black"
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        HasShadow="False"
+                        VerticalOptions="Center"
+                        HeightRequest="50"
+                        Padding="10"
+                        Margin="50,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+
+                            <Frame
+                                Padding="1"
+                                HasShadow="False"
+                                BorderColor="Black"
+                                VerticalOptions="Start"
+                                Margin="0">
+                                <ffmpeg:CachedImage
+                                    x:Name="img"
+                                    Grid.Column="0"
+                                    Margin="0"
+                                    Aspect="AspectFill"
                                     VerticalOptions="Start"
-                                    Margin="0">
-                                    <ffmpeg:CachedImage
-                                        x:Name="img"
-                                        Grid.Column="0"
-                                        Margin="0"
-                                        Aspect="AspectFill"
-                                        VerticalOptions="Start"
-                                        Source="{Binding Image}" />
-                                </Frame>
+                                    Source="{Binding Image}" />
+                            </Frame>
 
-                                <StackLayout
-                                    Margin="10,0"
-                                    Spacing="1"
-                                    Grid.Column="1">
-                                    <Label
-                                        FontSize="Subtitle"
-                                        FontAttributes="Bold"
-                                        Text="{Binding Name}" />
-                                    <Label
-                                        FontSize="Caption"
-                                        Text="{Binding Capital}" />
-                                </StackLayout>
-
+                            <StackLayout
+                                Margin="10,0"
+                                Spacing="1"
+                                Grid.Column="1">
                                 <Label
-                                    Grid.Column="2"
-                                    VerticalOptions="Center"
-                                    Style="{StaticResource FontIcon-FA-Solid}"
+                                    FontSize="Subtitle"
+                                    FontAttributes="Bold"
+                                    Text="{Binding Name}" />
+                                <Label
                                     FontSize="Caption"
-                                    TextColor="{DynamicResource TextColor}"
-                                    Text="{x:Static local:Icons.CHEVRON_RIGHT}" />
+                                    Text="{Binding Capital}" />
+                            </StackLayout>
 
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                            <Label
+                                Grid.Column="2"
+                                VerticalOptions="Center"
+                                Style="{StaticResource FontIcon-FA-Solid}"
+                                FontSize="Caption"
+                                TextColor="{DynamicResource TextColor}"
+                                Text="{x:Static local:Icons.CHEVRON_RIGHT}">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Value="false"
+                                        Binding="{Binding BindingContext.IsEnglish, Source={x:Reference countryPage}}">
+                                        <Setter Property="Text" Value="{x:Static local:Icons.CHEVRON_LEFT}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
 
-        </Grid>
-    </ContentPage.Content>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
 </local:BaseContentPage>

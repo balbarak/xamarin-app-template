@@ -34,6 +34,8 @@ namespace XamarinAppTemplate.ViewModels
 
         public ICommand CloseModalCommand => new Command(async () => await _navService.CloseModal());
 
+        public bool IsEnglish => Localization.IsEnglish;
+
         public BaseViewModel()
         {
             _navService = AppServiceLocator.Current.GetService<NavigationService>();
