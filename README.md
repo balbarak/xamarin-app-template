@@ -28,6 +28,23 @@ This project include the followings out of the box !
 * Custom Controls such as `CheckBox` and `Switch`
 
 
+## Getting Started
+
+### Requiremnts 
+* .NET Core 3.1
+* Visual Studio 2019 
+
+### Installation
+
+To install the template you need to do the followings
+
+* Clone the repo `git clone https://github.com/balbarak/xamarin-app-template.git`
+* Install the template as .NET Core template. Open cmd and follow the instructions
+
+ `dotnet new -i (PathToSrcFolder)` ex `dotnet new -i C:\Repos\C:\Repos\xamarin-app-template\src`
+
+ * Then create your project by writing the followings
+ * `dotnet new mobileApp -n (NameOfTheProject)` ex `dotnet new mobileApp -n FirstApp`
 
 
 
