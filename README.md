@@ -1,6 +1,6 @@
 # Xamarin Forms App Boilerplate
 
-A Startup project template for creating a new xamarin forms app.
+### A Startup project template for creating a new xamarin forms app.
 
 | <img src="https://balbarakdata.blob.core.windows.net/images/screen2.png" width=200/> <img src="https://balbarakdata.blob.core.windows.net/images/screen3.png" width=200/> <img src="https://balbarakdata.blob.core.windows.net/images/screen1.png" width=200/> <img src="https://balbarakdata.blob.core.windows.net/images/screen4.png" width=200/>
 
