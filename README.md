@@ -36,15 +36,16 @@ This project include the followings out of the box !
 
 ### Installation
 
-To install the template you need to do the followings
+To create a new project simply open your cmd or terminal and do the followings
 
-* Clone the repo `git clone https://github.com/balbarak/xamarin-app-template.git`
-* Install the template as .NET Core template. Open cmd and follow the instructions
+* `git clone https://github.com/balbarak/xamarin-app-template.git`
+* `dotnet new -i (PathToSrcFolder)`
+    * Example: 
+    * `dotnet new -i C:\Repos\C:\Repos\xamarin-app-template\src`
 
- `dotnet new -i (PathToSrcFolder)` ex `dotnet new -i C:\Repos\C:\Repos\xamarin-app-template\src`
-
- * Then create your project by writing the followings
- * `dotnet new mobileApp -n (NameOfTheProject)` ex `dotnet new mobileApp -n FirstApp`
+ * `dotnet new mobileApp -n (NameOfTheProject)` 
+    * Example:
+    * `dotnet new mobileApp -n FirstApp`
 
 
 
