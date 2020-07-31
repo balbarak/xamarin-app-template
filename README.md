@@ -21,7 +21,7 @@ This project include the followings out of the box !
 * `Shell` with Flyout
 * Theme and Style
 * Multi Languages
-* RTL and LTR Support
+* RTL Support
 * Success and Error Modals
 * General Modal
 * Button Icons
