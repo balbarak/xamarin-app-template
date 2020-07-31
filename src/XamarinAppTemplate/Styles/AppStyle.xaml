@@ -15,6 +15,7 @@
         <Setter Property="TextColor" Value="{DynamicResource ButtonColor}" />
     </Style>
 
+
     <Style
         x:Key="btn-danger"
         TargetType="Button">
@@ -43,12 +44,15 @@
     </Style>
 
     <Style TargetType="CheckBox">
+        <Setter Property="Scale" Value="1.2" />
         <Setter Property="Color" Value="{DynamicResource BrandColor}" />
     </Style>
 
+
     <Style TargetType="Switch">
+        <Setter Property="Scale" Value="1.2" />
+        <Setter Property="ThumbColor" Value="Gray" />
         <Setter Property="OnColor" Value="{DynamicResource BrandColor}" />
-        <Setter Property="ThumbColor" Value="{DynamicResource TextColorReverse}" />
     </Style>
 
     <!--  =========================================== SHELL STYLE =====================================  -->

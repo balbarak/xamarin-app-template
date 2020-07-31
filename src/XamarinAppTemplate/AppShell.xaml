@@ -20,19 +20,6 @@
     x:Class="XamarinAppTemplate.AppShell">
 
 
-    <FlyoutItem
-        Route="main"
-        Title="{x:Static resx:AppResource.Demo_Forms}">
-        <FlyoutItem.Icon>
-            <local:FontIcon
-                Glyph="{Static local:Icons.LIST}"
-                Color="{DynamicResource FlyoutTextColor}" />
-        </FlyoutItem.Icon>
-
-        <ShellContent
-            Route="forms"
-            ContentTemplate="{DataTemplate views:FormPage}" />
-    </FlyoutItem>
 
 
     <FlyoutItem
@@ -77,6 +64,19 @@
             ContentTemplate="{DataTemplate views:ButtonPage}" />
     </FlyoutItem>
 
+    <FlyoutItem
+        Route="main"
+        Title="{x:Static resx:AppResource.Demo_Forms}">
+        <FlyoutItem.Icon>
+            <local:FontIcon
+                Glyph="{Static local:Icons.LIST}"
+                Color="{DynamicResource FlyoutTextColor}" />
+        </FlyoutItem.Icon>
+
+        <ShellContent
+            Route="forms"
+            ContentTemplate="{DataTemplate views:FormPage}" />
+    </FlyoutItem>
 
     <FlyoutItem
         Route="main"

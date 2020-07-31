@@ -74,8 +74,16 @@
                         Text="{x:Static resx:AppResource.Demo_Switch}" />
                 </local:Portlet.Header>
                 <local:Portlet.Body>
-                    <StackLayout>
-                        <local:SwitchControl />
+                    <StackLayout Spacing="10">
+                        <local:SwitchControl
+                            Text="{x:Static resx:AppResource.Demo_ShortText}"
+                            IsToggled="True" />
+
+                        <local:SwitchControl
+                            Text="{x:Static resx:AppResource.Demo_NotCheck}"
+                            ToggledText="{x:Static resx:AppResource.Demo_Checked}"
+                            ToggledTextColor="{DynamicResource SuccessColor}"
+                            IsToggled="False" />
                     </StackLayout>
                 </local:Portlet.Body>
             </local:Portlet>
