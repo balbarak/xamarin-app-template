@@ -22,8 +22,7 @@ This project include the followings out of the box !
 * Theme and Style
 * Multi Languages
 * RTL Support
-* Success and Error Modals
-* General Modal
+* Modals
 * Button Icons
 * Custom Controls such as `CheckBox` and `Switch`
 
