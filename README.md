@@ -49,5 +49,13 @@ To create a new project simply open your cmd or terminal and do the followings
 
 
 
+### Acknowledgements
 
+This project using the followings plugins
+
+* [Popup Page Plugin for Xamarin Forms](https://github.com/rotorgames/Rg.Plugins.Popup)
+* [FFImageLoading](https://github.com/luberda-molinet/FFImageLoading)
+* [Xamarin Essentials](https://github.com/xamarin/Essentials)
+* [PermissionsPlugin](https://github.com/jamesmontemagno/PermissionsPlugin)
+* [LottieXamarin](https://github.com/Baseflow/LottieXamarin)
 
